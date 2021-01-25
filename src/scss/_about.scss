@@ -1,6 +1,9 @@
 .abount__row {
     display: flex;
-    
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
 }
 
 .about__left-col {
@@ -20,7 +23,21 @@
         width: 100vw;
         position: absolute;
         z-index: -1;
-        background: #7040C0;
+        background: #7040c0;
+    }
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+        padding: 2.4rem 0;
+
+        &::before {
+            left: calc(-1 * (100vw - 100%) / 2);
+            right: calc(-1 * (100vw - 100%) / 2);
+            top: 0;
+            bottom: 0;
+            width: auto;
+        }
     }
 }
 
@@ -42,6 +59,18 @@
         z-index: -1;
         background-color: white;
     }
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        padding: 2.4rem 0;
+        &::before {
+            left: calc(-1 * (100vw - 100%) / 2);
+            right: calc(-1 * (100vw - 100%) / 2);
+            top: 0;
+            bottom: 0;
+            width: auto;
+        }
+    }
 }
 
 .about__text {
@@ -49,13 +78,21 @@
     font-size: 5.5rem;
     line-height: 120%;
     letter-spacing: 0.005em;
-}
 
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+        line-height: 130%;
+    }
+}
 
 .about__partners-list {
     display: flex;
     flex-wrap: wrap;
     margin: -2.4rem -3.2rem;
+
+    @include breakpoint(mobile) {
+        margin: -1.5rem;
+    }
 }
 
 .about__partners-list-item {
@@ -63,7 +100,11 @@
     padding: 2.4rem 3.2rem;
     display: flex;
     flex-direction: column;
-    
+
+    @include breakpoint(mobile) {
+        padding: 1.5rem;
+        width: 33.33%;
+    }
 }
 
 .about__partners-card {
@@ -80,4 +121,8 @@
     max-width: 100%;
     max-height: 10rem;
     @include objectFitContain();
+
+    @include breakpoint(mobile) {
+        max-height: 6.5rem;
+    }
 }

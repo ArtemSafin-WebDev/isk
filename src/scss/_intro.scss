@@ -10,15 +10,77 @@
     top: 0;
     width: 100%;
     height: 100%;
-  
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+.intro__mobile-link {
+    display: none;
+    @include breakpoint(mobile) {
+        display: block;
+        color: white;
+        font-weight: 500;
+        font-size: 3rem;
+        line-height: 3.6rem;
+        letter-spacing: 0.005em;
+        text-transform: uppercase;
+        z-index: 20;
+        font-family: var(--druk);
+        &:link,
+        &:visited {
+            color: white;
+        }
+    }
+}
+
+.intro__mobile-bg {
+    display: none;
+
+    @include breakpoint(mobile) {
+        display: block;
+        position: absolute;
+        left: calc(-1 * (100vw - 100%) / 2);
+        right: calc(-1 * (100vw - 100%) / 2);
+        bottom: 0;
+        top: 0;
+        
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(#14142b, 0.5);
+        }
+    }
+}
+
+.intro__mobile-bg-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include objectFitCover();
 }
 
 .intro__content {
-    height: 93.4rem;
     height: 100vh;
     position: relative;
     display: flex;
-   
+
+    @include breakpoint(tablet) {
+        height: 93.4rem;
+    }
+
+    @include breakpoint(mobile) {
+        height: auto;
+        flex-direction: column;
+    }
 }
 
 .intro__left-col,
@@ -35,13 +97,31 @@
             opacity: 0;
         }
     }
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        min-height: 25.5rem;
+
+        &::before {
+            display: none;
+        }
+    }
 }
 
 .intro__left-col {
-   
-    
     .intro__semicircle {
         right: 0;
+    }
+
+    .intro__semicircle-mobile {
+        position: absolute;
+        bottom: 0;
+        width: 28.4rem;
+        height: auto;
+        left: 50%;
+        transform: translateX(-50%);
     }
     &::before {
         content: '';
@@ -52,17 +132,24 @@
         left: calc(-1 * (100vw - 100%) / 2);
         background-color: var(--blue);
         z-index: -1;
-        transition: opacity .3s;
+        transition: opacity 0.3s;
     }
 }
 
-
 .intro__right-col {
-  
-
-
     .intro__semicircle {
         left: 0;
+
+    
+    }
+
+    .intro__semicircle-mobile {
+        position: absolute;
+        top: 0;
+        width: 28.4rem;
+        height: auto;
+        left: 50%;
+        transform: translateX(-50%);
     }
     &::before {
         content: '';
@@ -73,7 +160,7 @@
         right: calc(-1 * (100vw - 100%) / 2);
         background-color: var(--dark-blue);
         z-index: -1;
-        transition: opacity .3s;
+        transition: opacity 0.3s;
     }
 }
 
@@ -94,8 +181,8 @@
     justify-content: center;
     position: absolute;
     z-index: 120;
-    transition: color .2s, background-color .2s;
-   
+    transition: color 0.2s, background-color 0.2s;
+
     &:link,
     &:visited {
         color: white;
@@ -105,8 +192,21 @@
         background-color: white;
         color: #5624ab;
     }
-}
 
+    @include breakpoint(mobile) {
+        font-size: 2.4rem;
+        letter-spacing: 0.005em;
+        font-weight: 700;
+        line-height: 130%;
+        padding: .8rem 2rem;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        bottom: auto;
+        top: 100%;
+        white-space: nowrap;
+        
+    }
+}
 
 .intro__text-content {
     display: flex;
@@ -116,6 +216,10 @@
     width: 100%;
     height: 100%;
     z-index: 90;
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
 }
 
 .intro__text-content-col {
@@ -126,13 +230,11 @@
     &--left {
         color: var(--dark-blue);
         align-items: flex-start;
-    
-    
+
         &.active {
             color: white;
         }
     }
-
 
     &--right {
         color: white;
@@ -153,7 +255,7 @@
     line-height: 7.3rem;
     font-family: var(--druk);
     text-transform: uppercase;
-    transition: color .2s, transform .2s;
+    transition: color 0.2s, transform 0.2s;
     transform-origin: left center;
     display: inline-flex;
     &.inactive {
@@ -176,25 +278,24 @@
     max-width: 49rem;
     opacity: 0;
     visibility: hidden;
-    transition: opacity .3s, visibility 0s linear .3s;
+    transition: opacity 0.3s, visibility 0s linear 0.3s;
 
     .intro__text-content-col.active & {
         opacity: 1;
         visibility: inherit;
-        transition: opacity .3s, visibility .3s;
+        transition: opacity 0.3s, visibility 0.3s;
     }
 }
 
 .intro__background {
     position: absolute;
- 
+
     top: 0;
-   
+
     bottom: 0;
     opacity: 0;
     visibility: hidden;
-    transition: opacity .3s, visibility 0s linear .3s;
-
+    transition: opacity 0.3s, visibility 0s linear 0.3s;
 
     &:nth-child(1) {
         left: 0;
@@ -213,16 +314,15 @@
         top: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(black, .5);
+        background-color: rgba(black, 0.5);
     }
 
     &.active {
         opacity: 1;
         visibility: inherit;
-        transition: opacity .3s, visibility .3s;
+        transition: opacity 0.3s, visibility 0.3s;
     }
 }
-
 
 .intro__background-image {
     position: absolute;
@@ -235,7 +335,7 @@
 
 .intro__semicircle {
     position: absolute;
-   
+
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
@@ -244,7 +344,10 @@
     max-width: none;
     pointer-events: none;
     z-index: 4;
-    transition: opacity .3s, visibility .3s;
+    transition: opacity 0.3s, visibility 0.3s;
+
+
+   
 
     &:only-child {
         opacity: 1 !important;
@@ -254,9 +357,8 @@
     &:nth-child(2) {
         opacity: 0;
         visibility: inherit;
-        transition: opacity .3s, visibility 0s linear .3s;
+        transition: opacity 0.3s, visibility 0s linear 0.3s;
     }
-
 
     .js-intro-col.active & {
         &:nth-child(1) {
@@ -268,5 +370,29 @@
             opacity: 1;
             visibility: inherit;
         }
+    }
+
+
+    @include breakpoint(mobile) {
+        height: 28.4rem;
+        width: auto;
+        display: none;
+        &:nth-child(1) {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &:nth-child(2) {
+            opacity: 1;
+            visibility: inherit;
+        }
+    }
+}
+
+
+.intro__semicircle-mobile {
+    display: none;
+    @include breakpoint(mobile) {
+        display: block;
     }
 }

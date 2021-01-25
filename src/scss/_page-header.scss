@@ -5,11 +5,19 @@
     width: 100%;
     z-index: 500;
     top: 3.5rem;
+
+    @include breakpoint(mobile) {
+        top: 1.5rem;
+    }
 }
 
 .page-header__row {
     display: flex;
     align-items: flex-start;
+
+    @include breakpoint(mobile) {
+        align-items: center;
+    }
 }
 
 .page-header__logo {
@@ -21,6 +29,10 @@
     width: 14.6rem;
     height: auto;
     display: block;
+
+    @include breakpoint(mobile) {
+        width: 6rem;
+    }
 }
 
 .page-header__burger {
@@ -42,6 +54,12 @@
         transition: opacity 0.2s, transform 0.2s;
         display: block;
         flex-shrink: 0;
+
+        @include breakpoint(mobile) {
+            width: 25px;
+            height: 3px;
+            margin-bottom: 4px;
+        }
         &:last-child {
             margin-bottom: 0;
         }
@@ -56,6 +74,10 @@
             }
             &:nth-child(3) {
                 transform: translateY(-8px) rotate(-45deg);
+            }
+
+
+            @include breakpoint(mobile) {
             }
         }
     }

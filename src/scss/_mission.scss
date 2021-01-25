@@ -7,10 +7,20 @@
     padding-top: 5rem;
     padding-bottom: 6.5rem;
     display: flex;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        padding-top: 4.2rem;
+        padding-bottom: 4.6rem;
+    }
 }
 
 .mission__col {
     width: 50%;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+    }
 }
 
 .mission__heading {
@@ -22,6 +32,16 @@
     color: var(--dark-blue);
     margin-bottom: 2rem;
     font-family: var(--druk);
+
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        margin-bottom: 0.7rem;
+
+        br {
+            display: none;
+        }
+    }
 }
 
 .mission__text {
@@ -29,4 +49,9 @@
     font-size: 5.5rem;
     line-height: 120%;
     letter-spacing: 0.005em;
+
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+        line-height: 130%;
+    }
 }

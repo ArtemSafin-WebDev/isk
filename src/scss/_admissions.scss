@@ -11,6 +11,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    @include breakpoint(mobile) {
+        align-items: initial;
+    }
 }
 
 .admissions__text {
@@ -21,4 +24,12 @@
     font-size: 7.2rem;
     line-height: 1;
     letter-spacing: 0.005em;
+
+    @include breakpoint(mobile) {
+        padding: 5.2rem 0;
+        font-size: 2.4rem;
+        max-width: none;
+        line-height: 130%;
+        font-weight: 700;
+    }
 }

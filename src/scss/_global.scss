@@ -15,14 +15,41 @@
     --dark-blue: #14142B;
     --druk: 'DrukWideMediumCy', sans-serif;
     --mabry: 'Mabry Pro', sans-serif;
+
+
+    @include breakpoint(tablet) {
+        --content-padding: 4rem;
+    }
+    @include breakpoint(small-tablet) {
+        --content-padding: 2rem;
+    }
 }
 
 html {
     box-sizing: border-box;
     font-size: 10px;
     -webkit-text-size-adjust: 100%;
-  
+
     @include noHighlight();
+    @include breakpoint(desktop) {
+        font-size: 9px;
+    }
+
+    @include breakpoint(laptop) {
+        font-size: 8px;
+    }
+
+    @include breakpoint(tablet) {
+        font-size: 7px;
+    }
+
+    @include breakpoint(small-tablet) {
+        font-size: 5.8px;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 10px;
+    }
 }
 
 body {
