@@ -1,0 +1,32 @@
+.mission {
+    background-color: var(--violet);
+    color: white;
+}
+
+.mission__row {
+    padding-top: 5rem;
+    padding-bottom: 6.5rem;
+    display: flex;
+}
+
+.mission__col {
+    width: 50%;
+}
+
+.mission__heading {
+    font-weight: 500;
+    font-size: 6rem;
+    line-height: 7.3rem;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    color: var(--dark-blue);
+    margin-bottom: 2rem;
+    font-family: var(--druk);
+}
+
+.mission__text {
+    font-weight: 500;
+    font-size: 5.5rem;
+    line-height: 120%;
+    letter-spacing: 0.005em;
+}

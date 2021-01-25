@@ -1,0 +1,24 @@
+.admissions {
+    background-color: var(--blue);
+    color: var(--dark-blue);
+    background-image: url('../img/admissions-bg-pattern.svg');
+    background-size: 7.972rem 8.066rem;
+    background-position: center top;
+    background-repeat: repeat;
+}
+
+.admissions__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admissions__text {
+    padding: 9rem 0;
+    max-width: 92.4rem;
+    width: 100%;
+    font-weight: 500;
+    font-size: 7.2rem;
+    line-height: 1;
+    letter-spacing: 0.005em;
+}

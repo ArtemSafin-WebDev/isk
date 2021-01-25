@@ -1,0 +1,83 @@
+.abount__row {
+    display: flex;
+    
+}
+
+.about__left-col {
+    width: 50%;
+    flex-grow: 1;
+    z-index: 1;
+    color: white;
+    position: relative;
+    padding-top: 4.4rem;
+    padding-bottom: 5.8rem;
+    padding-right: 3.6rem;
+    &::before {
+        content: '';
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100vw;
+        position: absolute;
+        z-index: -1;
+        background: #7040C0;
+    }
+}
+
+.about__right-col {
+    width: 46.8rem;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    padding-top: 4.4rem;
+    padding-bottom: 5.8rem;
+    padding-left: 8rem;
+    &::before {
+        content: '';
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 100vw;
+        position: absolute;
+        z-index: -1;
+        background-color: white;
+    }
+}
+
+.about__text {
+    font-weight: 500;
+    font-size: 5.5rem;
+    line-height: 120%;
+    letter-spacing: 0.005em;
+}
+
+
+.about__partners-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -2.4rem -3.2rem;
+}
+
+.about__partners-list-item {
+    width: 50%;
+    padding: 2.4rem 3.2rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.about__partners-card {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about__partners-card-image {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 10rem;
+    @include objectFitContain();
+}

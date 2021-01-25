@@ -1,0 +1,272 @@
+.intro {
+    background-color: var(--dark-blue);
+    color: white;
+    position: relative;
+}
+
+.intro__backgrounds {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  
+}
+
+.intro__content {
+    height: 93.4rem;
+    height: 100vh;
+    position: relative;
+    display: flex;
+   
+}
+
+.intro__left-col,
+.intro__right-col {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 70;
+    flex-shrink: 0;
+
+    &.active {
+        &::before {
+            opacity: 0;
+        }
+    }
+}
+
+.intro__left-col {
+   
+    
+    .intro__semicircle {
+        right: 0;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        left: calc(-1 * (100vw - 100%) / 2);
+        background-color: var(--blue);
+        z-index: -1;
+        transition: opacity .3s;
+    }
+}
+
+
+.intro__right-col {
+  
+
+
+    .intro__semicircle {
+        left: 0;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: calc(-1 * (100vw - 100%) / 2);
+        background-color: var(--dark-blue);
+        z-index: -1;
+        transition: opacity .3s;
+    }
+}
+
+.intro__bottom-link {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1.65rem 3.8rem;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 130%;
+    letter-spacing: 0.005em;
+    color: white;
+    text-align: center;
+    background: #5624ab;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 120;
+    transition: color .2s, background-color .2s;
+   
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    &:hover {
+        background-color: white;
+        color: #5624ab;
+    }
+}
+
+
+.intro__text-content {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 90;
+}
+
+.intro__text-content-col {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+    &--left {
+        color: var(--dark-blue);
+        align-items: flex-start;
+    
+    
+        &.active {
+            color: white;
+        }
+    }
+
+
+    &--right {
+        color: white;
+        align-items: flex-end;
+    }
+}
+
+.intro__column-content {
+    margin: auto 0;
+    position: relative;
+    z-index: 40;
+}
+
+.intro__column-link {
+    transition: color 0.2s;
+    font-weight: 500;
+    font-size: 6rem;
+    line-height: 7.3rem;
+    font-family: var(--druk);
+    text-transform: uppercase;
+    transition: color .2s, transform .2s;
+    transform-origin: left center;
+    display: inline-flex;
+    &.inactive {
+        transform: scale(0.92);
+    }
+    &:link,
+    &:visited {
+        color: inherit;
+    }
+}
+
+.intro__column-text {
+    position: absolute;
+    top: 100%;
+    padding-top: 5.4rem;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 130%;
+    letter-spacing: 0.005em;
+    max-width: 49rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s, visibility 0s linear .3s;
+
+    .intro__text-content-col.active & {
+        opacity: 1;
+        visibility: inherit;
+        transition: opacity .3s, visibility .3s;
+    }
+}
+
+.intro__background {
+    position: absolute;
+ 
+    top: 0;
+   
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s, visibility 0s linear .3s;
+
+
+    &:nth-child(1) {
+        left: 0;
+        width: 80vw;
+    }
+
+    &:nth-child(2) {
+        right: 0;
+        width: 80vw;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(black, .5);
+    }
+
+    &.active {
+        opacity: 1;
+        visibility: inherit;
+        transition: opacity .3s, visibility .3s;
+    }
+}
+
+
+.intro__background-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include objectFitCover();
+}
+
+.intro__semicircle {
+    position: absolute;
+   
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    height: 67.6rem;
+    width: auto;
+    max-width: none;
+    pointer-events: none;
+    z-index: 4;
+    transition: opacity .3s, visibility .3s;
+
+    &:only-child {
+        opacity: 1 !important;
+        visibility: inherit !important;
+    }
+
+    &:nth-child(2) {
+        opacity: 0;
+        visibility: inherit;
+        transition: opacity .3s, visibility 0s linear .3s;
+    }
+
+
+    .js-intro-col.active & {
+        &:nth-child(1) {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &:nth-child(2) {
+            opacity: 1;
+            visibility: inherit;
+        }
+    }
+}
