@@ -1,6 +1,9 @@
 import { lockScroll, unlockScroll } from './scrollBlocker';
 import gsap from 'gsap';
 import { debounce } from 'lodash';
+import { MOBILE_WIDTH } from './constants';
+
+
 
 export default function menu() {
     let menuOpen = false;
@@ -22,12 +25,16 @@ export default function menu() {
             autoAlpha: 0,
             stagger: 0.2,
             x: 70
-        }).fromTo(menuPointer, {
-            autoAlpha: 0
-        }, {
-            autoAlpha: 1,
-            duration: 0.2
-        })
+        }).fromTo(
+            menuPointer,
+            {
+                autoAlpha: 0
+            },
+            {
+                autoAlpha: 1,
+                duration: 0.2
+            }
+        );
         lockScroll(menu);
     };
 
@@ -47,43 +54,43 @@ export default function menu() {
         }
     });
 
-  
+    if (!window.matchMedia(`(max-width: ${MOBILE_WIDTH}px)`).matches) {
+        const initialActiveLink = menuLinks.find(link => link.classList.contains('active'));
 
-    const initialActiveLink = menuLinks.find(link => link.classList.contains('active'));
+        const slideToMenuLinks = link => {
+            const linkOffset = link.offsetTop + link.offsetHeight / 2;
 
-    const slideToMenuLinks = link => {
-        const linkOffset = link.offsetTop + link.offsetHeight / 2;
-
-        gsap.to(menuPointer, {
-            duration: 0.3,
-            y: linkOffset
-        });
-    };
-
-    const initializeLinks = () => {
-        if (initialActiveLink) {
-            slideToMenuLinks(initialActiveLink);
-        } else if (menuLinks.length) {
-            slideToMenuLinks(menuLinks[0]);
-        } else {
-            gsap.set(menuPointer, {
-                autoAlpha: 0
+            gsap.to(menuPointer, {
+                duration: 0.3,
+                y: linkOffset
             });
-        }
-    };
+        };
 
-    initializeLinks();
+        const initializeLinks = () => {
+            if (initialActiveLink) {
+                slideToMenuLinks(initialActiveLink);
+            } else if (menuLinks.length) {
+                slideToMenuLinks(menuLinks[0]);
+            } else {
+                gsap.set(menuPointer, {
+                    autoAlpha: 0
+                });
+            }
+        };
 
-    menuLinks.forEach(link => {
-        link.addEventListener('mouseenter', () => {
-            slideToMenuLinks(link);
+        initializeLinks();
+
+        menuLinks.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                slideToMenuLinks(link);
+            });
         });
-    });
 
-    window.addEventListener(
-        'resize',
-        debounce(() => {
-            initializeLinks();
-        }, 300)
-    );
+        window.addEventListener(
+            'resize',
+            debounce(() => {
+                initializeLinks();
+            }, 300)
+        );
+    }
 }
