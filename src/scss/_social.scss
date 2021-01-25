@@ -7,6 +7,11 @@
 .social__heading-block {
     padding: 7.1rem 0;
     position: relative;
+
+    @include breakpoint(mobile) {
+        padding-top: 1.9rem;
+        padding-bottom: 3.8rem;
+    }
 }
 
 .social__heading {
@@ -17,6 +22,13 @@
     letter-spacing: 0.005em;
     text-transform: uppercase;
     font-family: var(--druk);
+
+    @include breakpoint(mobile) {
+        font-weight: 500;
+        font-size: 3rem;
+        line-height: 3.6rem;
+        letter-spacing: 0.005em;
+    }
 }
 
 .social__tag {
@@ -34,7 +46,7 @@
     border-radius: 3.6rem;
     transform: translateY(-50%);
     font-family: var(--druk);
-    transition: color .2s, background-color .2s;
+    transition: color 0.2s, background-color 0.2s;
     z-index: 40;
     &:link,
     &:visited {
@@ -44,18 +56,44 @@
     &:hover {
         background: var(--dark-violet);
     }
+
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+        line-height: 2.4rem;
+        letter-spacing: 0.005em;
+        border-radius: 3.6rem;
+        padding: 1rem 4rem;
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, -50%);
+        top: 100%;
+        bottom: auto;
+    }
 }
 
 .social__grid {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
     position: relative;
+
+
+    @include breakpoint(mobile) {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
 }
 
 .social__grid-item {
     &:first-child {
         grid-column: span 2;
         grid-row: span 2;
+    }
+
+
+    @include breakpoint(mobile) {
+        display: none;
+        &:nth-child(-n+5) {
+            display: block;
+        }
     }
 }
 

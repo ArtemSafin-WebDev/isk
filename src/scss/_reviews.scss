@@ -4,6 +4,10 @@
 }
 .reviews__row {
     display: flex;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
 }
 
 .reviews__left-col,
@@ -13,6 +17,11 @@
     flex-direction: column;
     position: relative;
     z-index: 1;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+    }
 }
 
 .reviews__left-col {
@@ -34,11 +43,20 @@
         background-size: 16.1rem 7.3rem;
         position: absolute;
     }
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
 }
 
 .reviews__right-col {
     padding-top: 5rem;
     padding-left: 7rem;
+
+    @include breakpoint(mobile) {
+        padding: 0;
+        padding-top: 3rem;
+    }
 }
 
 .reviews__heading {
@@ -50,10 +68,23 @@
     margin-bottom: 7rem;
     text-transform: uppercase;
     font-family: var(--druk);
+
+    @include breakpoint(mobile) {
+        font-weight: 500;
+        font-size: 3rem;
+        line-height: 3.6rem;
+        letter-spacing: 0.005em;
+        color: white;
+        margin-bottom: 1.7rem;
+    }
 }
 
 .reviews__main-slider {
     margin-bottom: 15rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 1.1rem;
+    }
 }
 
 .reviews__main-slider-card {
@@ -68,6 +99,12 @@
     letter-spacing: 0.005em;
     color: #028aa0;
     margin-bottom: 3.4rem;
+
+    @include breakpoint(mobile) {
+        font-size: 2.4rem;
+        line-height: 130%;
+        margin-bottom: 1.3rem;
+    }
 }
 
 .reviews__main-slider-card-text {
@@ -76,6 +113,12 @@
     line-height: 120%;
     letter-spacing: 0.005em;
     color: var(--dark-blue);
+
+    @include breakpoint(mobile) {
+        font-size: 2.4rem;
+        line-height: 130%;
+        font-weight: 700;
+    }
 }
 
 .reviews__all-reviews-link {
@@ -94,12 +137,23 @@
     &:hover {
         color: white;
     }
+
+    @include breakpoint(mobile) {
+        font-size: 2.4rem;
+        line-height: 130%;
+        margin-bottom: 0.7rem;
+    }
 }
 
 .reviews__slider-controls {
     margin-top: auto;
     display: flex;
     align-items: center;
+
+    @include breakpoint(mobile) {
+        margin: 0 calc(-1 * var(--content-padding));
+        padding-left: 1.1rem;
+    }
 }
 
 .reviews__slider-pagination {
@@ -107,6 +161,11 @@
     margin-right: 3.7rem;
     width: 40%;
     flex-grow: 1;
+
+    @include breakpoint(mobile) {
+        margin-right: 2rem;
+        
+    }
 }
 
 .reviews__slider-pagination-bullet {
@@ -120,6 +179,10 @@
     overflow: hidden;
     position: relative;
 
+    &:last-child {
+        margin-right: 0;
+    }
+
     &::before {
         content: '';
         position: absolute;
@@ -130,6 +193,12 @@
         transform-origin: left center;
         background-color: #fff;
         transform: scaleX(var(--slider-progress, 0));
+    }
+
+
+    @include breakpoint(mobile) {
+        height: 0.3rem;
+        margin-right: 0.6rem;
     }
 }
 
@@ -152,10 +221,21 @@
         height: 2.7rem;
         fill: white;
         transform: translate(-50%, -50%);
+
+        @include breakpoint(mobile) {
+            width: 1rem;
+            height: 1.5rem;
+        }
     }
 
     &:not(.swiper-button-disabled):hover {
         background-color: var(--violet);
+    }
+
+
+    @include breakpoint(mobile) {
+        width: 6.6rem;
+        height: 6rem;
     }
 }
 
@@ -173,7 +253,7 @@
     width: 100%;
     visibility: hidden;
     opacity: 0;
-    transition: opacity 0.3s ease .3s, visibility 0s linear .6s;
+    transition: opacity 0.3s ease 0.3s, visibility 0s linear 0.6s;
     z-index: 1;
     display: flex;
     flex-direction: column;

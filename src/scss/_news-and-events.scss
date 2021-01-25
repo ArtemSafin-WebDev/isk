@@ -17,9 +17,8 @@
 
     @include breakpoint(mobile) {
         width: 100%;
-       
+        justify-content: space-between;
         min-height: 25.6rem;
-       
     }
 }
 
@@ -115,7 +114,8 @@
     display: flex;
     flex-direction: column;
     @include breakpoint(mobile) {
-        justify-content: flex-end;
+        // justify-content: flex-end;
+        flex-grow: 1;
     }
 }
 
@@ -143,11 +143,38 @@
     @include breakpoint(mobile) {
         font-size: 3rem;
         line-height: 130%;
+        
     }
 }
 
 .news-and-events__content {
     position: relative;
+
+    .swiper-container {
+        @include breakpointMF(small-tablet) {
+            margin: 0;
+            overflow: visible;
+            position: static;
+        }
+    }
+
+    .swiper-wrapper {
+        @include breakpointMF(small-tablet) {
+            position: static;
+            width: auto;
+            height: auto;
+            display: block;
+            box-sizing: border-box;
+            transition: none;
+        }
+    }
+
+    .swiper-slide {
+        @include breakpointMF(small-tablet) {
+            display: block;
+            position: static;
+        }
+    }
 }
 
 .news-and-events__preview {
