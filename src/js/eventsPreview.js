@@ -33,11 +33,14 @@ export default function eventsPreview() {
                     const offsetTop = cardTitle.offsetTop;
                     previews.forEach(preview => preview.classList.remove('active'));
                     previews[cardIndex].classList.add('active');
-                    gsap.to(previewCircle, {
+
+                    const tl = gsap.timeline();
+
+                    tl.to(previewCircle, {
                         duration: 0.3,
                         y: offsetTop + cardTitle.offsetHeight / 2,
                         yPercent: -50
-                    });
+                    })
                 });
             });
         });

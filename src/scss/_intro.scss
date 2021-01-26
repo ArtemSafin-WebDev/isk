@@ -258,6 +258,10 @@
     transition: color 0.2s, transform 0.2s;
     transform-origin: left center;
     display: inline-flex;
+    padding: 8rem;
+    margin: -8rem;
+    z-index: 30;
+    position: relative;
     &.inactive {
         transform: scale(0.92);
     }

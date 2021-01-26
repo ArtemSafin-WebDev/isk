@@ -100,11 +100,21 @@
 .social__card {
     position: relative;
     width: 100%;
+    display: block;
+    overflow: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
     &::after {
         content: '';
         display: block;
         width: 100%;
         padding-bottom: 100%;
+    }
+
+    .no-touch &:hover {
+        .social__card-image {
+            transform: scale(1.02);
+        }
     }
 }
 
@@ -114,5 +124,6 @@
     top: 0;
     width: 100%;
     height: 100%;
+    transition: transform .3s;
     @include objectFitCover();
 }

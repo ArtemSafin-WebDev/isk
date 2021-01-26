@@ -33,9 +33,28 @@
     width: 14.6rem;
     height: auto;
     display: block;
+    fill: white;
 
     @include breakpoint(mobile) {
         width: 6rem;
+    }
+}
+
+.page-header__logo-outer {
+    animation-name: rotate;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: center;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
     }
 }
 
@@ -166,7 +185,10 @@
 }
 
 .page-header__menu-right-col {
-    
+    align-items: flex-start;
+    @include breakpoint(mobile) {
+        align-items: initial;
+    }
 }
 
 .page-header__menu-languages {
@@ -368,13 +390,13 @@
 }
 
 .page-header__menu-nav-list-item {
-    margin-bottom: 5.5rem;
+    padding-bottom: 5.5rem;
     &:last-child {
-        margin-bottom: 0;
+        padding-bottom: 0;
     }
 
     @include breakpoint(mobile) {
-        margin-bottom: 3rem;
+        padding-bottom: 3rem;
     }
 }
 

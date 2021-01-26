@@ -3,8 +3,6 @@ import gsap from 'gsap';
 import { debounce } from 'lodash';
 import { MOBILE_WIDTH } from './constants';
 
-
-
 export default function menu() {
     let menuOpen = false;
     const openMenuBtn = document.querySelector('.js-menu-open');
@@ -25,16 +23,7 @@ export default function menu() {
             autoAlpha: 0,
             stagger: 0.2,
             x: 70
-        }).fromTo(
-            menuPointer,
-            {
-                autoAlpha: 0
-            },
-            {
-                autoAlpha: 1,
-                duration: 0.2
-            }
-        );
+        });
         lockScroll(menu);
     };
 
@@ -56,7 +45,26 @@ export default function menu() {
 
     if (!window.matchMedia(`(max-width: ${MOBILE_WIDTH}px)`).matches) {
         const initialActiveLink = menuLinks.find(link => link.classList.contains('active'));
+        const menuNav = menu.querySelector('.page-header__menu-nav');
+        gsap.set(menuPointer, {
+            scale: 0,
+            autoAlpha: 0
+        });
 
+        menuNav.addEventListener('mouseenter', () => {
+            gsap.to(menuPointer, {
+                duration: 0.2,
+                scale: 1,
+                autoAlpha: 1
+            });
+        });
+        menuNav.addEventListener('mouseleave', () => {
+            gsap.to(menuPointer, {
+                duration: 0.2,
+                scale: 0,
+                autoAlpha: 0
+            });
+        });
         const slideToMenuLinks = link => {
             const linkOffset = link.offsetTop + link.offsetHeight / 2;
 

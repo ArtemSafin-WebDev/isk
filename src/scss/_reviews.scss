@@ -29,23 +29,51 @@
     padding-bottom: 5rem;
     padding-right: 7rem;
 
+   
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+.reviews__pattern {
+   
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: calc(-1 * (100vw - 100%) / 2);
+ 
+    position: absolute;
+
     &::before {
         content: '';
-        pointer-events: none;
-        z-index: -1;
-        right: 0;
+        position: absolute;
+        left: 0;
         top: 0;
-        bottom: 0;
-        left: calc(-1 * (100vw - 100%) / 2);
+        width: 200%;
+        height: 100%;
         background-image: url('../img/reviews-bg-pattern.svg');
         background-repeat: repeat;
         background-position: center;
         background-size: 16.1rem 7.3rem;
-        position: absolute;
+        animation-name: reviews-pattern;
+        animation-iteration-count: infinite;
+        animation-duration: 19s;
+        animation-timing-function: linear;
+    }
+}
+
+
+@keyframes reviews-pattern {
+    0% {
+        transform: translateX(0%);
     }
 
-    @include breakpoint(mobile) {
-        display: none;
+    100% {
+        transform: translateX(-50%);
     }
 }
 
