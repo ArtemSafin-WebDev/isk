@@ -116,8 +116,9 @@
     display: flex;
     flex-direction: column;
     @include breakpoint(mobile) {
-        // justify-content: flex-end;
+        justify-content: flex-end;
         flex-grow: 1;
+        min-height: 15rem;
     }
 }
 
@@ -293,5 +294,46 @@
     @include breakpoint(mobile) {
         width: 6.6rem;
         height: 6rem;
+    }
+}
+
+
+.news-and-events__card-preview {
+    display: none;
+    @include breakpoint(mobile) {
+        display: block;
+        width: 15rem;
+        height: 15rem;
+        position: absolute;
+        z-index: -1;
+        pointer-events: none;
+        right: 0;
+        bottom: 0;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: var(--blue);
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(#14142b, 0.2);
+        }
+
+        &--no-image {
+            &::after {
+                display: none;
+            }
+        }
+        img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            @include objectFitCover();
+        }
     }
 }
