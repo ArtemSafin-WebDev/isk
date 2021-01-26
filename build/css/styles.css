@@ -2567,16 +2567,7 @@ select:-webkit-autofill:focus {
   top: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: 0;
-  visibility: hidden;
-  -webkit-transition: opacity 0.3s, visibility 0s linear 0.3s;
-  transition: opacity 0.3s, visibility 0s linear 0.3s;
   background-color: var(--blue); }
-  .news-and-events__preview.active {
-    opacity: 1;
-    visibility: inherit;
-    -webkit-transition: opacity 0.3s, visibility 0.3s;
-    transition: opacity 0.3s, visibility 0.3s; }
   @media only screen and (max-width: 640px) {
     .news-and-events__preview {
       display: none; } }

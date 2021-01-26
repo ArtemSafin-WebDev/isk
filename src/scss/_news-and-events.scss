@@ -189,17 +189,9 @@
     top: 0;
     z-index: -1;
     pointer-events: none;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0s linear 0.3s;
+ 
     background-color: var(--blue);
-    // transform: scale(0);
-    &.active {
-        opacity: 1;
-        visibility: inherit;
-        transition: opacity 0.3s, visibility 0.3s;
-        // transform: scale(1);
-    }
+ 
     @include breakpoint(mobile) {
         display: none;
     }

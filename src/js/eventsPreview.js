@@ -14,16 +14,29 @@ export default function eventsPreview() {
 
             const previewCircle = element.querySelector('.news-and-events__preview');
 
+            gsap.set(previewCircle, {
+                autoAlpha: 0,
+                scale: 0
+            })
+
             if (cards.length !== previews.length) {
                 console.error('Not equal amound of cards and previews');
                 return;
             }
 
             element.addEventListener('mouseenter', () => {
-                previewCircle.classList.add('active');
+                gsap.to(previewCircle, {
+                    autoAlpha: 1,
+                    scale: 1,
+                    duration: 0.3
+                })
             });
             element.addEventListener('mouseleave', () => {
-                previewCircle.classList.remove('active');
+                gsap.to(previewCircle, {
+                    autoAlpha: 0,
+                    scale: 0,
+                    duration: 0.3
+                })
             });
 
             cards.forEach((card, cardIndex) => {
