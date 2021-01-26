@@ -2098,6 +2098,59 @@ select:-webkit-autofill:focus {
     .intro__semicircle-mobile {
       display: block; } }
 
+.intro__semicircle-with-pattern {
+  overflow: hidden;
+  width: 33.8rem;
+  height: 100%;
+  position: relative; }
+
+.intro__semicircle-with-pattern-inner-circle {
+  height: 67.6rem;
+  width: 67.6rem;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-radius: 50%;
+  background-color: var(--violet);
+  position: absolute;
+  overflow: hidden; }
+  .intro__semicircle-with-pattern-inner-circle::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 200%;
+    background-repeat: repeat;
+    background-image: url("../img/semicircle-bg-pattern.svg");
+    background-position: center;
+    background-size: 15.752rem 7.886rem;
+    -webkit-animation-name: moving-up-pattern;
+            animation-name: moving-up-pattern;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-duration: 8s;
+            animation-duration: 8s;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear; }
+
+@-webkit-keyframes moving-up-pattern {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
+  100% {
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%); } }
+
+@keyframes moving-up-pattern {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0); }
+  100% {
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%); } }
+
 .mission {
   background-color: var(--violet);
   color: white; }
