@@ -105,3 +105,6 @@ package-lock.json
 # MacOS Files
 
 .DS_Store
+
+
+.idea

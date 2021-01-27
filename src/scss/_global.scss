@@ -7,7 +7,7 @@
 }
 
 :root {
-    --max-container-width: 134rem;
+    --max-container-width: 160rem;
     --content-padding: 6rem;
     --violet: #9761F3;
     --dark-violet: #5624AB;
@@ -17,6 +17,9 @@
     --mabry: 'Mabry Pro', sans-serif;
 
 
+    @include breakpoint(large-desktop) {
+        --max-container-width: 134rem;
+    }
     @include breakpoint(tablet) {
         --content-padding: 4rem;
     }
@@ -59,7 +62,6 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    font-family: sans-serif;
     color: var(--dark-blue);
     font-family: var(--mabry);
 }

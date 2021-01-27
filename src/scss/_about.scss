@@ -42,13 +42,16 @@
 }
 
 .about__right-col {
-    width: 46.8rem;
+    width: 40%;
     flex-shrink: 0;
     position: relative;
     z-index: 1;
     padding-top: 4.4rem;
     padding-bottom: 5.8rem;
     padding-left: 8rem;
+    @include breakpoint(large-desktop) {
+        width: 46.8rem;
+    }
     &::before {
         content: '';
         left: 0;
@@ -96,10 +99,13 @@
 }
 
 .about__partners-list-item {
-    width: 50%;
+    width: 33.3%;
     padding: 2.4rem 3.2rem;
     display: flex;
     flex-direction: column;
+    @include breakpoint(large-desktop) {
+        width: 50%;
+    }
 
     @include breakpoint(mobile) {
         padding: 1.5rem;

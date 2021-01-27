@@ -1,13 +1,12 @@
 .page-header {
-    position: absolute;
+    position: fixed;
     left: 0;
-    top: 0;
     width: 100%;
     z-index: 500;
     top: 3.5rem;
 
     @include breakpoint(mobile) {
-        top: 1.5rem;
+        top: 1rem;
     }
 }
 
@@ -41,10 +40,7 @@
 }
 
 .page-header__logo-outer {
-    animation-name: rotate;
-    animation-duration: 15s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    animation: rotate 40s linear infinite;
     transform-origin: center;
 }
 
@@ -59,7 +55,6 @@
 }
 
 .page-header__burger {
-    margin-left: auto;
     position: relative;
     z-index: 900;
     flex-shrink: 0;
@@ -70,10 +65,10 @@
     flex-direction: column;
 
     span {
-        width: 42px;
-        height: 4.2px;
+        width: 50px;
+        height: 5px;
         background-color: #fff;
-        margin-bottom: 4.2px;
+        margin-bottom: 5px;
         transition: opacity 0.2s, transform 0.2s;
         display: block;
         flex-shrink: 0;
@@ -89,13 +84,13 @@
 
         .menu-open & {
             &:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
+                transform: translateY(9px) rotate(45deg);
             }
             &:nth-child(2) {
                 opacity: 0;
             }
             &:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
+                transform: translateY(-10px) rotate(-45deg);
             }
 
             @include breakpoint(mobile) {
@@ -212,7 +207,7 @@
     flex-shrink: 0;
     border-radius: 50%;
     color: white;
-    transition: color 0.2s, background-color 0.2s;
+    transition: color .4s ease-in-out, background-color .4s ease-in-out;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -250,6 +245,34 @@
         line-height: 130%;
     }
 }
+
+.page-header__menu-languages--fixed{
+    margin: 0 auto;
+    padding-right: 6rem;
+    @include breakpoint(tablet) {
+        padding-right: 4rem;
+    }
+    @include breakpoint(mobile) {
+        padding-right: 2rem;
+    }
+    .page-header__menu-languages-link{
+        width: 5.2rem;
+        height: 5.2rem;
+        font-size: 2.4rem;
+        margin: 0 1rem;
+        &.active {
+            background-color: #fff;
+            color: var(--blue);
+        }
+        @include breakpoint(mobile) {
+            width: 5rem;
+            height: 5rem;
+            font-size: 1.8rem;
+            margin: 0 0.5rem;
+        }
+    }
+}
+
 
 .page-header__menu-certs {
     display: flex;

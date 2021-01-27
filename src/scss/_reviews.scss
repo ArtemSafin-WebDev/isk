@@ -1,6 +1,16 @@
 .reviews {
     background-color: var(--blue);
     color: var(--dark-blue);
+    padding-left: calc((100vw - 1600px) / 2);
+    @include breakpoint(large-desktop) {
+        padding-left: calc((100vw - 1340px) / 2);
+    }
+    @include breakpoint(desktop) {
+        padding-left: var(--content-padding);
+    }
+    @include breakpoint(mobile) {
+        padding: 0 var(--content-padding);
+    }
 }
 .reviews__row {
     display: flex;
@@ -12,60 +22,37 @@
 
 .reviews__left-col,
 .reviews__right-col {
-    width: 50%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     position: relative;
     z-index: 1;
 
+    @include breakpoint(tablet) {
+        width: 60%;
+    }
     @include breakpoint(mobile) {
         width: 100%;
         flex-grow: 0;
     }
 }
+.reviews__right-col{
+    width: 30%;
 
-.reviews__left-col {
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-    padding-right: 7rem;
-
-   
-
+    @include breakpoint(tablet) {
+        width: 40%;
+    }
     @include breakpoint(mobile) {
         display: none;
     }
 }
 
-.reviews__pattern {
-   
-    overflow: hidden;
-    pointer-events: none;
-    z-index: -1;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    left: calc(-1 * (100vw - 100%) / 2);
- 
-    position: absolute;
-
-    &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 200%;
-        height: 100%;
-        background-image: url('../img/reviews-bg-pattern.svg');
-        background-repeat: repeat;
-        background-position: center;
-        background-size: 16.1rem 7.3rem;
-        animation-name: reviews-pattern;
-        animation-iteration-count: infinite;
-        animation-duration: 19s;
-        animation-timing-function: linear;
+.reviews__left-col {
+    padding-top: 5rem;
+    @include breakpoint(mobile) {
+        padding-top: 2.5rem;
     }
 }
-
 
 @keyframes reviews-pattern {
     0% {
@@ -77,15 +64,6 @@
     }
 }
 
-.reviews__right-col {
-    padding-top: 5rem;
-    padding-left: 7rem;
-
-    @include breakpoint(mobile) {
-        padding: 0;
-        padding-top: 3rem;
-    }
-}
 
 .reviews__heading {
     font-weight: 500;
@@ -94,7 +72,6 @@
     letter-spacing: 0.005em;
     text-transform: uppercase;
     margin-bottom: 7rem;
-    text-transform: uppercase;
     font-family: var(--druk);
 
     @include breakpoint(mobile) {
@@ -108,10 +85,10 @@
 }
 
 .reviews__main-slider {
-    margin-bottom: 15rem;
+    min-height: 30rem;
 
     @include breakpoint(mobile) {
-        margin-bottom: 1.1rem;
+        min-height: 0;
     }
 }
 
@@ -141,35 +118,50 @@
     line-height: 120%;
     letter-spacing: 0.005em;
     color: var(--dark-blue);
+    padding-right: 5rem;
 
     @include breakpoint(mobile) {
         font-size: 2.4rem;
         line-height: 130%;
         font-weight: 700;
+        padding-right: 0;
+        margin-bottom: 1.3rem;
     }
 }
 
 .reviews__all-reviews-link {
+    padding: 1.65rem 3.8rem;
+    font-weight: bold;
     font-size: 3rem;
     line-height: 130%;
-    font-weight: bold;
     letter-spacing: 0.005em;
-    color: #12aac4;
-    margin-bottom: 4.4rem;
-    align-self: flex-start;
+    color: white;
+    text-align: center;
+    background: #5624ab;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 120;
+    transition: color 0.2s, background-color 0.2s;
+
     &:link,
     &:visited {
-        color: #12aac4;
+        color: white;
     }
 
     &:hover {
-        color: white;
+        background-color: white;
+        color: #5624ab;
     }
 
     @include breakpoint(mobile) {
         font-size: 2.4rem;
+        letter-spacing: 0.005em;
+        font-weight: 700;
         line-height: 130%;
-        margin-bottom: 0.7rem;
+        padding: .8rem 2rem;
+        margin: 0;
+        white-space: nowrap;
     }
 }
 
@@ -268,8 +260,14 @@
 }
 
 .reviews__thumbs-slider {
-    margin: auto 0;
+    flex: 1;
     position: relative;
+}
+.reviews__thumbs-slider-name{
+    background: var(--dark-blue);
+    color: #fff;
+    padding: 2.5rem 3.5rem;
+    font-size: 5.5rem;
 }
 
 .reviews__thumbs-slider-card {
@@ -283,15 +281,13 @@
     opacity: 0;
     transition: opacity 0.3s ease 0.3s, visibility 0s linear 0.6s;
     z-index: 1;
-    display: flex;
-    flex-direction: column;
+    height: 100%;
 
     &.active {
         position: relative;
         opacity: 1;
         visibility: inherit;
         z-index: 2;
-
         transition: opacity 0.3s, visibility 0.3s;
     }
 }
@@ -299,14 +295,8 @@
 .reviews__thumbs-slider-card-image-container {
     position: relative;
     overflow: hidden;
-    border-radius: 50%;
-    width: 57.6rem;
-    &::after {
-        content: '';
-        display: block;
-        width: 100%;
-        padding-bottom: 100%;
-    }
+    width: 100%;
+    height: 100%;
 }
 
 .reviews__thumbs-slider-card-image {

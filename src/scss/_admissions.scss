@@ -1,10 +1,10 @@
 .admissions {
-    background-color: var(--blue);
+    background-color: #fff;
     color: var(--dark-blue);
-    background-image: url('../img/admissions-bg-pattern.svg');
-    background-size: 7.972rem 8.066rem;
-    background-position: center top;
-    background-repeat: repeat;
+    background-image: url('../img/admissions-logo.svg');
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
 }
 
 .admissions__content {

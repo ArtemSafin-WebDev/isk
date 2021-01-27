@@ -139,8 +139,6 @@
 .intro__right-col {
     .intro__semicircle {
         left: 0;
-
-    
     }
 
     .intro__semicircle-mobile {
@@ -163,11 +161,21 @@
         transition: opacity 0.3s;
     }
 }
+.intro__bottom{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 120;
+
+    @include breakpoint(mobile) {
+        transform: translate(0, 50%);
+    }
+}
 
 .intro__bottom-link {
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
     padding: 1.65rem 3.8rem;
     font-weight: bold;
     font-size: 3rem;
@@ -179,9 +187,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    z-index: 120;
-    transition: color 0.2s, background-color 0.2s;
+    transition: color .4s ease-in-out, background-color .4s ease-in-out, transform .4s ease-in-out;
+    transform-origin: center bottom;
 
     &:link,
     &:visited {
@@ -191,6 +198,7 @@
     &:hover {
         background-color: white;
         color: #5624ab;
+        transform: scale(1.1);
     }
 
     @include breakpoint(mobile) {
@@ -199,12 +207,13 @@
         font-weight: 700;
         line-height: 130%;
         padding: .8rem 2rem;
-        transform: translate(-50%, -50%);
         margin: 0;
         bottom: auto;
         top: 100%;
         white-space: nowrap;
-        
+        &:hover {
+            transform-origin: center;
+        }
     }
 }
 
@@ -249,13 +258,12 @@
 }
 
 .intro__column-link {
-    transition: color 0.2s;
     font-weight: 500;
     font-size: 6rem;
     line-height: 7.3rem;
     font-family: var(--druk);
     text-transform: uppercase;
-    transition: color 0.2s, transform 0.2s;
+    transition: color 0.4s, transform 0.4s;
     transform-origin: left center;
     display: inline-flex;
     padding: 8rem;
@@ -282,24 +290,22 @@
     max-width: 49rem;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s, visibility 0s linear 0.3s;
+    transition: opacity 0.4s, visibility 0s linear 0.4s;
 
     .intro__text-content-col.active & {
         opacity: 1;
         visibility: inherit;
-        transition: opacity 0.3s, visibility 0.3s;
+        transition: opacity 0.4s, visibility 0.4s;
     }
 }
 
 .intro__background {
     position: absolute;
-
     top: 0;
-
     bottom: 0;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s, visibility 0s linear 0.3s;
+    transition: opacity 0.4s, visibility 0s linear 0.4s;
 
     &:nth-child(1) {
         left: 0;
@@ -324,7 +330,7 @@
     &.active {
         opacity: 1;
         visibility: inherit;
-        transition: opacity 0.3s, visibility 0.3s;
+        transition: opacity 0.4s, visibility 0.4s;
     }
 }
 
@@ -339,19 +345,14 @@
 
 .intro__semicircle {
     position: absolute;
-
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1;
     height: 67.6rem;
     width: auto;
     max-width: none;
     pointer-events: none;
     z-index: 4;
-    transition: opacity 0.3s, visibility 0.3s;
-
-
-   
+    transition: opacity 0.4s, visibility 0.4s;
 
     &:only-child {
         opacity: 1 !important;
@@ -361,7 +362,7 @@
     &:nth-child(2) {
         opacity: 0;
         visibility: inherit;
-        transition: opacity 0.3s, visibility 0s linear 0.3s;
+        transition: opacity 0.4s, visibility 0s linear 0.4s;
     }
 
     .js-intro-col.active & {
@@ -375,7 +376,6 @@
             visibility: inherit;
         }
     }
-
 
     @include breakpoint(mobile) {
         height: 28.4rem;
@@ -407,11 +407,6 @@
     width: 33.8rem;
     height: 100%;
     position: relative;
-
-  
-
-    
-    
 }
 
 
@@ -422,26 +417,22 @@
     top: 50%;
     transform: translateY(-50%);
     border-radius: 50%;
-    background-color: var(--violet);
     position: absolute;
     overflow: hidden;
 
-
     &::before {
         content: '';
-       
         position: absolute;
         left: 0;
-        bottom: 0;
+        top: 0;
         width: 100%;
         height: 200%;
         background-repeat: repeat;
         background-image: url('../img/semicircle-bg-pattern.svg');
         background-position: center;
-        background-size: 15.752rem 7.886rem;
         animation-name: moving-up-pattern;
         animation-iteration-count: infinite;
-        animation-duration: 8s;
+        animation-duration: 30s;
         animation-timing-function: linear;
     }
 }
@@ -453,6 +444,6 @@
     }
 
     100% {
-        transform: translateY(50%);
+        transform: translateY(-50%);
     }
 }
