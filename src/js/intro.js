@@ -7,6 +7,7 @@ export default function intro() {
     elements.forEach(element => {
         const columnContent = Array.from(element.querySelectorAll('.intro__column-content'));
         const backgrounds = Array.from(element.querySelectorAll('.intro__background'));
+        const backgroundVideos = Array.from(element.querySelectorAll('.intro__background-image'));
         const introBottomLink = element.querySelector('.intro__bottom-link');
         const decorativeColumns = Array.from(element.querySelectorAll('.js-intro-col'));
         const textColumns = Array.from(element.querySelectorAll('.js-intro-text-col'));
@@ -42,6 +43,7 @@ export default function intro() {
                 col.classList.add('active');
                 backgrounds.forEach(bg => bg.classList.remove('active'));
                 backgrounds[contentIndex].classList.add('active');
+                backgroundVideos[contentIndex].play();
                 textColumns.forEach(col => col.classList.remove('active'));
                 textColumns[contentIndex].classList.add('active');
                 links.forEach(link => link.classList.remove('inactive'))
@@ -81,6 +83,7 @@ export default function intro() {
             content.addEventListener('mouseleave', () => {
                 col.classList.remove('active');
                 backgrounds.forEach(bg => bg.classList.remove('active'));
+                backgroundVideos.forEach(video => video.pause());
                 textColumns.forEach(col => col.classList.remove('active'));
                 links.forEach(link => link.classList.remove('inactive'))
                 if (contentIndex === 0) {

@@ -3,16 +3,15 @@
     left: 0;
     width: 100%;
     z-index: 500;
-    top: 3.5rem;
-
-    @include breakpoint(mobile) {
-        top: 1rem;
-    }
+    top: 0;
+    transition: background-color .4s ease-in-out;
 }
 
 .page-header__row {
     display: flex;
-    align-items: flex-start;
+    position: relative;
+    padding: 0.7em 0;
+    align-items: center;
 
     @include breakpoint(mobile) {
         align-items: center;
@@ -21,11 +20,53 @@
 
 .page-header__logo {
     flex-shrink: 0;
-    margin-right: 2rem;
+    width: 85px;
 
     @include breakpoint(mobile) {
         z-index: 900;
     }
+}
+
+.page-header__logo svg:first-child{
+    position: absolute;
+    z-index: 1;
+    top: 2em;
+    left: 0;
+    transition: opacity .4s ease-in-out, transform .4s ease-in-out;
+    transform-origin: 2em 0;
+    @include breakpoint(mobile) {
+        top: 0.4em;
+    }
+}
+.page-header__logo svg:nth-child(2){
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity .4s ease-in-out, transform .4s ease-in-out;
+    @include breakpoint(tablet) {
+        width: 50px;
+        height: auto;
+    }
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+.header-fixed .page-header__logo svg:first-child{
+    opacity: 0;
+    transform: scale(0);
+    @include breakpoint(mobile) {
+        transform: none;
+        opacity: 1;
+    }
+}
+.header-fixed .page-header__logo svg:nth-child(2){
+    opacity: 1;
+}
+.header-fixed .page-header{
+    top: 0;
+    position: fixed;
+    background: var(--dark-blue);
 }
 
 .page-header__logo-image {
@@ -248,13 +289,6 @@
 
 .page-header__menu-languages--fixed{
     margin: 0 auto;
-    padding-right: 6rem;
-    @include breakpoint(tablet) {
-        padding-right: 4rem;
-    }
-    @include breakpoint(mobile) {
-        padding-right: 2rem;
-    }
     .page-header__menu-languages-link{
         width: 5.2rem;
         height: 5.2rem;
@@ -307,9 +341,10 @@
     margin-bottom: 9.2rem;
 
     @include breakpoint(mobile) {
-        margin-bottom: 4.5rem;
         order: 2;
         max-width: 28.2rem;
+        width: 100%;
+        margin: 0 auto 4.5rem;
     }
 }
 

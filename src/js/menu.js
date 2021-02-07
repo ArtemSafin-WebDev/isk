@@ -46,6 +46,7 @@ export default function menu() {
     if (!window.matchMedia(`(max-width: ${MOBILE_WIDTH}px)`).matches) {
         const initialActiveLink = menuLinks.find(link => link.classList.contains('active'));
         const menuNav = menu.querySelector('.page-header__menu-nav');
+
         gsap.set(menuPointer, {
             scale: 0,
             autoAlpha: 0
@@ -100,5 +101,31 @@ export default function menu() {
                 initializeLinks();
             }, 300)
         );
+
     }
+
+
+    const checkFixed = () => {
+        if (!menuOpen) {
+            let windTop = window.scrollY;
+            if (windTop > 100) {
+                document.body.classList.add('header-fixed');
+
+            } else {
+                document.body.classList.remove('header-fixed');
+            }
+        }
+    };
+
+    window.addEventListener(
+        'resize',
+        debounce(() => {
+            initializeLinks();
+            checkFixed();
+        }, 300)
+    );
+
+    window.addEventListener('scroll', checkFixed);
+
+    checkFixed();
 }
