@@ -29,6 +29,7 @@
     "lodash": "^4.17.20",
     "moment": "^2.24.0",
     "object-fit-images": "^3.2.4",
+    "parsleyjs": "^2.9.2",
     "picturefill": "^3.0.3",
     "smoothscroll-polyfill": "^0.4.4",
     "swiper": "^6.3.2"

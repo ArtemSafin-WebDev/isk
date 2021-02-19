@@ -1,0 +1,77 @@
+.text-input-wrapper {
+    position: relative;
+}
+
+.text-input {
+    font: inherit;
+    display: block;
+    width: 100%;
+    font-weight: 500;
+    font-size: 5.5rem;
+    line-height: 120%;
+    letter-spacing: 0.005em;
+    color: #9761f3;
+    padding: 0.7rem 3.2rem;
+    transition: border-color 0.2s;
+    border-bottom: 1rem solid #9761f3;
+
+    @include breakpoint(mobile) {
+        border-width: 0.4rem;
+        padding: 0.6rem 0;
+        font-size: 3.2rem;
+    }
+
+    .no-touch &:not(.parsley-error):not(:focus):hover {
+        border-color: var(--dark-violet);
+    }
+
+    &.parsley-error {
+        border-color: #eb5757;
+    }
+
+    & ~ .parsley-errors-list.filled {
+        font-weight: bold;
+        font-size: 3rem;
+        line-height: 160%;
+        letter-spacing: 0.005em;
+        color: #eb5757;
+        position: absolute;
+        right: 0;
+        top: 2.7rem;
+    }
+
+    @include placeholder {
+        opacity: 0;
+    }
+}
+
+.text-input-label {
+    position: absolute;
+    left: 3.2rem;
+    top: 0.85rem;
+    font-weight: 500;
+    font-size: 5.5rem;
+    line-height: 120%;
+    letter-spacing: 0.005em;
+    color: #e0d0fc;
+    pointer-events: none;
+    transition: transform 0.3s, opacity 0.3s;
+    transform-origin: left center;
+
+    @include breakpoint(mobile) {
+       
+        font-size: 3.2rem;
+        left: 0;
+        top: 0;
+    }
+}
+
+.text-input:focus ~ .text-input-label,
+.text-input:not(:placeholder-shown) ~ .text-input-label,
+.text-input.parsley-error ~ .text-input-label {
+    transform: scale(0.6) translateY(-7.6rem);
+
+    @include breakpoint(mobile) {
+        transform: scale(0.6) translateY(-4rem);
+    }
+}

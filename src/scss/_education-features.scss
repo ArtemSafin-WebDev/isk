@@ -1,0 +1,102 @@
+.education-features__content {
+    margin-left: calc((100vw - 100%) / 2 * -1);
+    margin-right: calc((100vw - 100%) / 2 * -1);
+
+    @include breakpoint(mobile) {
+        margin-left: calc(-1 * var(--content-padding));
+        margin-right: calc(-1 * var(--content-padding));
+    }
+}
+
+.education-features__list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.education-features__list-item {
+    width: 25%;
+    position: relative;
+    color: white;
+
+    @include breakpointMF(small-tablet) {
+        &:nth-child(odd) {
+            background: #242441;
+        }
+        &:nth-child(even) {
+            background: #343454;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        width: 50%;
+
+        &:nth-child(1) {
+            background: #242441;
+        }
+        &:nth-child(2) {
+            background: #343454;
+        }
+        &:nth-child(3) {
+            background: #343454;
+        }
+        &:nth-child(4) {
+            background: #242441;
+        }
+
+        
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-bottom: 100%;
+    }
+}
+
+.education-features__card-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.education-features__card-icon-container {
+    position: relative;
+    width: 12rem;
+    height: 12rem;
+    flex-shrink: 0;
+    margin-bottom: 2.2rem;
+
+    @include breakpoint(mobile) {
+        width: 6rem;
+        height: 6rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.education-features__card-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include objectFitContain();
+}
+
+.education-features__card-title {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 110%;
+    letter-spacing: 0.005em;
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+    }
+}

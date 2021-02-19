@@ -5,6 +5,10 @@ import intro from './intro';
 import eventsPreview from './eventsPreview';
 import reviewsSlider from './reviewsSlider';
 import menu from './menu';
+import educationSlider from './educationSlider';
+import phoneMask from './phoneMask';
+import customSelects from './customSelect';
+import validation from './validation';
 
 document.addEventListener('DOMContentLoaded', function() {
     polyfills();
@@ -13,6 +17,10 @@ document.addEventListener('DOMContentLoaded', function() {
     eventsPreview();
     reviewsSlider();
     menu();
+    educationSlider();
+    phoneMask();
+    customSelects();
+    validation();
 });
 
 window.addEventListener('load', function() {

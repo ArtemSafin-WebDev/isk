@@ -1,0 +1,239 @@
+.education-school {
+    padding-top: 7rem;
+    padding-bottom: 8rem;
+    background-color: var(--violet);
+    color: white;
+
+    @include breakpoint(mobile) {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
+
+.education-school__heading {
+    font-weight: 500;
+    font-size: 6rem;
+    line-height: 7.3rem;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    margin-bottom: 5.5rem;
+    font-family: var(--druk);
+
+    @include breakpoint(mobile) {
+        font-size: 3rem;
+        line-height: 3.6rem;
+        letter-spacing: 0.005em;
+        margin-bottom: 3rem;
+    }
+}
+
+.education-school__slider {
+    margin-top: -2rem;
+    margin-bottom: 5.5rem;
+
+    @include breakpoint(mobile) {
+        margin: 0;
+        margin-bottom: 2rem;
+    }
+    .swiper-container {
+        margin: 0;
+        overflow: visible;
+    }
+
+    .swiper-wrapper {
+        align-items: flex-end;
+    }
+}
+
+.education-school__slider-main {
+    width: 94rem;
+
+    .swiper-slide {
+        @include breakpoint(mobile) {
+            width: 32rem;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        width: 100%;
+    }
+}
+
+.education-school__slider-wrapper {
+    margin-right: calc((100vw - 100%) / 2 * -1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    @include breakpoint(mobile) {
+        margin: 0;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.education-school__slider-card {
+    position: relative;
+    height: 56rem;
+    width: 100%;
+
+    @include breakpoint(mobile) {
+        height: auto;
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            padding-bottom: 70%;
+        }
+    }
+}
+
+.education-school__slider-card-image-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: height 0.5s;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, rgba(32, 32, 30, 0.2) 50%, rgba(32, 32, 30, 0) 100%),
+            linear-gradient(0deg, rgba(41, 46, 56, 0.3), rgba(41, 46, 56, 0.3));
+        transition: opacity 0.3s;
+        pointer-events: none;
+    }
+
+    .swiper-slide-active &,
+    .swiper-slide-duplicate-active & {
+        @include breakpointMF(small-tablet) {
+            height: calc(100% + 6.2rem);
+        }
+
+        &::after {
+            opacity: 0;
+        }
+    }
+}
+
+.education-school__slider-card-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    @include objectFitCoverBottom();
+}
+
+.education-school__slider-arrows {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
+    @include breakpoint(mobile) {
+        order: 5;
+        margin-right: calc(-1 * var(--content-padding));
+    }
+}
+
+.education-school__slider-arrow {
+    width: 11.8rem;
+    height: 10.7rem;
+    position: relative;
+    background: var(--dark-violet);
+    flex-shrink: 0;
+    transition: background-color 0.2s, opacity 0.2s;
+    svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 1.7rem;
+        height: 2.7rem;
+        fill: white;
+        transform: translate(-50%, -50%);
+
+        @include breakpoint(mobile) {
+            width: 1rem;
+            height: 1.5rem;
+        }
+    }
+
+    &.swiper-button-disabled {
+        cursor: default;
+        opacity: 0.7;
+    }
+
+    &:not(.swiper-button-disabled):hover {
+        background-color: var(--dark-violet-hover);
+    }
+
+    @include breakpoint(mobile) {
+        width: 6.6rem;
+        height: 6rem;
+    }
+}
+
+.education-school__info-row {
+    display: flex;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
+}
+
+.education-school__info-left-col {
+    width: 50%;
+    flex-grow: 1;
+
+    @include breakpoint(mobile) {
+        flex-grow: 0;
+        width: 100%;
+    }
+}
+
+.education-school__info-right-col {
+    width: 37.5rem;
+    flex-shrink: 0;
+    margin-left: 6rem;
+
+    @include breakpoint(mobile) {
+        flex-grow: 0;
+        width: 100%;
+        margin: 0;
+    }
+}
+
+.education-school__large-text {
+    font-weight: 500;
+    font-size: 5.5rem;
+    line-height: 120%;
+    letter-spacing: 0.005em;
+
+    @include breakpoint(mobile) {
+     
+        margin-bottom: 2rem;
+
+        font-size: 2.4rem;
+        line-height: 1.3;
+    }
+}
+
+.education-school__small-text {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 160%;
+    letter-spacing: 0.005em;
+    color: var(--dark-violet);
+
+    @include breakpoint(mobile) { 
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+}

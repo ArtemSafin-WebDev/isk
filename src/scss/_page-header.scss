@@ -114,6 +114,10 @@
         display: block;
         flex-shrink: 0;
 
+        .page-header--violet-burger & {
+            background-color: var(--violet);
+        }
+
         @include breakpoint(mobile) {
             width: 25px;
             height: 3px;
