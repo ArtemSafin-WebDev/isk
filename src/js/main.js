@@ -9,6 +9,8 @@ import educationSlider from './educationSlider';
 import phoneMask from './phoneMask';
 import customSelects from './customSelect';
 import validation from './validation';
+import uniformSlider from './uniformSlider';
+import nutritionSlider from './nutritionSlider';
 
 document.addEventListener('DOMContentLoaded', function() {
     polyfills();
@@ -21,6 +23,8 @@ document.addEventListener('DOMContentLoaded', function() {
     phoneMask();
     customSelects();
     validation();
+    uniformSlider();
+    nutritionSlider();
 });
 
 window.addEventListener('load', function() {

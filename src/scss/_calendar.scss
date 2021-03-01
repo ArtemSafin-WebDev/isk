@@ -1,0 +1,261 @@
+.calendar {
+    background: #14142b;
+    color: white;
+}
+
+.calendar__row {
+    display: flex;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
+}
+
+.calendar__left-col {
+    width: 30%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+    }
+}
+
+.calendar__right-col {
+    width: 47rem;
+    flex-shrink: 0;
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+}
+
+.calendar__calendar-btn {
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    padding-left: 5rem;
+    min-height: 36.5rem;
+    background: #58d6eb;
+    color: white;
+    text-align: left;
+
+    @include breakpoint(mobile) {
+        min-height: 15rem;
+        padding: 3rem;
+    }
+
+    &:nth-child(2) {
+        background: #12aac4;
+    }
+    &:link,
+    &:visited {
+        color: white;
+    }
+}
+
+.calendar__calendar-btn-icon {
+    flex-shrink: 0;
+    width: 9rem;
+    height: 9rem;
+    margin-right: 5rem;
+    @include objectFitContain();
+
+    @include breakpoint(mobile) {
+        width: 6rem;
+        height: 6rem;
+        margin-right: 3rem;
+    }
+}
+
+.calendar__calendar-btn-text {
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 128.7%;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+
+    font-family: var(--druk);
+
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+}
+
+.calendar__table {
+    max-width: 70rem;
+    margin: auto 0;
+    padding: 3rem 0;
+
+    @include breakpoint(mobile) {
+        padding: 2rem 0;
+        margin: 0;
+        max-width: none;
+    }
+}
+
+.calendar__table-controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 3rem;
+    }
+}
+
+.calendar__table-arrow {
+    width: 8rem;
+    height: 8rem;
+    flex-shrink: 0;
+    background: #9761f3;
+    transition: background-color 0.2s;
+
+    @include breakpoint(mobile) {
+        width: 4rem;
+        height: 4rem;
+    }
+    svg {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 1.2rem;
+        height: 1.8rem;
+        fill: white;
+        position: absolute;
+    }
+
+    .no-touch &:hover {
+        background: var(--dark-violet);
+    }
+}
+
+.calendar__table-month {
+    width: 30%;
+    flex-grow: 1;
+    text-align: center;
+    padding: 0 1rem;
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 128.7%;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    font-family: var(--druk);
+
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+    }
+}
+
+.calendar__table-events {
+    table {
+        thead,
+        tbody,
+        th,
+        td {
+            display: block;
+        }
+        th,
+        td {
+            font-weight: bold;
+            font-size: 3rem;
+            line-height: 160%;
+            letter-spacing: 0.005em;
+            width: 14%;
+            flex-grow: 1;
+
+            @include breakpoint(mobile) {
+                font-size: 1.6rem;
+                text-align: center;
+            }
+        }
+
+        tr {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3.5rem;
+            @include breakpoint(mobile) {
+                margin-bottom: 2rem;
+            }
+        }
+
+        tbody tr {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+.calendar__table-number {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    width: 4rem;
+    height: 4rem;
+    align-items: center;
+    justify-content: center;
+    .highlighted & {
+        &::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 5.5rem;
+            height: 5.5rem;
+            border-radius: 50%;
+            background: #9761f3;
+            z-index: -1;
+
+            @include breakpoint(mobile) {
+                width: 4rem;
+                height: 4rem;
+            }
+        }
+    }
+
+    &:hover {
+        z-index: 5;
+        .calendar__table-dropdown {
+            opacity: 1;
+            visibility: inherit;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+    }
+}
+
+.calendar__table-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 2rem;
+    z-index: 50;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0s linear 0.3s;
+    width: 8rem;
+}
+
+.calendar__table-dropdown-inner {
+    text-align: center;
+    padding: 0.3rem 1rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    background-color: #58d6eb;
+    color: white;
+}
+
+.calendar__calendar-btns {
+    margin-right: calc(-1 * (100vw - 100% - 27rem) / 2);
+
+    @include breakpoint(mobile) {
+        margin-left: calc(-1 * var(--content-padding));
+        margin-right: calc(-1 * var(--content-padding));
+    }
+}

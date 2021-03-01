@@ -1,3 +1,9 @@
+.education-features {
+    background-color: #242441;
+}
+
+ 
+
 .education-features__content {
     margin-left: calc((100vw - 100%) / 2 * -1);
     margin-right: calc((100vw - 100%) / 2 * -1);
@@ -17,6 +23,7 @@
     width: 25%;
     position: relative;
     color: white;
+  
 
     @include breakpointMF(small-tablet) {
         &:nth-child(odd) {
@@ -42,8 +49,6 @@
         &:nth-child(4) {
             background: #242441;
         }
-
-        
     }
 
     &::before {

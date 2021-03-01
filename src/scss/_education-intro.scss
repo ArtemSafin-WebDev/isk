@@ -1,14 +1,18 @@
 .education-intro {
+    &--for-parents {
+        background: #9761f3;
+        color: #14142b;
+    }
 }
 
 .education-intro__row {
     display: flex;
-    min-height: 100vh;
+    // min-height: 100vh;
     position: relative;
 
-    @include breakpoint(tablet) {
-        min-height: 100rem;
-    }
+    // @include breakpoint(tablet) {
+    //     min-height: 100rem;
+    // }
 
     @include breakpoint(mobile) {
         min-height: auto;
@@ -23,7 +27,7 @@
     color: white;
     padding-top: 23rem;
     padding-right: 7.2rem;
-
+    z-index: 1;
     @include breakpoint(mobile) {
         padding: 0;
         width: 100%;
@@ -112,10 +116,11 @@
     font-size: 5.5rem;
     line-height: 120%;
     letter-spacing: 0.005em;
-
+    padding-bottom: 11rem;
     @include breakpoint(mobile) {
         font-size: 1.8rem;
         line-height: 130%;
+        padding-bottom: 0;
     }
 }
 
@@ -222,7 +227,7 @@
         letter-spacing: 0.005em;
         font-weight: 700;
         line-height: 130%;
-        padding: .8rem 2rem;
+        padding: 0.8rem 2rem;
         height: auto;
     }
     &:link,
@@ -242,6 +247,10 @@
     padding-left: 3.6rem;
     padding-top: 9.2rem;
     padding-bottom: 9rem;
+
+    .education-intro--for-parents & {
+        padding-bottom: 5.5rem;
+    }
 
     @include breakpoint(mobile) {
         flex-grow: 0;
@@ -286,5 +295,35 @@
     @include breakpoint(mobile) {
         width: 6.6rem;
         height: 6rem;
+    }
+}
+
+.education-intro__contacts-list-item {
+    margin-bottom: 2.4rem;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.education-intro__contacts-card-key {
+    font-weight: bold;
+    font-size: 2.4rem;
+    line-height: 130%;
+    letter-spacing: 0.005em;
+    color: #5624ab;
+
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+    }
+}
+
+.education-intro__contacts-card-value {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 160%;
+    letter-spacing: 0.005em;
+    color: white;
+    @include breakpoint(mobile) {
+        font-size: 2.4rem;
     }
 }
