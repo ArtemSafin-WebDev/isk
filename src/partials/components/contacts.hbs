@@ -1,0 +1,60 @@
+<section class="sign-up">
+    <div class="container">
+        <h2 class="sign-up__heading">
+            Contact us
+        </h2>
+        <form action="/" method="POST" class="sign-up__form" data-need-validation>
+            <div class="sign-up__form-row">
+                <div class="text-input-wrapper">
+                    <input type="text" class="text-input" name="name" placeholder="Name" required>
+                    <label for="name" class="text-input-label">Name</label>
+
+                </div>
+
+            </div>
+            <div class="sign-up__form-row">
+                <div class="text-input-wrapper">
+                    <input type="tel" class="text-input js-phone-input" name="phone" placeholder="Phone" required
+                        data-parsley-phone>
+                    <label for="phone" class="text-input-label">Phone</label>
+
+                </div>
+
+            </div>
+            <div class="sign-up__form-row">
+                <div class="text-input-wrapper">
+                    <input type="email" class="text-input" name="email" placeholder="E-mail" required
+                           data-parsley-email>
+                    <label for="email" class="text-input-label">E-mail</label>
+
+                </div>
+
+            </div>
+            <div class="sign-up__form-row">
+
+                <div class="text-input-wrapper">
+                    <textarea class="text-input" name="message" placeholder="Message"></textarea>
+                    <label for="message" class="text-input-label">Message</label>
+                </div>
+            </div>
+            <div class="sign-up__form-buttons">
+                <div class="sign-up__form-buttons-row">
+                    <div class="sign-up__form-buttons-col">
+                        <button type="submit" class="sign-up__form-submit-btn">
+                            Send
+                        </button>
+                    </div>
+                    <div class="sign-up__form-buttons-col">
+                        <div class="sign-up__form-rules">
+                            By clicking "Send" you consent to the processing of your personal data in accordance with
+                            Article 9
+                            of the Federal Law of 27 July 2006 N 152-FZ "On Personal Data"
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+</section>
