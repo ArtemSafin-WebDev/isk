@@ -1,0 +1,35 @@
+{{#extend "layout"}}
+    {{#content "main"}}
+
+        <section class="contacts">
+            <div class="contacts-map" id="contacts-map" data-coordinates="55.757024277169876,49.18964249999999;55.802232,49.117802" data-names="Campus on Mavlyutova St;Campus on Fedoseyevskaya St" data-center="55.791716,49.152442" data-pin="https://iskazan.com/bitrix/templates/isk/img/map_middle.png;https://iskazan.com/bitrix/templates/isk/img/map_elemetary.png">
+            </div>
+            <div class="contacts-info">
+                <div class="contacts-info__item">
+                    <div class="contacts-info__name">
+                        Campus on Mavlyutova St
+                    </div>
+                    <address class="contacts-info__address">
+                        5 Mavlyutova St., Kazan
+                    </address>
+                    <a href="tel:+78432041282" class="contacts-info__tel">+7 (843) 204-12-82</a>
+                    <a href="mailto:info@iskazan.com" class="contacts-info__mail">info@iskazan.com</a>
+                </div>
+                <div class="contacts-info__item">
+                    <div class="contacts-info__name">
+                        Campus on Fedoseyevskaya St
+                    </div>
+                    <address class="contacts-info__address">
+                        52 Fedoseyevskaya St., Kazan
+                    </address>
+                    <a href="tel:+78432112100" class="contacts-info__tel">+7 (843) 211-21-00</a>
+                    <a href="mailto:info@iskazan.com" class="contacts-info__mail">info@iskazan.com</a>
+                </div>
+            </div>
+
+        </section>
+
+
+    {{> contacts }}
+    {{/content}}
+{{/extend}}

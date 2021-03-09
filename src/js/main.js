@@ -6,11 +6,10 @@ import eventsPreview from './eventsPreview';
 import reviewsSlider from './reviewsSlider';
 import menu from './menu';
 import educationSlider from './educationSlider';
-import phoneMask from './phoneMask';
-import customSelects from './customSelect';
-import validation from './validation';
 import uniformSlider from './uniformSlider';
 import nutritionSlider from './nutritionSlider';
+import contactsMap from './contactsMap';
+import initForms from './forms';
 
 document.addEventListener('DOMContentLoaded', function() {
     polyfills();
@@ -20,11 +19,10 @@ document.addEventListener('DOMContentLoaded', function() {
     reviewsSlider();
     menu();
     educationSlider();
-    phoneMask();
-    customSelects();
-    validation();
     uniformSlider();
     nutritionSlider();
+    contactsMap();
+    initForms();
 });
 
 window.addEventListener('load', function() {

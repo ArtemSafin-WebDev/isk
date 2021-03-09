@@ -16,6 +16,7 @@
     "not ie <= 9"
   ],
   "dependencies": {
+    "autosize": "^4.0.2",
     "body-scroll-lock": "^2.6.4",
     "choices.js": "^7.0.0",
     "classlist-polyfill": "^1.2.0",
