@@ -1,0 +1,433 @@
+.admissions-details {
+    color: white;
+    background: #14142b;
+    margin-top: -6rem;
+    @include breakpoint(mobile) {
+        margin-top: 0;
+    }
+}
+
+.admissions-details__row {
+    display: flex;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
+}
+
+.admissions-details__left-col {
+    width: 30%;
+    flex-grow: 1;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+    }
+}
+
+.admissions-details__right-col {
+    width: 43.2rem;
+    flex-shrink: 0;
+    padding-top: 14rem;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-shrink: 1;
+        padding: 0;
+    }
+}
+.admissions-details__image-wrapper {
+    margin-left: calc((100vw - 100% - 43.2rem) / 2 * -1);
+
+    @include breakpoint(mobile) {
+        margin: 0 calc(-1 * var(--content-padding));
+    }
+}
+
+.admissions-details__image {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.admissions-details__discounts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 1.4rem;
+
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint(tablet) {
+        margin-right: calc(-1 * var(--content-padding));
+    }
+
+    @include breakpoint(mobile) {
+        padding: 2rem 0;
+        align-items: initial;
+        margin-right: 0;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100%;
+        z-index: -1;
+        pointer-events: none;
+        background: #5624ab;
+
+        @include breakpoint(mobile) {
+            left: calc(-1 * var(--content-padding));
+            right: calc(-1 * var(--content-padding));
+            top: 0;
+            bottom: 0;
+            width: auto;
+            height: auto;
+        }
+    }
+}
+
+.admissions-details__discounts-number {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+    -webkit-text-stroke-color: white;
+    font-weight: 500;
+    font-size: 20rem;
+    line-height: 1;
+    font-family: var(--druk);
+    text-transform: uppercase;
+    margin-bottom: 4rem;
+
+    @include breakpoint(mobile) {
+        font-size: 10rem;
+        -webkit-text-stroke-width: 1px;
+        order: -1;
+        margin-bottom: 2rem;
+    }
+}
+
+.admissions-details__discounts-selected-text {
+    font-weight: 500;
+    font-size: 5.5rem;
+    line-height: 120%;
+    letter-spacing: 0.005em;
+    padding: 3rem;
+    border: 1px solid #9761f3;
+    border-radius: 5rem 5rem 5rem 0px;
+    margin-bottom: 5rem;
+
+    @include breakpoint(mobile) {
+        font-size: 2.6rem;
+        line-height: 1.2;
+        padding: 2rem;
+        border-radius: 2.5rem 2.5rem 2.5rem 0px;
+        margin-right: 0;
+        margin-bottom: 0;
+        width: 100%;
+        flex-grow: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+.admissions-details__discounts-regular-text {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 160%;
+    letter-spacing: 0.005em;
+    margin-bottom: 4.5rem;
+
+    @include breakpoint(mobile) {
+        font-weight: 700;
+        font-size: 2.4rem;
+        line-height: 1.4;
+        letter-spacing: 0.005em;
+        margin-bottom: 2rem;
+    }
+}
+
+.admissions-details__fee {
+    position: relative;
+    padding-bottom: 7rem;
+    z-index: 1;
+
+    @include breakpoint(mobile) {
+        padding-bottom: 3rem;
+    }
+    &::before {
+        content: '';
+        right: 0;
+        width: 100vw;
+        top: 11rem;
+        bottom: 0;
+        background: #9761f3;
+        z-index: -1;
+        pointer-events: none;
+        position: absolute;
+
+        @include breakpoint(mobile) {
+            top: 6rem;
+            left: calc(-1 * var(--content-padding));
+            right: calc(-1 * var(--content-padding));
+            width: auto;
+        }
+    }
+}
+
+.admissions-details__fee-number {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+    -webkit-text-stroke-color: #5624ab;
+    font-weight: 500;
+    font-size: 20rem;
+    line-height: 1;
+    font-family: var(--druk);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+
+    @include breakpoint(mobile) {
+        font-size: 10rem;
+        -webkit-text-stroke-width: 1px;
+        order: -1;
+        margin-bottom: 2rem;
+    }
+}
+
+.admissions-details__fee-what-is {
+    font-weight: 500;
+    font-size: 5.5rem;
+    line-height: 120%;
+    letter-spacing: 0.005em;
+    color: #5624ab;
+    padding: 3.8rem;
+    border-radius: 5rem 5rem 5rem 0px;
+    border: 1px solid #eff4f5;
+    margin-bottom: 4rem;
+    display: inline-flex;
+
+    @include breakpoint(mobile) {
+        font-size: 2.6rem;
+        line-height: 1.2;
+        padding: 2rem;
+        border-radius: 2.5rem 2.5rem 2.5rem 0px;
+        margin-right: 0;
+        margin-bottom: 0;
+        width: 100%;
+        flex-grow: 0;
+        margin-bottom: 3rem;
+    }
+}
+
+.admissions-details__fee-wrapper {
+    padding-left: 4.5rem;
+    padding-right: 12.5rem;
+
+    @include breakpoint(mobile) {
+        padding: 0;
+    }
+}
+
+.admissions-details__fee-text {
+    font-size: 3rem;
+    line-height: 160%;
+    font-weight: bold;
+    letter-spacing: 0.005em;
+    margin-bottom: 5rem;
+
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+}
+
+.admissions-details__fee-content {
+    margin-top: -11rem;
+    position: relative;
+    z-index: 2;
+
+    @include breakpoint(mobile) {
+        margin-top: -6rem;
+    }
+}
+
+.admissions-details__fee-items {
+    margin-bottom: 3rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+    }
+}
+
+.admissions-details__fee-item {
+    margin-bottom: 4rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.admissions-details__fee-item-heading {
+    font-weight: 500;
+    font-size: 5.5rem;
+    line-height: 120%;
+    letter-spacing: 0.005em;
+    color: #5624ab;
+
+    @include breakpoint(mobile) {
+        font-size: 2.8rem;
+        line-height: 1.2;
+    }
+}
+
+.admissions-details__fee-item-pricings {
+}
+
+.admissions-details__fee-item-pricings-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 3.2rem 0;
+    border-bottom: 0.2rem solid #7040c0;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 160%;
+    letter-spacing: 0.005em;
+
+    @include breakpoint(mobile) {
+        padding: 2rem 0;
+        font-size: 1.6rem;
+    }
+    &:last-child {
+        border: none;
+    }
+}
+
+.admissions-details__fee-item-pricings-item-value {
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-left: 2rem;
+}
+
+.admissions-details__fee-discount {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 160%;
+    letter-spacing: 0.005em;
+    color: #5624ab;
+    @include breakpoint(mobile) {
+        font-weight: 700;
+        font-size: 2.4rem;
+        line-height: 1.4;
+        letter-spacing: 0.005em;
+    }
+}
+.admissions-details__what-is-school {
+    @include breakpoint(tablet) {
+        margin-right: calc(-1 * var(--content-padding));
+    }
+
+    @include breakpoint(mobile) {
+        margin-right: 0;
+    }
+}
+
+
+
+.admissions-details__what-is-school-image-container {
+    margin-left: -3.8rem;
+
+    position: relative;
+    z-index: 15;
+
+    @include breakpoint(mobile) {
+        margin-left: calc(-1 * var(--content-padding));
+        margin-right: calc(-1 * var(--content-padding));
+    }
+}
+
+.admissions-details__what-is-school-image {
+    display: block;
+    height: auto;
+}
+
+.admissions-details__what-is-school-content {
+    padding: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: -9rem;
+    position: relative;
+    z-index: 40;
+
+    @include breakpoint(mobile) {
+        margin: 0;
+        padding: 0;
+        margin-top: -5rem;
+    }
+}
+
+.admissions-details__what-is-school-number {
+    text-align: center;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+    -webkit-text-stroke-color: #9761f3;
+
+    font-weight: 500;
+    font-size: 20rem;
+    line-height: 1;
+    font-family: var(--druk);
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+
+    @include breakpoint(mobile) {
+        font-size: 10rem;
+        -webkit-text-stroke-width: 1px;
+        order: -1;
+        margin-bottom: 2rem;
+        text-align: left;
+    }
+}
+
+.admissions-details__what-is-school-question {
+    padding: 3.2rem;
+    font-weight: 500;
+    font-size: 5.5rem;
+    line-height: 120%;
+    letter-spacing: 0.005em;
+    border: 1px solid #9761f3;
+    border-radius: 5rem 5rem 5rem 0px;
+    margin-bottom: 5rem;
+
+    @include breakpoint(mobile) {
+        font-size: 2.6rem;
+        line-height: 1.2;
+        padding: 2rem;
+        border-radius: 2.5rem 2.5rem 2.5rem 0px;
+        margin-right: 0;
+        margin-bottom: 0;
+        width: 100%;
+        flex-grow: 0;
+        margin-bottom: 3rem;
+    }
+}
+
+.admissions-details__what-is-school-text {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 160%;
+    letter-spacing: 0.005em;
+    padding: 0 3rem;
+
+    @include breakpoint(mobile) {
+        font-weight: 700;
+        font-size: 2.4rem;
+        line-height: 1.4;
+        letter-spacing: 0.005em;
+        margin-bottom: 3rem;
+        padding: 0;
+    }
+}

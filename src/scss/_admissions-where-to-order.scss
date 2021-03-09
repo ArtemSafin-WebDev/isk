@@ -1,0 +1,91 @@
+.admissions-where-to-order {
+    padding-top: 3.6rem;
+    padding-bottom: 6rem;
+    background: #9761f3;
+    color: white;
+
+    @include breakpoint(mobile) {
+        padding: 3rem 0;
+    }
+}
+
+.admissions-where-to-order__row {
+    display: flex;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
+}
+
+.admissions-where-to-order__number {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+    -webkit-text-stroke-color: white;
+
+    font-weight: 500;
+    font-size: 20rem;
+    line-height: 1;
+    font-family: var(--druk);
+    text-transform: uppercase;
+    margin-right: 17rem;
+
+    @include breakpoint(mobile) {
+        font-size: 10rem;
+        -webkit-text-stroke-width: 1px;
+        order: -1;
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+.admissions-where-to-order__content {
+    width: 20%;
+    flex-grow: 1;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+    }
+}
+
+.admissions-where-to-order__question {
+    padding: 4.5rem;
+    font-weight: 500;
+    font-size: 5.5rem;
+    line-height: 120%;
+    letter-spacing: 0.005em;
+    margin-bottom: 3.5rem;
+    color: #14142b;
+    border-radius: 5rem 5rem 5rem 0px;
+    border: 1px solid white;
+    margin-top: 2.5rem;
+
+    @include breakpoint(mobile) {
+        font-size: 2.6rem;
+        line-height: 1.2;
+        padding: 2rem;
+        border-radius: 2.5rem 2.5rem 2.5rem 0px;
+        margin-right: 0;
+        margin-bottom: 0;
+        width: 100%;
+        flex-grow: 0;
+        margin-top: 0;
+        margin-bottom: 3rem;
+    }
+}
+
+.admissions-where-to-order__text {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 160%;
+    letter-spacing: 0.005em;
+
+    @include breakpoint(mobile) {
+        font-weight: 700;
+        font-size: 2.4rem;
+        line-height: 1.4;
+        letter-spacing: 0.005em;
+        margin-bottom: 0;
+        padding: 0;
+    }
+}

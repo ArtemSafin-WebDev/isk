@@ -1,0 +1,56 @@
+.admissions-applicants {
+    color: white;
+    background: #14142b;
+
+    @include breakpoint(mobile) {
+        padding-bottom: 3rem;
+    }
+}
+
+.admissions-applicants__row {
+    padding-left: 46.8rem;
+    position: relative;
+
+
+    @include breakpoint(mobile) {
+        padding-left: 0;
+        flex-direction: column;
+    }
+
+    &::before {
+        content: '';
+        background-image: url(../img/admissions-pattern.svg);
+        background-size: contain;
+        background-repeat: none;
+        background-position: center;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 100%;
+        margin-right: -32rem;
+        width: 86rem;
+        height: 30rem;
+        background-repeat: no-repeat;
+
+        @include breakpoint(mobile) {
+            display: none;
+        }
+    }
+}
+
+.admissions-applicants__text {
+    background: #7040c0;
+    border-radius: 5rem 5rem 0px 5rem;
+    color: white;
+    padding: 4rem;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 160%;
+    letter-spacing: 0.005em;
+
+    @include breakpoint(mobile) {
+        border-radius: 2.5rem 2.5rem 0px 2.5rem;
+        padding: 2rem;
+        font-size: 1.8rem;
+    }
+}

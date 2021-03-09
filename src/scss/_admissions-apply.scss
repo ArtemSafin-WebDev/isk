@@ -1,0 +1,27 @@
+.admissions-apply__btn {
+    min-height: 19rem;
+    text-align: center;
+    font-weight: 500;
+    font-size: 5.5rem;
+    line-height: 120%;
+    letter-spacing: 0.005em;
+    color: white;
+    display: block;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: radial-gradient(78.72% 423.07% at 78.72% 100%, #F98181 0%, #D72545 51.04%, #14142B 99.8%);
+
+    @include breakpoint(mobile) {
+        min-height: 8rem;
+        font-size: 2.4rem;
+    }
+
+
+    &:link,
+    &:visited {
+        color: white;
+    }
+}

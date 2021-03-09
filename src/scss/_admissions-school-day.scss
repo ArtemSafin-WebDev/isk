@@ -1,0 +1,100 @@
+.admissions-school-day {
+    background: #14142b;
+    color: white;
+    padding-top: 4rem;
+    padding-bottom: 9rem;
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint(mobile) {
+        padding: 3rem 0;
+        padding-top: 0;
+    }
+}
+
+.admissions-school-day__bg-image-container {
+    width: 78.8rem;
+    position: absolute;
+    right: calc(-1 * var(--content-padding));
+    z-index: -1;
+    pointer-events: none;
+    top: -5rem;
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(360deg, #14142b 0%, rgba(20, 20, 43, 0) 100%);
+    }
+
+
+    @include breakpoint(mobile) {
+        position: static;
+        top: auto;
+        right: auto;
+        width: 100%;
+        height: auto;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.admissions-school-day__bg-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.admissions-school-day__content {
+    position: relative;
+    z-index: 20;
+}
+
+.admissions-school-day__number {
+   
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+    -webkit-text-stroke-color: #9761f3;
+
+    font-weight: 500;
+    font-size: 20rem;
+    line-height: 1;
+    font-family: var(--druk);
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+
+    @include breakpoint(mobile) {
+        font-size: 10rem;
+        -webkit-text-stroke-width: 1px;
+        order: -1;
+        margin-bottom: 2rem;
+    }
+}
+
+.admissions-school-day__text-content {
+    font-weight: 500;
+    font-size: 5.5rem;
+    line-height: 120%;
+    letter-spacing: 0.005em;
+
+    @include breakpoint(mobile) {
+        font-weight: 700;
+        font-size: 2.4rem;
+        line-height: 1.4;
+        letter-spacing: 0.005em;
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+    p {
+        margin-bottom: 4.5rem;
+
+        @include breakpoint(mobile) {
+            margin-bottom: 2.5rem;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

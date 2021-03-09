@@ -1,0 +1,131 @@
+
+
+
+.admissions-intro {
+    position: relative;
+    color: white;
+    background: #14142B;
+    z-index: 1;
+    padding-bottom: 6.5rem;
+
+    @include breakpoint(mobile) {
+        padding-bottom: 3rem;
+        padding-top: 16rem;
+    }
+}
+
+.admissions-intro__background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    max-height: 64rem;
+
+    @include breakpoint(mobile) {
+        max-height: 30rem;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, #14142b 0%, rgba(20, 20, 43, 0) 100%);
+    }
+}
+
+.admissions-intro__background-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include objectFitCover();
+}
+.admissions-intro__content {
+    min-height: 75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include breakpoint(mobile) {
+        min-height: auto;
+    }
+}
+
+.admissions-intro__main-heading {
+    font-weight: 500;
+    font-size: 6rem;
+    line-height: 7.3rem;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    margin-bottom: 9rem;
+    font-family: var(--druk);
+
+    @include breakpoint(mobile) {
+        font-size: 3rem;
+        line-height: 3.6rem;
+        letter-spacing: 0.005em;
+        margin-bottom: 3rem;
+    }
+}
+
+.admissions-intro__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        align-items: initial;
+        justify-content: initial;
+    }
+}
+
+.admissions-intro__text {
+    font-weight: 500;
+    font-size: 5.5rem;
+    line-height: 120%;
+    letter-spacing: 0.005em;
+    padding: 3.8rem;
+    border: 1px solid #58d6eb;
+    border-radius: 5rem 5rem 5rem 0px;
+    width: 50%;
+    flex-grow: 1;
+    margin-right: 8.8rem;
+
+    @include breakpoint(mobile) {
+        font-size: 2.6rem;
+        line-height: 1.2;
+        padding: 2rem;
+        border-radius: 2.5rem 2.5rem 2.5rem 0px;
+        margin-right: 0;
+        margin-bottom: 0;
+        width: 100%;
+        flex-grow: 0;
+    }
+}
+
+.admissions-intro__number {
+    font-weight: 500;
+    font-size: 20rem;
+    line-height: 1;
+    font-family: var(--druk);
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+    -webkit-text-stroke-color: #9761f3;
+
+
+    @include breakpoint(mobile) {
+        font-size: 10rem;
+        -webkit-text-stroke-width: 1px;
+        order: -1;
+        margin-bottom: 2rem;
+    }
+}
