@@ -1,0 +1,97 @@
+.our-team-jobs {
+    background: #5624AB;
+    color: white;
+
+    @include breakpoint(mobile) {
+        padding: 2rem 0;
+    }
+}
+
+.our-team-jobs__row {
+    margin-right: calc((100vw - 100% - var(--sb-width, 0)) / 2 * -1);
+    margin-left: calc((100vw - 100% - var(--sb-width, 0)) / 2 * -1);
+    display: flex;
+
+    @include breakpoint(mobile) {
+        margin: 0;
+        flex-direction: column;
+    }
+}
+
+.our-team-jobs__image-container {
+    display: block;
+    position: relative;
+    &::before {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-bottom: 100%;
+    }
+}
+
+
+.our-team-jobs__left-col,
+.our-team-jobs__right-col {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+    }
+}
+
+.our-team-jobs__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include objectFitCover();
+}
+
+.our-team-jobs__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  
+    justify-content: center;
+    padding: 5.8rem;
+
+    @include breakpoint(mobile) {
+        padding: 3rem 0;
+        flex-grow: 0;
+    }
+}
+
+.our-team-jobs__heading {
+    font-weight: 500;
+    font-size: 6rem;
+    line-height: 7.3rem;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    margin-bottom: 5.5rem;
+    font-family: var(--druk);
+
+    @include breakpoint(mobile) {
+        font-size: 3rem;
+        line-height: 3.6rem;
+        letter-spacing: 0.005em;
+        margin-bottom: 3rem;
+    }
+}
+
+.our-team-jobs__text {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 160%;
+    letter-spacing: 0.005em;
+   
+
+    @include breakpoint(mobile) {
+       
+        font-size: 1.8rem;
+        line-height: 130%;
+        letter-spacing: 0.005em;
+    }
+}

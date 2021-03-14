@@ -7390,3 +7390,542 @@ select:-webkit-autofill:focus {
     .about-philosophy__content {
       padding: 2.5rem 0;
       padding-bottom: 3rem; } }
+
+.our-team-intro {
+  position: relative;
+  z-index: 1;
+  color: white;
+  background: #14142b; }
+
+.our-team-intro__bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  max-height: 96rem; }
+  .our-team-intro__bg::after {
+    content: '';
+    background: -webkit-gradient(linear, left bottom, left top, color-stop(2.5%, #14142b), to(rgba(20, 20, 43, 0)));
+    background: linear-gradient(0deg, #14142b 2.5%, rgba(20, 20, 43, 0) 100%);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; }
+
+.our-team-intro__bg-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
+  font-family: 'object-fit: cover; object-position: center top;'; }
+
+.our-team-intro__content {
+  padding-top: 35rem;
+  padding-bottom: 14rem;
+  min-height: 96rem;
+  max-width: 125rem; }
+  @media only screen and (max-width: 640px) {
+    .our-team-intro__content {
+      padding-top: 17rem;
+      min-height: auto;
+      padding-bottom: 3rem; } }
+
+.our-team-intro__heading {
+  font-weight: 500;
+  font-size: 6rem;
+  line-height: 7.3rem;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  margin-bottom: 4.5rem;
+  font-family: var(--druk); }
+  @media only screen and (max-width: 640px) {
+    .our-team-intro__heading {
+      font-size: 3rem;
+      line-height: 3.6rem;
+      letter-spacing: 0.005em;
+      margin-bottom: 1.6rem; } }
+
+.our-team-intro__text {
+  font-weight: 500;
+  font-size: 5.5rem;
+  line-height: 120%;
+  letter-spacing: 0.005em; }
+  @media only screen and (max-width: 640px) {
+    .our-team-intro__text {
+      font-size: 1.8rem;
+      line-height: 130%; } }
+
+.our-team-jobs {
+  background: #5624AB;
+  color: white; }
+  @media only screen and (max-width: 640px) {
+    .our-team-jobs {
+      padding: 2rem 0; } }
+
+.our-team-jobs__row {
+  margin-right: calc((100vw - 100% - var(--sb-width, 0)) / 2 * -1);
+  margin-left: calc((100vw - 100% - var(--sb-width, 0)) / 2 * -1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  @media only screen and (max-width: 640px) {
+    .our-team-jobs__row {
+      margin: 0;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+
+.our-team-jobs__image-container {
+  display: block;
+  position: relative; }
+  .our-team-jobs__image-container::before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-bottom: 100%; }
+
+.our-team-jobs__left-col,
+.our-team-jobs__right-col {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  @media only screen and (max-width: 640px) {
+    .our-team-jobs__left-col,
+    .our-team-jobs__right-col {
+      width: 100%; } }
+
+.our-team-jobs__image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  font-family: 'object-fit: cover; object-position: center;'; }
+
+.our-team-jobs__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 5.8rem; }
+  @media only screen and (max-width: 640px) {
+    .our-team-jobs__content {
+      padding: 3rem 0;
+      -webkit-box-flex: 0;
+          -ms-flex-positive: 0;
+              flex-grow: 0; } }
+
+.our-team-jobs__heading {
+  font-weight: 500;
+  font-size: 6rem;
+  line-height: 7.3rem;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  margin-bottom: 5.5rem;
+  font-family: var(--druk); }
+  @media only screen and (max-width: 640px) {
+    .our-team-jobs__heading {
+      font-size: 3rem;
+      line-height: 3.6rem;
+      letter-spacing: 0.005em;
+      margin-bottom: 3rem; } }
+
+.our-team-jobs__text {
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 160%;
+  letter-spacing: 0.005em; }
+  @media only screen and (max-width: 640px) {
+    .our-team-jobs__text {
+      font-size: 1.8rem;
+      line-height: 130%;
+      letter-spacing: 0.005em; } }
+
+.our-team-people {
+  color: white;
+  background: #14142b;
+  padding-top: 3rem;
+  position: relative;
+  z-index: 1; }
+  @media only screen and (max-width: 640px) {
+    .our-team-people {
+      padding-top: 2rem;
+      padding-bottom: 4rem; } }
+  .our-team-people::before {
+    content: '';
+    position: absolute;
+    left: calc((100vw - 100%) / 2 * -1);
+    bottom: 0;
+    right: calc((100vw - 100%) / 2 * -1);
+    height: 49rem;
+    background-color: #fff; }
+    @media only screen and (max-width: 640px) {
+      .our-team-people::before {
+        display: none; } }
+
+.our-team-people__light-bg {
+  background-color: #fff;
+  color: #14142b; }
+
+.our-team-people__director {
+  padding: 0 3.5rem;
+  background: #9761f3;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  z-index: 20;
+  margin-bottom: 25rem; }
+  @media only screen and (max-width: 640px) {
+    .our-team-people__director {
+      margin-bottom: 5rem;
+      padding: 1.8rem;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+
+.our-team-people__director-image-container {
+  margin-top: -8rem;
+  margin-bottom: -8rem;
+  width: 54rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-right: 6rem;
+  position: relative; }
+  @media only screen and (max-width: 640px) {
+    .our-team-people__director-image-container {
+      margin: 0;
+      width: 100%;
+      -ms-flex-negative: 1;
+          flex-shrink: 1;
+      margin: 0;
+      margin-bottom: 1.5rem; } }
+
+.our-team-people__director-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  font-family: 'object-fit: cover; object-position: center;'; }
+  @media only screen and (max-width: 640px) {
+    .our-team-people__director-image {
+      position: static;
+      height: auto; } }
+
+.our-team-people__director-content {
+  width: 30%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 5.2rem 0; }
+  @media only screen and (max-width: 640px) {
+    .our-team-people__director-content {
+      padding: 0;
+      width: 100%;
+      -webkit-box-flex: 0;
+          -ms-flex-positive: 0;
+              flex-grow: 0; } }
+
+.our-team-people__card-title {
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 128.7%;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  font-family: var(--druk);
+  color: #14142b;
+  margin-bottom: 1rem; }
+  @media only screen and (max-width: 640px) {
+    .our-team-people__card-title {
+      font-size: 2rem;
+      line-height: 128.7%;
+      letter-spacing: 0.005em;
+      margin-bottom: 0.5rem; } }
+
+.our-team-people__card-role {
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 1.5;
+  letter-spacing: 0.005em;
+  margin-bottom: 1.8rem; }
+  @media only screen and (max-width: 640px) {
+    .our-team-people__card-role {
+      font-size: 1.8rem;
+      line-height: 1.5; } }
+
+.our-team-people__card-text {
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 1.5;
+  letter-spacing: 0.005em;
+  color: white; }
+  @media only screen and (max-width: 640px) {
+    .our-team-people__card-text {
+      font-size: 1.8rem;
+      line-height: 1.5; } }
+  .our-team-people__card-text em {
+    color: #14142b;
+    font-style: normal; }
+
+.our-team-people__deputy-director {
+  padding: 0 3.5rem;
+  background: #9761f3;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  z-index: 20;
+  margin-bottom: 15rem; }
+  @media only screen and (max-width: 640px) {
+    .our-team-people__deputy-director {
+      margin-bottom: 5rem;
+      padding: 0;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      padding: 1.8rem; } }
+
+.our-team-people__deputy-director-content {
+  width: 30%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 5.2rem 7rem; }
+  @media only screen and (max-width: 640px) {
+    .our-team-people__deputy-director-content {
+      width: 100%;
+      -webkit-box-flex: 0;
+          -ms-flex-positive: 0;
+              flex-grow: 0;
+      padding: 0; } }
+
+.our-team-people__deputy-director-image-container {
+  width: 54rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  position: relative;
+  margin-top: -12rem;
+  margin-bottom: 3.5rem; }
+  @media only screen and (max-width: 640px) {
+    .our-team-people__deputy-director-image-container {
+      width: 100%;
+      -ms-flex-negative: 1;
+          flex-shrink: 1;
+      margin: 0;
+      -webkit-box-ordinal-group: 0;
+          -ms-flex-order: -1;
+              order: -1;
+      margin-bottom: 1.5rem; } }
+
+.our-team-people__deputy-director-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
+  font-family: 'object-fit: cover; object-position: center top;'; }
+  @media only screen and (max-width: 640px) {
+    .our-team-people__deputy-director-image {
+      position: static;
+      height: auto; } }
+
+.our-team-people__inner-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: -3.7rem; }
+  @media only screen and (max-width: 640px) {
+    .our-team-people__inner-row {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      margin: 0; } }
+
+.our-team-people__inner-col {
+  width: 50%;
+  padding: 3.7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  @media only screen and (max-width: 640px) {
+    .our-team-people__inner-col {
+      width: 100%;
+      padding: 0;
+      margin-bottom: 2rem; }
+      .our-team-people__inner-col:last-child {
+        margin-bottom: 0; } }
+
+.our-team-people__primary-principal-card-image-container {
+  padding-right: 2rem;
+  width: 100%;
+  margin-bottom: 3.8rem;
+  margin-top: -9rem; }
+  @media only screen and (max-width: 640px) {
+    .our-team-people__primary-principal-card-image-container {
+      margin: 0;
+      margin-bottom: 1.5rem; } }
+
+.our-team-people__primary-principal-card-image {
+  display: block;
+  width: 100%;
+  height: auto; }
+
+.our-team-people__primary-principal-card {
+  background: #9761f3;
+  color: white; }
+
+.our-team-people__primary-principal-card {
+  padding: 3.5rem;
+  padding-top: 0;
+  padding-bottom: 5rem; }
+  @media only screen and (max-width: 640px) {
+    .our-team-people__primary-principal-card {
+      padding: 1.8rem; } }
+
+.our-team-people__secondary-principal-card {
+  padding: 3.5rem;
+  padding-top: 0;
+  padding-bottom: 5rem;
+  background: #9761f3;
+  color: white;
+  margin-top: 22rem; }
+  @media only screen and (max-width: 640px) {
+    .our-team-people__secondary-principal-card {
+      padding: 1.8rem;
+      margin: 0; } }
+
+.our-team-people__secondary-principal-card-image-container {
+  padding-left: 3.5rem;
+  margin-bottom: 6rem;
+  margin-top: -22rem; }
+  @media only screen and (max-width: 640px) {
+    .our-team-people__secondary-principal-card-image-container {
+      margin: 0;
+      padding: 0;
+      margin-bottom: 1.5rem; } }
+
+.our-team-people__secondary-principal-card-image {
+  display: block;
+  width: 100%;
+  height: auto; }
+
+.our-team-people__white-bg {
+  height: 86rem;
+  background-color: #fff;
+  margin-top: -40rem; }
+
+.our-team-people__primary-principals {
+  margin-top: -48rem;
+  padding-bottom: 18rem; }
+  @media only screen and (max-width: 640px) {
+    .our-team-people__primary-principals {
+      margin-top: -46rem;
+      padding-bottom: 5rem; } }
+
+.our-team-people__academic-director {
+  background: #9761f3;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 4rem;
+  position: relative;
+  margin-bottom: 8.6rem; }
+  @media only screen and (max-width: 640px) {
+    .our-team-people__academic-director {
+      margin: 0;
+      padding: 1.8rem;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+
+.our-team-people__academic-director-image-container {
+  margin-bottom: 3.6rem;
+  width: 54rem;
+  position: relative;
+  margin-top: -9rem;
+  margin-right: 5.5rem; }
+  @media only screen and (max-width: 640px) {
+    .our-team-people__academic-director-image-container {
+      margin: 0;
+      margin-bottom: 1.5rem;
+      width: 100%; } }
+
+.our-team-people__academic-director-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
+  font-family: 'object-fit: cover; object-position: center top;'; }
+  @media only screen and (max-width: 640px) {
+    .our-team-people__academic-director-image {
+      position: static; } }
+
+.our-team-people__academic-director-content {
+  width: 40%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 5.2rem 0; }
+  @media only screen and (max-width: 640px) {
+    .our-team-people__academic-director-content {
+      width: 100%;
+      -webkit-box-flex: 0;
+          -ms-flex-positive: 0;
+              flex-grow: 0;
+      padding: 0; } }
+
+.our-team-people__academic-director-wrapper {
+  background-color: #fff; }
