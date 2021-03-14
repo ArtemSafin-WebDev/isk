@@ -9,9 +9,10 @@
 
 .admissions-details__row {
     display: flex;
-
+    margin-right: calc(((100vw - 100% - var(--sb-width, 0)) / 2 * -1));
     @include breakpoint(mobile) {
         flex-direction: column;
+        margin-right: 0;
     }
 }
 
@@ -58,36 +59,16 @@
 
     position: relative;
     z-index: 1;
-
-    @include breakpoint(tablet) {
-        margin-right: calc(-1 * var(--content-padding));
-    }
+    background: #5624ab;
+   
 
     @include breakpoint(mobile) {
-        padding: 2rem 0;
+        padding: 2rem var(--content-padding);
+        margin: 0 calc(-1 * var(--content-padding));
         align-items: initial;
-        margin-right: 0;
+       
     }
-    &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100vw;
-        height: 100%;
-        z-index: -1;
-        pointer-events: none;
-        background: #5624ab;
-
-        @include breakpoint(mobile) {
-            left: calc(-1 * var(--content-padding));
-            right: calc(-1 * var(--content-padding));
-            top: 0;
-            bottom: 0;
-            width: auto;
-            height: auto;
-        }
-    }
+   
 }
 
 .admissions-details__discounts-number {

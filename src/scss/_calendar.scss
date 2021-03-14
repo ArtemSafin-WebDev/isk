@@ -5,9 +5,11 @@
 
 .calendar__row {
     display: flex;
+    margin-right: calc((100vw - 100% - var(--sb-width, 0)) / 2 * -1);
 
     @include breakpoint(mobile) {
         flex-direction: column;
+        margin-right: 0;
     }
 }
 
@@ -24,7 +26,7 @@
 }
 
 .calendar__right-col {
-    width: 47rem;
+    width: 50rem;
     flex-shrink: 0;
     @include breakpoint(mobile) {
         width: 100%;
@@ -252,8 +254,6 @@
 }
 
 .calendar__calendar-btns {
-    margin-right: calc(-1 * (100vw - 100% - 27rem) / 2);
-
     @include breakpoint(mobile) {
         margin-left: calc(-1 * var(--content-padding));
         margin-right: calc(-1 * var(--content-padding));

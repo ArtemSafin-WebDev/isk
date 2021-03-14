@@ -16,7 +16,7 @@ export default function nutritionSlider() {
          
             direction: window.matchMedia("(min-width: 641px)").matches ? 'vertical' : 'horizontal',
             speed: 600,
-          
+            loop: window.matchMedia("(min-width: 641px)").matches ? false : true,
             navigation: {
                 nextEl: element.querySelector('.nutrition__slider-arrow--next'),
                 prevEl: element.querySelector('.nutrition__slider-arrow--prev')

@@ -138,13 +138,22 @@
     }
 
     .swiper-container {
-        display: flex;
-        flex-direction: column;
-        flex-grow: 1;
-        margin: 0;
-        height: 100%;
-        margin-left: -7rem;
-        padding-left: 7rem;
+
+        @include breakpoint(mobile) {
+            width: 100%;
+            margin: 0;
+            overflow: visible;
+        }
+       
+        @include breakpointMF(small-tablet) {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            margin: 0;
+            height: 100%;
+            margin-left: -7rem;
+            padding-left: 7rem;
+        }
     }
 
     .swiper-wrapper {
@@ -169,6 +178,10 @@
     width: 100%;
     height: calc(100% + 6rem);
     padding-left: 7rem;
+
+    @include breakpoint(small-tablet) {
+        padding-left: 9.5rem;
+    }
 
     @include breakpoint(mobile) {
         height: auto;
@@ -214,13 +227,11 @@
         transition: opacity 0.6s;
     }
     .swiper-slide-active & {
-
         @include breakpointMF(small-tablet) {
             width: calc(100% + 7rem);
             height: calc(100% + 7rem);
             height: calc(100% + 30rem);
         }
-       
 
         &::after {
             opacity: 0;
@@ -246,6 +257,10 @@
     bottom: 0;
     z-index: 100;
 
+    @include breakpoint(small-tablet) {
+        margin-right: -9.5rem;
+    }
+
     @include breakpoint(mobile) {
         position: static;
         margin-left: 0;
@@ -257,6 +272,7 @@
         margin-right: 0;
         justify-content: flex-end;
 
+        display: none;
     }
 }
 
@@ -267,7 +283,7 @@
     background: #028aa0;
     flex-shrink: 0;
     transition: background-color 0.2s, opacity 0.2s;
-   
+
     svg {
         position: absolute;
         left: 50%;
@@ -288,8 +304,6 @@
             svg {
                 transform: translate(-50%, -50%) rotate(-90deg);
             }
-           
-          
         }
     }
 
@@ -298,8 +312,6 @@
             svg {
                 transform: translate(-50%, -50%) rotate(270deg);
             }
-           
-          
         }
     }
 
@@ -337,6 +349,10 @@
     bottom: 0;
     transition: color 0.2s, background-color 0.2s;
 
+    @include breakpoint(small-tablet) {
+        left: 9.5rem;
+    }
+
     @include breakpoint(mobile) {
         position: static;
         left: auto;
@@ -344,6 +360,9 @@
         padding: 1.4rem;
         font-size: 1.8rem;
         line-height: 1.6;
+        width: auto;
+        margin-left: calc(-1 * var(--content-padding));
+        margin-right: calc(-1 * var(--content-padding));
     }
     &:link,
     &:visited {

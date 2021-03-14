@@ -10,6 +10,7 @@ import uniformSlider from './uniformSlider';
 import nutritionSlider from './nutritionSlider';
 import contactsMap from './contactsMap';
 import initForms from './forms';
+import setScrollbarWidth from './setScrollbarWidth';
 
 document.addEventListener('DOMContentLoaded', function() {
     polyfills();
@@ -23,6 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
     nutritionSlider();
     contactsMap();
     initForms();
+    setScrollbarWidth();
 });
 
 window.addEventListener('load', function() {

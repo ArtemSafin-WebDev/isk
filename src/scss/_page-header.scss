@@ -118,6 +118,13 @@
             background-color: var(--violet);
         }
 
+
+        @include breakpoint(small-tablet) {
+            width: 40px;
+            height: 4px;
+            margin-bottom: 5px;
+        }
+
         @include breakpoint(mobile) {
             width: 25px;
             height: 3px;
@@ -129,13 +136,25 @@
 
         .menu-open & {
             &:nth-child(1) {
-                transform: translateY(9px) rotate(45deg);
+                transform: translateY(9.5px) rotate(45deg);
             }
             &:nth-child(2) {
                 opacity: 0;
             }
             &:nth-child(3) {
-                transform: translateY(-10px) rotate(-45deg);
+                transform: translateY(-9.5px) rotate(-45deg);
+            }
+
+            @include breakpoint(small-tablet) {
+                &:nth-child(1) {
+                    transform: translateY(8.5px) rotate(45deg);
+                }
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+                &:nth-child(3) {
+                    transform: translateY(-8.5px) rotate(-45deg);
+                }
             }
 
             @include breakpoint(mobile) {

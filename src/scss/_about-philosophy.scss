@@ -1,0 +1,125 @@
+.about-philosophy {
+    background: #14142b;
+    color: white;
+}
+
+.about-philosophy__row {
+    display: flex;
+    margin-right: calc((100vw - 100%) / 2 * -1);
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        margin-right: 0;
+    }
+}
+
+.about-philosophy__left-col {
+    width: 50%;
+    flex-grow: 1;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+    }
+}
+
+.about-philosophy__heading {
+    font-weight: 500;
+    font-size: 6rem;
+    line-height: 7.3rem;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    margin-bottom: 11rem;
+    font-family: var(--druk);
+
+    @include breakpoint(mobile) {
+        font-size: 3rem;
+        line-height: 3.6rem;
+        letter-spacing: 0.005em;
+        margin-bottom: 1.6rem;
+    }
+}
+
+.about-philosophy__text {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 160%;
+    letter-spacing: 0.005em;
+    max-width: 80rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+        line-height: 130%;
+        padding: 0;
+    }
+}
+
+.about-philosophy__right-col {
+    width: 50rem;
+    @include breakpoint(mobile) {
+        width: auto;
+        margin-left: calc(-1 * var(--content-padding));
+        margin-right: calc(-1 * var(--content-padding));
+    }
+}
+
+.about-philosophy__features-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.about-philosophy__card {
+    min-height: 36rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.8rem;
+    text-align: center;
+    justify-content: center;
+    .about-philosophy__features-list-item:nth-child(even) & {
+        background: #343454;
+    }
+    .about-philosophy__features-list-item:nth-child(odd) & {
+        background: #242441;
+    }
+
+    @include breakpoint(mobile) {
+        padding: 1.8rem;
+        min-height: 24rem;
+    }
+}
+
+.about-philosophy__card-icon {
+    width: 15rem;
+    height: 15rem;
+    margin-bottom: .5rem;
+    @include objectFitContain();
+
+    @include breakpoint(mobile) {
+        width: 10rem;
+        height: 10rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.about-philosophy__card-title {
+    font-weight: 500;
+    font-size: 5.5rem;
+    line-height: 120%;
+    letter-spacing: 0.005em;
+
+    @include breakpoint(mobile) {
+        font-size: 2.8rem;
+        line-height: 1.2;
+    }
+}
+
+.about-philosophy__content {
+    padding: 10rem 0;
+    padding-right: 6rem;
+
+    @include breakpoint(mobile) {
+        padding: 2.5rem 0;
+        padding-bottom: 3rem;
+    }
+}

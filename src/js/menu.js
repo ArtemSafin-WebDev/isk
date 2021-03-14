@@ -18,12 +18,19 @@ export default function menu() {
             delay: 0.3
         });
 
-        tl.from(menuLinks, {
-            duration: 0.4,
-            autoAlpha: 0,
-            stagger: 0.2,
-            x: 70
-        });
+        tl.fromTo(
+            menuLinks,
+            {
+                autoAlpha: 0,
+                x: 70
+            },
+            {
+                duration: 0.4,
+                autoAlpha: 1,
+                stagger: 0.2,
+                x: 0
+            }
+        );
         lockScroll(menu);
     };
 
@@ -101,16 +108,13 @@ export default function menu() {
                 initializeLinks();
             }, 300)
         );
-
     }
-
 
     const checkFixed = () => {
         if (!menuOpen) {
             let windTop = window.scrollY;
             if (windTop > 100) {
                 document.body.classList.add('header-fixed');
-
             } else {
                 document.body.classList.remove('header-fixed');
             }
