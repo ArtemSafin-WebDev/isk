@@ -7459,6 +7459,10 @@ select:-webkit-autofill:focus {
   font-size: 5.5rem;
   line-height: 120%;
   letter-spacing: 0.005em; }
+  .our-team-intro__text p {
+    margin-bottom: 4rem; }
+    .our-team-intro__text p:last-child {
+      margin-bottom: 0; }
   @media only screen and (max-width: 640px) {
     .our-team-intro__text {
       font-size: 1.8rem;
@@ -7929,3 +7933,187 @@ select:-webkit-autofill:focus {
 
 .our-team-people__academic-director-wrapper {
   background-color: #fff; }
+
+.teachers {
+  padding-bottom: 8rem;
+  color: white;
+  background: #14142b; }
+  @media only screen and (max-width: 768px) {
+    .teachers {
+      padding-bottom: 4rem; } }
+
+.teachers__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: -1rem; }
+
+.teachers__list-item {
+  width: 25%;
+  padding: 1rem; }
+  @media only screen and (max-width: 768px) {
+    .teachers__list-item {
+      width: 50%; } }
+
+.teachers__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .no-touch .teachers__card:hover .teachers__card-image {
+    -webkit-transform: scale(1.02);
+            transform: scale(1.02);
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    transition: -webkit-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out; }
+
+.teachers__card-image-container {
+  position: relative;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden; }
+  .teachers__card-image-container::before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-bottom: 120%; }
+
+.teachers__card-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  font-family: 'object-fit: cover; object-position: center;'; }
+
+.teachers__card-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.4s, visibility 0s linear 0.4s;
+  transition: opacity 0.4s, visibility 0s linear 0.4s;
+  padding: var(--content-padding); }
+  .teachers__card-modal::-webkit-scrollbar * {
+    background: transparent; }
+  .teachers__card-modal::-webkit-scrollbar-track {
+    background-color: transparent; }
+  .teachers__card-modal::-webkit-scrollbar {
+    display: none;
+    background-color: transparent; }
+  .teachers__card-modal::-webkit-scrollbar-thumb {
+    background-color: transparent; }
+  .teachers__card-modal.shown {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity 0.4s, visibility 0.4s;
+    transition: opacity 0.4s, visibility 0.4s; }
+
+.teachers__card-modal-inner {
+  width: 100%;
+  max-width: 130rem;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #9761f3;
+  color: white; }
+  @media only screen and (max-width: 640px) {
+    .teachers__card-modal-inner {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      position: relative; } }
+
+.teachers__card-modal-image-container {
+  width: 37.4rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  position: relative;
+  min-height: 50rem; }
+  @media only screen and (max-width: 640px) {
+    .teachers__card-modal-image-container {
+      width: 100%;
+      -ms-flex-negative: 1;
+          flex-shrink: 1;
+      min-height: auto; }
+      .teachers__card-modal-image-container::after {
+        content: '';
+        display: block;
+        width: 100%;
+        padding-bottom: 100%; } }
+
+.teachers__card-modal-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center top;
+     object-position: center top;
+  font-family: 'object-fit: cover; object-position: center top;'; }
+
+.teachers__card-modal-content {
+  width: 50%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  padding: 4rem;
+  position: relative; }
+  @media only screen and (max-width: 640px) {
+    .teachers__card-modal-content {
+      padding: 2rem;
+      -webkit-box-flex: 0;
+          -ms-flex-positive: 0;
+              flex-grow: 0;
+      width: 100%;
+      position: static; } }
+
+.teachers__card-modal-close {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  width: 4.8rem;
+  height: 4.8rem; }
+  @media only screen and (max-width: 640px) {
+    .teachers__card-modal-close {
+      right: 1rem;
+      top: 1rem;
+      width: 2.4rem;
+      height: 2.4rem; } }
+  .teachers__card-modal-close svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: white; }

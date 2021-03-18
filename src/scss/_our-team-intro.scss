@@ -70,6 +70,13 @@
     line-height: 120%;
     letter-spacing: 0.005em;
 
+    p {
+        margin-bottom: 4rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
     @include breakpoint(mobile) {
         font-size: 1.8rem;
         line-height: 130%;

@@ -11,6 +11,7 @@ import nutritionSlider from './nutritionSlider';
 import contactsMap from './contactsMap';
 import initForms from './forms';
 import setScrollbarWidth from './setScrollbarWidth';
+import teachersModals from './teachersModals';
 
 document.addEventListener('DOMContentLoaded', function() {
     polyfills();
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     contactsMap();
     initForms();
     setScrollbarWidth();
+    teachersModals();
 });
 
 window.addEventListener('load', function() {
