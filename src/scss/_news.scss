@@ -1,0 +1,423 @@
+.news {
+    background: #14142b;
+    color: white;
+    flex-grow: 1;
+}
+
+.news__intro-row {
+    display: flex;
+
+    margin-right: calc((100vw - 100% - var(--sb-width, 0)) / 2 * -1);
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        margin-right: 0;
+    }
+}
+
+.news__intro-left-col {
+    width: 30%;
+    flex-grow: 1;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+    }
+}
+
+.news__intro-right-col {
+    width: 50rem;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 20;
+    background: #14142b;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-shrink: 1;
+    }
+}
+
+.news__intro-content {
+    padding-top: 20rem;
+    min-height: 62.6rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 4.5rem;
+    z-index: 1;
+    justify-content: flex-end;
+
+    @include breakpoint(mobile) {
+        padding: 5rem 0;
+
+        min-height: 38rem;
+    }
+}
+
+.news__intro-bg {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    left: calc((100vw - 100% - 50rem - var(--sb-width, 0)) * -1);
+    z-index: -1;
+    pointer-events: none;
+
+    @include breakpoint(mobile) {
+        left: calc(-1 * var(--content-padding));
+        right: calc(-1 * var(--content-padding));
+    }
+    &::after {
+        content: '';
+        background: linear-gradient(180deg, rgba(20, 20, 43, 0) 0%, #14142b 100%);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.news__intro-bg-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include objectFitCoverTop();
+}
+
+.news__intro-date {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.8rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 1.8rem;
+    }
+}
+
+.news__intro-date-day {
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 1.2;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    font-family: var(--druk);
+
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+}
+
+.news__intro-date-month {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 160%;
+    letter-spacing: 0.005em;
+
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+}
+
+.news__intro-title {
+    font-weight: 500;
+    font-size: 6rem;
+    line-height: 7.3rem;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+
+    font-family: var(--druk);
+
+    @include breakpoint(mobile) {
+        font-size: 2.8rem;
+        line-height: 3.6rem;
+        letter-spacing: 0.005em;
+    }
+}
+
+.news__intro-categories {
+    padding-top: 12rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    display: flex;
+    align-items: flex-end;
+
+    @include breakpoint(mobile) {
+        padding: 0;
+    }
+}
+
+.news__intro-categories-link {
+    flex-shrink: 0;
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 128.7%;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    margin-right: 4.6rem;
+    padding-bottom: 4rem;
+    color: white;
+    font-family: var(--druk);
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+        padding-bottom: 3rem;
+        margin-right: 3rem;
+    }
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    &.active {
+        color: #58d6eb;
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 10rem;
+            height: 1.5rem;
+            background-position: center bottom;
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: -1;
+            pointer-events: none;
+            transform: translateX(-50%);
+            background-image: url('../img/active-link-marker.svg');
+
+            @include breakpoint(mobile) {
+                width: 7rem;
+                height: 1.2rem;
+            }
+        }
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.news__intro-dates {
+    background: #5624ab;
+    color: white;
+    @include breakpoint(mobile) {
+        margin-left: calc(-1 * var(--content-padding));
+        margin-right: calc(-1 * var(--content-padding));
+        padding-left: var(--content-padding);
+        padding-right: var(--content-padding);
+    }
+}
+
+.news__intro-back {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 160%;
+    letter-spacing: 0.005em;
+    text-align: center;
+    padding: 1.2rem 2.4rem;
+    background-color: #fff;
+    color: #14142b;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transition: background-color .2s, color .2s;
+    @include breakpoint(mobile) {
+        position: static;
+    }
+
+    &:link,
+    &:visited {
+        color: #14142b;
+    }
+
+    &:hover {
+        background-color: var(--blue);
+        color: white;
+    }
+}
+
+.news__intro-dates-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2.5rem 4rem;
+    padding-bottom: 8rem;
+
+    @include breakpoint(mobile) {
+        padding: 2rem 0;
+    }
+}
+
+.news__intro-dates-list-item {
+    margin-bottom: 0.7rem;
+    @include breakpoint(mobile) {
+        margin-bottom: 1.5rem;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.news__intro-dates-link {
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 228.7%;
+    font-family: var(--druk);
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .news__intro-dates-list-item.active & {
+        color: #9761f3;
+    }
+}
+
+.news__card {
+    display: flex;
+    align-items: center;
+    margin-right: calc((100vw - 100% - var(--sb-width, 0)) / 2 * -1);
+    position: relative;
+    z-index: 1;
+
+    @include breakpoint(mobile) {
+        margin-right: calc(-1 * var(--content-padding));
+    }
+    .news__list-item:nth-child(even) & {
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: calc((100vw - 100% - var(--sb-width, 0)) * -1);
+            background: #343454;
+            z-index: -1;
+            pointer-events: none;
+
+            @include breakpoint(mobile) {
+                left: calc(-1 * var(--content-padding));
+                right: 0;
+            }
+        }
+    }
+}
+
+.news__card-photos {
+    flex-shrink: 0;
+    width: 50rem;
+
+    @include breakpoint(mobile) {
+        width: 12rem;
+    }
+}
+
+.news__card-content {
+    width: 30%;
+    flex-grow: 1;
+
+    padding: 2rem;
+    padding-left: 7.5rem;
+
+    @include breakpoint(mobile) {
+        padding: 1rem 0;
+        padding-right: 2rem;
+    }
+}
+
+.news__card-title {
+    font-weight: 500;
+    font-size: 5.5rem;
+    line-height: 120%;
+    letter-spacing: 0.005em;
+
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+}
+
+.news__card-photo-container {
+    position: relative;
+    width: 50%;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+    }
+    &::before {
+        content: '';
+        display: block;
+        padding-bottom: 80%;
+
+        @include breakpoint(mobile) {
+        }
+    }
+}
+
+.news__card-photo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include objectFitCover();
+}
+
+.news__sphere {
+    width: 53.8rem;
+    height: 53.8rem;
+    @include objectFitContain();
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) translateX(50%);
+    z-index: -1;
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+.news__card-date {
+    font-weight: bold;
+    font-size: 2.4rem;
+    line-height: 130%;
+    letter-spacing: 0.005em;
+
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+    }
+}
+
+.news__article-text {
+    font-weight: 500;
+    font-size: 5.5rem;
+    line-height: 120%;
+    letter-spacing: 0.005em;
+    padding: 6rem 0;
+    padding-bottom: 12rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+        line-height: 130%;
+        padding: 3rem 0;
+    }
+    p {
+        margin-bottom: 2.5rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
