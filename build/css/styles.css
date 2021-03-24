@@ -2746,6 +2746,166 @@ select:-webkit-autofill:focus {
   .no-touch .about-intro__btn:hover {
     background: var(--dark-violet-hover); }
 
+.about-intro__modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.4s, visibility 0s linear 0.4s;
+  transition: opacity 0.4s, visibility 0s linear 0.4s;
+  padding: var(--content-padding); }
+  .about-intro__modal::-webkit-scrollbar * {
+    background: transparent; }
+  .about-intro__modal::-webkit-scrollbar-track {
+    background-color: transparent; }
+  .about-intro__modal::-webkit-scrollbar {
+    display: none;
+    background-color: transparent; }
+  .about-intro__modal::-webkit-scrollbar-thumb {
+    background-color: transparent; }
+  .about-intro__modal.shown {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity 0.4s, visibility 0.4s;
+    transition: opacity 0.4s, visibility 0.4s; }
+
+.about-intro__modal-inner {
+  width: 100%;
+  max-width: 130rem;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #9761f3;
+  color: white;
+  position: relative; }
+  @media only screen and (max-width: 640px) {
+    .about-intro__modal-inner {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      position: relative; } }
+
+.about-intro__modal-close {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  width: 4.8rem;
+  height: 4.8rem; }
+  @media only screen and (max-width: 640px) {
+    .about-intro__modal-close {
+      right: 1rem;
+      top: 1rem;
+      width: 2.4rem;
+      height: 2.4rem; } }
+  .about-intro__modal-close svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: white; }
+
+.about-intro__modal-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  @media only screen and (max-width: 640px) {
+    .about-intro__modal-row {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+
+.about-intro__modal-left-col {
+  width: 37.4rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0; }
+  @media only screen and (max-width: 640px) {
+    .about-intro__modal-left-col {
+      width: 100%;
+      -ms-flex-negative: 1;
+          flex-shrink: 1; } }
+
+.about-intro__modal-right-col {
+  width: 50%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
+  @media only screen and (max-width: 640px) {
+    .about-intro__modal-right-col {
+      width: 100%;
+      -webkit-box-flex: 0;
+          -ms-flex-positive: 0;
+              flex-grow: 0; } }
+
+.about-intro__image {
+  display: block;
+  height: auto; }
+
+.about-intro__modal-content {
+  padding: 4rem;
+  padding-right: 7rem; }
+  @media only screen and (max-width: 640px) {
+    .about-intro__modal-content {
+      padding: 2rem; } }
+
+.about-intro__modal-name {
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 128.7%;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  font-family: var(--druk);
+  color: white;
+  margin-bottom: 1rem; }
+  @media only screen and (max-width: 640px) {
+    .about-intro__modal-name {
+      font-size: 2rem;
+      line-height: 128.7%;
+      letter-spacing: 0.005em;
+      margin-bottom: 0.5rem; } }
+
+.about-intro__modal-text {
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 1.5;
+  letter-spacing: 0.005em;
+  color: #14142B; }
+  @media only screen and (max-width: 640px) {
+    .about-intro__modal-text {
+      font-size: 1.8rem;
+      line-height: 1.5; } }
+  .about-intro__modal-text p {
+    margin-bottom: 2.5rem; }
+    .about-intro__modal-text p:last-child {
+      margin-bottom: 0; }
+
+.about-intro__modal-role {
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 1.5;
+  letter-spacing: 0.005em;
+  margin-bottom: 1.8rem;
+  color: white; }
+  @media only screen and (max-width: 640px) {
+    .about-intro__modal-role {
+      font-size: 1.8rem;
+      line-height: 1.5; } }
+
 .news-and-events__row {
   display: -webkit-box;
   display: -ms-flexbox;

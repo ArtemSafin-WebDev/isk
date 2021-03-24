@@ -12,6 +12,7 @@ import contactsMap from './contactsMap';
 import initForms from './forms';
 import setScrollbarWidth from './setScrollbarWidth';
 import teachersModals from './teachersModals';
+import aboutModals from './aboutModal';
 
 document.addEventListener('DOMContentLoaded', function() {
     polyfills();
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initForms();
     setScrollbarWidth();
     teachersModals();
+    aboutModals();
 });
 
 window.addEventListener('load', function() {
