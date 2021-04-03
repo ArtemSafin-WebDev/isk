@@ -1,0 +1,254 @@
+.teachers-intro {
+    color: white;
+    background: #14142b;
+}
+
+.teachers-intro__row {
+    display: flex;
+
+    position: relative;
+    padding-bottom: 9rem;
+
+    @include breakpoint(mobile) {
+        min-height: auto;
+        flex-direction: column;
+        padding: 0;
+    }
+}
+
+.teachers-intro__left-col {
+    width: 40%;
+    flex-grow: 1;
+    position: relative;
+    color: white;
+    padding-top: 23rem;
+    padding-right: 7.2rem;
+    z-index: 1;
+    @include breakpoint(mobile) {
+        padding: 0;
+        width: 100%;
+        flex-grow: 0;
+        padding-top: 17rem;
+        padding-bottom: 4rem;
+    }
+}
+
+.teachers-intro__right-col {
+    width: 47rem;
+    flex-shrink: 0;
+    align-self: flex-start;
+    color: var(--dark-blue);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100vw;
+        background: #9761f3;
+        z-index: -1;
+        pointer-events: none;
+
+        @include breakpoint(mobile) {
+            display: none;
+        }
+    }
+
+    @include breakpoint(tablet) {
+        width: 50rem;
+    }
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-shrink: 1;
+    }
+}
+
+.teachers-intro__bg {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    right: 0;
+    top: 0;
+    left: calc((100vw - 100% - 47rem) / 2 * -1);
+    height: 100%;
+    max-height: 90rem;
+
+    &::after {
+        content: '';
+        background: linear-gradient(0deg, #14142b 2.5%, rgba(20, 20, 43, 0) 100%);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    @include breakpoint(mobile) {
+        left: calc(-1 * var(--content-padding));
+        right: calc(-1 * var(--content-padding));
+        max-height: 40rem;
+       
+    }
+}
+
+.teachers-intro__bg-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include objectFitCover();
+}
+
+.teachers-intro__content {
+    padding-top: 35rem;
+
+    @include breakpoint(mobile) {
+        padding: 0;
+    }
+}
+
+.teachers-intro__heading {
+    font-weight: 500;
+    font-size: 6rem;
+    line-height: 7.3rem;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    margin-bottom: 7rem;
+    font-family: var(--druk);
+
+    @include breakpoint(mobile) {
+        font-size: 3rem;
+        line-height: 3.6rem;
+        letter-spacing: 0.005em;
+        margin-bottom: 1.6rem;
+    }
+}
+
+.teachers-intro__schools {
+    display: flex;
+    margin-bottom: 5rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+    }
+}
+
+.teachers-intro__schools-link {
+    margin-right: 8.5rem;
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 128.7%;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    font-family: var(--druk);
+
+    @include breakpoint(mobile) {
+        margin-right: 2rem;
+        font-size: 1.6rem;
+        line-height: 1.2;
+    }
+
+    &.active {
+        color: var(--violet);
+    }
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.teachers-intro__text {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 160%;
+    letter-spacing: 0.005em;
+
+    p {
+        margin-bottom: 2rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+        line-height: 130%;
+        padding: 0;
+    }
+}
+
+.teachers-intro__nav {
+    padding-top: 11.3rem;
+    padding-bottom: 9.4rem;
+    display: flex;
+    flex-direction: column;
+
+
+    @include breakpoint(mobile) {
+        padding: 2rem 0;
+
+        background: #9761f3;
+        margin: 0 calc(-1 * var(--content-padding));
+        margin-bottom: 2rem;
+    }
+}
+
+.teachers-intro__nav-link {
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 4.5rem;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+    padding-left: 5rem;
+    position: relative;
+    font-family: var(--druk);
+    color: white;
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        line-height: 1.2;
+        padding-left: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    &:link,
+    &:visited {
+        color: white;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &.active {
+        color: var(--dark-blue);
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1.3rem;
+            height: 10rem;
+            background-position: left center;
+            background-repeat: no-repeat;
+            background-image: url('../img/teachers-active-item.svg');
+            background-size: contain;
+
+            @include breakpoint(mobile) {
+                width: 1.4rem;
+                height: 4rem;
+            }
+        }
+    }
+
+    &:not(.active):hover {
+        color: var(--blue);
+    }
+}

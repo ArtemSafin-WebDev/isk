@@ -229,7 +229,7 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    transition: background-color .2s, color .2s;
+    transition: background-color 0.2s, color 0.2s;
     @include breakpoint(mobile) {
         position: static;
     }
@@ -420,4 +420,126 @@
             margin-bottom: 0;
         }
     }
+}
+
+.news__pagination {
+    display: flex;
+   
+    margin: 0 calc(-1 * (100vw - 100% - var(--sb-width, 0)) / 2);
+    background: var(--dark-violet);
+
+  
+}
+
+.news__pagination-prev,
+.news__pagination-next {
+    width: 18rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.8rem;
+    line-height: 130%;
+    letter-spacing: 0.005em;
+    background-color: var(--violet);
+    transition: background-color .2s;
+
+    @include breakpoint(mobile) {
+        width: 3rem;
+    }
+
+    svg {
+        display: none;
+
+        @include breakpoint(mobile) {
+            display: block;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+
+    .no-touch &:hover {
+        background-color: var(--blue);
+    }
+}
+
+.news__pagination-text {
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+.news__pagination-links {
+    width: 30%;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.news__pagination-link {
+    width: 15rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 128.7%;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    font-family: var(--druk);
+    background: var(--dark-violet);
+    color: white;
+    position: relative;
+
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    @include breakpoint(mobile) {
+        width: 5rem;
+        height: 5rem;
+        font-size: 1.4rem;
+        line-height: 1.2;
+    }
+
+
+    .no-touch &:hover {
+        color: var(--blue);
+    }
+    
+
+    &.active {
+        color: var(--blue);
+
+        &:link,
+        &:visited {
+            color: var(--blue);
+        }
+        &::before {
+            content: '';
+            position: absolute;
+           
+            bottom: 0;
+            width: 10rem;
+            height: 1.3rem;
+            z-index: 5;
+            left: 50%;
+            transform: translateX(-50%);
+            background-image: url('../img/pagination-active.svg');
+            background-position: center bottom;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            @include breakpoint(mobile) {
+                width: 3rem;
+                height: 1rem;
+            }
+        }
+    }
+
+   
 }
