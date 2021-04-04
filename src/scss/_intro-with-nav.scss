@@ -42,7 +42,7 @@
     text-transform: uppercase;
     margin-bottom: 7rem;
     font-family: var(--druk);
-
+    hyphens: auto;
     @include breakpoint(mobile) {
         font-size: 3rem;
         line-height: 3.6rem;

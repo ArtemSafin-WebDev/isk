@@ -3,6 +3,10 @@
     background: #14142b;
     margin-top: -7rem;
 
+    .education-school__slider {
+        margin-bottom: 0;
+    }
+
     @include breakpoint(mobile) {
         margin-top: -2rem;
     }
@@ -10,8 +14,9 @@
 
 .diploma__art {
     padding-bottom: 8rem;
-
+    padding-top: 5rem;
     @include breakpoint(mobile) {
+        padding-top: 2rem;
         padding-bottom: 3rem;
     }
   

@@ -9474,7 +9474,10 @@ select:-webkit-autofill:focus {
   letter-spacing: 0.005em;
   text-transform: uppercase;
   margin-bottom: 7rem;
-  font-family: var(--druk); }
+  font-family: var(--druk);
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto; }
   @media only screen and (max-width: 640px) {
     .intro-with-nav__heading {
       font-size: 3rem;
@@ -9788,14 +9791,18 @@ select:-webkit-autofill:focus {
   color: white;
   background: #14142b;
   margin-top: -7rem; }
+  .diploma .education-school__slider {
+    margin-bottom: 0; }
   @media only screen and (max-width: 640px) {
     .diploma {
       margin-top: -2rem; } }
 
 .diploma__art {
-  padding-bottom: 8rem; }
+  padding-bottom: 8rem;
+  padding-top: 5rem; }
   @media only screen and (max-width: 640px) {
     .diploma__art {
+      padding-top: 2rem;
       padding-bottom: 3rem; } }
 
 .diploma__art-heading {
