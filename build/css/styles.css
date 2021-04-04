@@ -9620,6 +9620,21 @@ select:-webkit-autofill:focus {
      object-position: center top;
   font-family: 'object-fit: cover; object-position: center top;'; }
 
+.intro-with-nav__text {
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 160%;
+  letter-spacing: 0.005em; }
+  .intro-with-nav__text p {
+    margin-bottom: 2rem; }
+    .intro-with-nav__text p:last-child {
+      margin-bottom: 0; }
+  @media only screen and (max-width: 640px) {
+    .intro-with-nav__text {
+      font-size: 1.8rem;
+      line-height: 130%;
+      padding: 0; } }
+
 .reviews-page {
   color: white;
   background: #14142b;
@@ -9768,3 +9783,94 @@ select:-webkit-autofill:focus {
     .reviews-page__card-text {
       font-size: 1.8rem;
       line-height: 1.2; } }
+
+.diploma {
+  color: white;
+  background: #14142b;
+  margin-top: -7rem; }
+  @media only screen and (max-width: 640px) {
+    .diploma {
+      margin-top: -2rem; } }
+
+.diploma__art {
+  padding-bottom: 8rem; }
+  @media only screen and (max-width: 640px) {
+    .diploma__art {
+      padding-bottom: 3rem; } }
+
+.diploma__art-heading {
+  font-weight: 500;
+  font-size: 6rem;
+  line-height: 7.3rem;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+  font-family: var(--druk); }
+  @media only screen and (max-width: 640px) {
+    .diploma__art-heading {
+      font-size: 3rem;
+      line-height: 3.6rem;
+      letter-spacing: 0.005em;
+      margin-bottom: 1.6rem; } }
+
+.diploma__art-text {
+  font-weight: 500;
+  font-size: 5.5rem;
+  line-height: 120%;
+  letter-spacing: 0.005em;
+  text-transform: lowercase;
+  color: #9761F3;
+  max-width: 120rem; }
+  @media only screen and (max-width: 640px) {
+    .diploma__art-text {
+      font-size: 1.8rem;
+      line-height: 130%;
+      padding: 0; } }
+
+.diploma__speak {
+  position: relative;
+  padding: 7rem 0;
+  z-index: 1;
+  color: var(--dark-blue); }
+  @media only screen and (max-width: 640px) {
+    .diploma__speak {
+      padding: 3rem 0; } }
+  .diploma__speak::before {
+    content: '';
+    position: absolute;
+    left: calc((100vw - 100% - var(--sb-width, 0)) / 2 * -1);
+    right: calc((100vw - 100% - var(--sb-width, 0)) / 2 * -1);
+    top: 0;
+    bottom: 0;
+    background: #58D6EB;
+    z-index: -1;
+    pointer-events: none; }
+
+.diploma__speak-heading {
+  font-weight: 500;
+  font-size: 6rem;
+  line-height: 7.3rem;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+  font-family: var(--druk); }
+  @media only screen and (max-width: 640px) {
+    .diploma__speak-heading {
+      font-size: 3rem;
+      line-height: 3.6rem;
+      letter-spacing: 0.005em;
+      margin-bottom: 1.6rem; } }
+
+.diploma__speak-text {
+  font-weight: 500;
+  font-size: 5.5rem;
+  line-height: 120%;
+  letter-spacing: 0.005em;
+  text-transform: lowercase;
+  color: #9761F3;
+  max-width: 120rem; }
+  @media only screen and (max-width: 640px) {
+    .diploma__speak-text {
+      font-size: 1.8rem;
+      line-height: 130%;
+      padding: 0; } }
