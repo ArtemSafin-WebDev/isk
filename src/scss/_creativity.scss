@@ -1,0 +1,51 @@
+.creativity {
+   
+    background: #9761F3;
+    color: white;
+}
+
+
+.creativity__content {
+    padding: 8rem 0;
+
+    @include breakpoint(mobile) {
+        padding: 3rem 0;
+    }
+}
+
+.creativity__heading {
+    font-weight: 500;
+    font-size: 6rem;
+    line-height: 7.3rem;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    font-family: var(--druk);
+    margin-bottom: 2.5rem;
+    color: #14142B;
+
+    @include breakpoint(mobile) {
+        font-size: 3rem;
+        line-height: 3.6rem;
+        letter-spacing: 0.005em;
+        margin-bottom: 1.6rem;
+    }
+}
+
+.creativity__text {
+    font-weight: 500;
+    font-size: 5.5rem;
+    line-height: 120%;
+    letter-spacing: 0.005em;
+
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+        line-height: 130%;
+        padding: 0;
+    }
+}
+
+.creativity__image {
+    display: block;
+    width: 100%;
+    height: auto;
+}

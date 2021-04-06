@@ -1,0 +1,77 @@
+.extended-essay {
+    background: #14142b;
+    color: white;
+}
+
+.extended-essay__row {
+    display: flex;
+    padding: 10rem 0;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        padding: 3rem 0;
+    }
+}
+
+.extended-essay__col {
+    width: 50%;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+    }
+}
+
+.extended-essay__heading {
+    font-weight: 500;
+    font-size: 6rem;
+    line-height: 7.3rem;
+    letter-spacing: 0.005em;
+    font-family: var(--druk);
+    position: relative;
+    display: inline-flex;
+
+    z-index: 1;
+
+    @include breakpoint(mobile) {
+        font-size: 3rem;
+        line-height: 3.6rem;
+        letter-spacing: 0.005em;
+        margin-bottom: 1.6rem;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        width: 86rem;
+        height: 40rem;
+        background-image: url('../img/extended-essay-pattern.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        top: 100%;
+        margin-top: -10rem;
+        right: -3rem;
+        z-index: -1;
+        pointer-events: none;
+
+        @include breakpoint(mobile) {
+            width: 30rem;
+            height: 10rem;
+            margin-top: -8.5rem;
+            right: 5rem;
+        }
+    }
+}
+
+.extended-essay__text {
+    font-weight: 500;
+    font-size: 5.5rem;
+    line-height: 120%;
+    letter-spacing: 0.005em;
+
+    
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+        line-height: 130%;
+        padding: 0;
+    }
+}

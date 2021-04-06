@@ -19,7 +19,6 @@
         padding-top: 2rem;
         padding-bottom: 3rem;
     }
-  
 }
 
 .diploma__art-heading {
@@ -45,7 +44,7 @@
     line-height: 120%;
     letter-spacing: 0.005em;
     text-transform: lowercase;
-    color: #9761F3;
+    color: #9761f3;
     max-width: 120rem;
 
     @include breakpoint(mobile) {
@@ -53,9 +52,7 @@
         line-height: 130%;
         padding: 0;
     }
-    
 }
-
 
 .diploma__speak {
     position: relative;
@@ -74,7 +71,7 @@
         right: calc((100vw - 100% - var(--sb-width, 0)) / 2 * -1);
         top: 0;
         bottom: 0;
-        background: #58D6EB;
+        background: #58d6eb;
         z-index: -1;
         pointer-events: none;
     }
@@ -103,12 +100,148 @@
     line-height: 120%;
     letter-spacing: 0.005em;
     text-transform: lowercase;
-    color: #9761F3;
+    color: #9761f3;
     max-width: 120rem;
 
     @include breakpoint(mobile) {
         font-size: 1.8rem;
         line-height: 130%;
         padding: 0;
+    }
+}
+
+.diploma__program {
+    padding-top: 4rem;
+    padding-bottom: 9rem;
+
+    @include breakpoint(mobile) {
+        padding-top: 3rem;
+        padding-bottom: 4rem;
+    }
+}
+
+.diploma__program-row {
+    display: flex;
+    margin-right: calc(((100vw - 100% - var(--sb-width, 0)) / 2 * -1));
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        margin-right: 0;
+    }
+}
+
+.diploma__program-left-col {
+    width: 30%;
+    flex-grow: 1;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+        margin-bottom: 3rem;
+    }
+}
+
+.diploma__program-right-col {
+    width: 50rem;
+    flex-shrink: 0;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-shrink: 1;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.diploma__program-heading {
+    font-weight: 500;
+    font-size: 6rem;
+    line-height: 7.3rem;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    margin-bottom: 5rem;
+    font-family: var(--druk);
+    hyphens: auto;
+    @include breakpoint(mobile) {
+        font-size: 3rem;
+        line-height: 3.6rem;
+        letter-spacing: 0.005em;
+        margin-bottom: 1.6rem;
+    }
+}
+
+.diploma__program-main-text {
+    font-weight: 500;
+    font-size: 5.5rem;
+    line-height: 120%;
+    letter-spacing: 0.005em;
+    color: #9761f3;
+
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+        line-height: 130%;
+    }
+
+    p {
+        margin-bottom: 2.5rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.diploma__program-info-blocks {
+    padding: 0 6rem;
+
+    @include breakpoint(mobile) {
+        padding: 0;
+    }
+}
+
+.diploma__program-info-block {
+    margin-bottom: 6rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 4rem;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.diploma__program-info-block-heading {
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 128.7%;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    font-family: var(--druk);
+    margin-bottom: 3rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.diploma__program-info-block-text {
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 160%;
+    letter-spacing: 0.005em;
+    color: #9761F3;
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+    }
+
+    p {
+        margin-bottom: 3rem;
+
+        @include breakpoint(mobile) {
+            margin-bottom: 1.5rem;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
     }
 }
