@@ -13,6 +13,7 @@ import initForms from './forms';
 import setScrollbarWidth from './setScrollbarWidth';
 import teachersModals from './teachersModals';
 import aboutModals from './aboutModal';
+import ourTeamSlider from './ourTeamSlider';
 
 document.addEventListener('DOMContentLoaded', function() {
     polyfills();
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setScrollbarWidth();
     teachersModals();
     aboutModals();
+    ourTeamSlider();
 });
 
 window.addEventListener('load', function() {

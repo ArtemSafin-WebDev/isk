@@ -1,0 +1,194 @@
+.our-team-slider {
+    background: #14142b;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(mobile) {
+        padding-top: 4.5rem;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .swiper-container {
+        margin: 0;
+    }
+    
+}
+
+.our-team-slider__card {
+    padding-bottom: 12rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    @include breakpoint(mobile) {
+        padding-bottom: 4rem;
+    }
+   
+
+  
+}
+
+.our-team-slider__card-btn {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    padding: 3.5rem 4rem;
+    font-weight: 500;
+    font-size: 5.5rem;
+    background: #7040C0;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: 0.005em;
+    display: inline-flex;
+    min-width: 64rem;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .2s, opacity .4s, visibility .4s;
+    z-index: 100;
+ 
+
+    .our-team-slider__card:not(.btn-shown) & {
+        opacity: 0;
+        visibility: hidden;
+        transition: background-color .2s, opacity .4s, visibility 0s linear .4s;
+    }
+   
+ 
+
+    @include breakpoint(mobile) {
+        padding: .5rem 1rem;
+        font-size: 2rem;
+        line-height: 1.2;
+        min-width: auto;
+    }
+    .no-touch &:hover {
+        background: var(--dark-violet);
+    }
+}
+
+.our-team-slider__card-image-container {
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        padding-bottom: 56.25%;
+    }
+}
+
+.our-team-slider__card-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include objectFitCover();
+    transition: transform .5s;
+    transform: scale(.98);
+
+
+
+
+    .our-team-slider__card.next &,
+    .our-team-slider__card.active & {
+        transform: rotate(3deg) scale(1);
+    }
+
+
+    .our-team-slider__card.prev & {
+        transform: rotate(0) scale(.98);
+    }
+}
+
+
+.our-team-slider__cards {
+    position: relative;
+
+}
+
+.our-team-slider__card {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    &.active {
+        z-index: 10;
+        position: relative;
+        height: auto;
+       
+    }
+}
+
+
+.our-team-slider__arrows {
+    display: flex;
+    align-items: center;
+    
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 200;
+    @include breakpoint(mobile) {
+        order: -1;
+        left: auto;
+        bottom: auto;
+        right: 0;
+        top: 0;
+        position: absolute;
+        // margin-left: auto;
+        // margin-bottom: 2rem;
+        // margin-right: calc(-1 * var(--content-padding));
+    }
+}
+
+.our-team-slider__arrow {
+    width: 11.8rem;
+    height: 10.7rem;
+    position: relative;
+    background: #12AAC4;
+    flex-shrink: 0;
+    transition: background-color 0.2s, opacity 0.2s;
+
+
+    .our-team-slider.locked & {
+        opacity: .9;
+        pointer-events: none;
+    }
+    svg {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 1.7rem;
+        height: 2.7rem;
+        fill: white;
+        transform: translate(-50%, -50%);
+
+        @include breakpoint(mobile) {
+            width: 1rem;
+            height: 1.5rem;
+        }
+    }
+
+    &.swiper-button-disabled {
+        cursor: default;
+        opacity: 0.7;
+    }
+
+    &:not(.swiper-button-disabled):hover {
+        background-color: var(--blue);
+    }
+
+    @include breakpoint(mobile) {
+        width: 6.6rem;
+        height: 6rem;
+    }
+}
