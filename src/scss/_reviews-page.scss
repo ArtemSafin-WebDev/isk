@@ -58,7 +58,8 @@
         }
     
         &:nth-child(even) {
-            margin-top: -10rem;
+            position: relative;
+            top: 0rem;
         }
     
     
