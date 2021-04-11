@@ -221,4 +221,9 @@
     text-transform: uppercase;
     margin-bottom: 5rem;
     font-family: var(--druk);
+
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
 }
