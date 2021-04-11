@@ -176,6 +176,10 @@
         color: white;
     }
 
+    .no-touch &:hover {
+        color: var(--violet);
+    }
+
     &.active {
         color: #58d6eb;
         &::before {
@@ -275,6 +279,10 @@
     letter-spacing: 0.005em;
     text-transform: uppercase;
 
+    .no-touch &:hover {
+        color: var(--blue);
+    }
+
     @include breakpoint(mobile) {
         font-size: 2rem;
         line-height: 1.2;
@@ -291,6 +299,12 @@
     margin-right: calc((100vw - 100% - var(--sb-width, 0)) / 2 * -1);
     position: relative;
     z-index: 1;
+
+    .no-touch &:hover {
+        .news__card-title {
+            color: var(--blue);
+        }
+    }
 
     @include breakpoint(mobile) {
         margin-right: calc(-1 * var(--content-padding));
@@ -342,7 +356,7 @@
     font-size: 5.5rem;
     line-height: 120%;
     letter-spacing: 0.005em;
-
+    transition: color .2s;
     @include breakpoint(mobile) {
         font-size: 2rem;
         line-height: 1.3;
