@@ -38,6 +38,14 @@
         position: absolute;
         right: 0;
         top: 2.7rem;
+
+        @include breakpoint(mobile) {
+            position: absolute;
+            top: 100%;
+            font-size: 1.8rem;
+            line-height: 1.2;
+            margin-top: 1rem;
+        }
     }
 
     @include placeholder {
