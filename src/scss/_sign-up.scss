@@ -72,14 +72,34 @@
     text-align: center;
     padding: 4rem 7rem;
     color: white;
-    
+
     flex-shrink: 0;
     display: block;
     width: 100%;
-    transition: background-color .2s;
+    transition: background-color 0.2s;
+    position: relative;
+    z-index: 1;
+    background: radial-gradient(78.72% 423.07% at 78.72% 100%, #f98181 0%, #d72545 51.04%, #14142b 99.8%);
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
 
-    background: radial-gradient(78.72% 423.07% at 78.72% 100%, #F98181 0%, #D72545 51.04%, #14142B 99.8%);
-    
+        z-index: -1;
+        background: radial-gradient(78.72% 423.07% at 78.72% 100%, #9761f3 0%, #5624ab 51.04%, #14142b 99.8%);
+        transition: opacity 0.3s;
+        opacity: 0;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        &::before {
+            opacity: 1;
+        }
+    }
 
     @include breakpoint(mobile) {
         font-size: 2.4rem;

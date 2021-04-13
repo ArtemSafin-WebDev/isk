@@ -37,7 +37,7 @@
         top: 0;
         width: 100%;
         height: 100%;
-        background-color: blue;
+       
         z-index: -1;
         background: radial-gradient(78.72% 423.07% at 78.72% 100%, #9761f3 0%, #5624ab 51.04%, #14142b 99.8%);
         transition: opacity 0.3s;
@@ -48,7 +48,10 @@
         color: white;
     }
 
-    .no-touch &:hover {
+
+    
+    .no-touch &:hover,
+    .touch &:active {
         &::before {
             opacity: 1;
         }

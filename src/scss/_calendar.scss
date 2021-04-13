@@ -28,11 +28,18 @@
 .calendar__right-col {
     width: 50rem;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
     @include breakpoint(mobile) {
         width: 100%;
         flex-grow: 0;
         flex-shrink: 0;
     }
+}
+
+.calendar__calendar-btns {
+    display: flex;
+    flex-direction: column;
 }
 
 .calendar__calendar-btn {
@@ -44,7 +51,7 @@
     background: #58d6eb;
     color: white;
     text-align: left;
-
+    flex-grow: 1;
     @include breakpoint(mobile) {
         min-height: 15rem;
         padding: 3rem;
@@ -91,10 +98,10 @@
 .calendar__table {
     max-width: 70rem;
     margin: auto 0;
-    padding: 3rem 0;
+    padding: 10rem 0;
 
     @include breakpoint(mobile) {
-        padding: 2rem 0;
+        padding: 4rem 0;
         margin: 0;
         max-width: none;
     }

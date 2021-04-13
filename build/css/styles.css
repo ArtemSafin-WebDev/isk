@@ -1843,7 +1843,6 @@ select:-webkit-autofill:focus {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: blue;
     z-index: -1;
     background: radial-gradient(78.72% 423.07% at 78.72% 100%, #9761f3 0%, #5624ab 51.04%, #14142b 99.8%);
     -webkit-transition: opacity 0.3s;
@@ -1851,7 +1850,8 @@ select:-webkit-autofill:focus {
     opacity: 0; }
   .intro__main-btn:link, .intro__main-btn:visited {
     color: white; }
-  .no-touch .intro__main-btn:hover::before {
+  .no-touch .intro__main-btn:hover::before,
+  .touch .intro__main-btn:active::before {
     opacity: 1; }
   @media only screen and (max-width: 640px) {
     .intro__main-btn {
@@ -5122,9 +5122,26 @@ select:-webkit-autofill:focus {
       flex-shrink: 0;
   display: block;
   width: 100%;
-  -webkit-transition: background-color .2s;
-  transition: background-color .2s;
-  background: radial-gradient(78.72% 423.07% at 78.72% 100%, #F98181 0%, #D72545 51.04%, #14142B 99.8%); }
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  position: relative;
+  z-index: 1;
+  background: radial-gradient(78.72% 423.07% at 78.72% 100%, #f98181 0%, #d72545 51.04%, #14142b 99.8%); }
+  .sign-up__form-submit-btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(78.72% 423.07% at 78.72% 100%, #9761f3 0%, #5624ab 51.04%, #14142b 99.8%);
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    opacity: 0; }
+  .no-touch .sign-up__form-submit-btn:hover::before,
+  .touch .sign-up__form-submit-btn:active::before {
+    opacity: 1; }
   @media only screen and (max-width: 640px) {
     .sign-up__form-submit-btn {
       font-size: 2.4rem;
@@ -5602,7 +5619,14 @@ select:-webkit-autofill:focus {
 .calendar__right-col {
   width: 50rem;
   -ms-flex-negative: 0;
-      flex-shrink: 0; }
+      flex-shrink: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
   @media only screen and (max-width: 640px) {
     .calendar__right-col {
       width: 100%;
@@ -5611,6 +5635,15 @@ select:-webkit-autofill:focus {
               flex-grow: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0; } }
+
+.calendar__calendar-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
 
 .calendar__calendar-btn {
   padding: 2rem;
@@ -5624,7 +5657,10 @@ select:-webkit-autofill:focus {
   min-height: 36.5rem;
   background: #58d6eb;
   color: white;
-  text-align: left; }
+  text-align: left;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
   @media only screen and (max-width: 640px) {
     .calendar__calendar-btn {
       min-height: 15rem;
@@ -5666,10 +5702,10 @@ select:-webkit-autofill:focus {
 .calendar__table {
   max-width: 70rem;
   margin: auto 0;
-  padding: 3rem 0; }
+  padding: 10rem 0; }
   @media only screen and (max-width: 640px) {
     .calendar__table {
-      padding: 2rem 0;
+      padding: 4rem 0;
       margin: 0;
       max-width: none; } }
 
