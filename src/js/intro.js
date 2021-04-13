@@ -11,30 +11,34 @@ export default function intro() {
         const introBottomLink = element.querySelector('.intro__bottom-link');
         const decorativeColumns = Array.from(element.querySelectorAll('.js-intro-col'));
         const textColumns = Array.from(element.querySelectorAll('.js-intro-text-col'));
-        const links = Array.from(element.querySelectorAll('.intro__column-link'))
+        const links = Array.from(element.querySelectorAll('.intro__column-link'));
         const leftColumn = element.querySelector('.intro__left-col');
-
+        const offsetValue = 160;
         let leftColumnWidth = leftColumn.offsetWidth;
 
-        window.addEventListener('resize', debounce(() => {
-            leftColumnWidth = leftColumn.offsetWidth;
-            backgrounds.forEach(bg => bg.classList.remove('active'));
-            decorativeColumns.forEach(col => {
-                gsap.set(col, {
-                    clearProps: 'all'
-                })
-                col.classList.remove('active');
-            })
-            textColumns.forEach(col => {
-                gsap.set(col, {
-                    clearProps: 'all'
-                })
-                col.classList.remove('active');
-            })
-            links.forEach(link => link.classList.remove('inactive'));
+        window.addEventListener(
+            'resize',
+            debounce(() => {
+                leftColumnWidth = leftColumn.offsetWidth;
+                backgrounds.forEach(bg => bg.classList.remove('active'));
+                decorativeColumns.forEach(col => {
+                    gsap.set(col, {
+                        clearProps: 'all'
+                    });
+                    col.classList.remove('active');
+                });
+                textColumns.forEach(col => {
+                    gsap.set(col, {
+                        clearProps: 'all'
+                    });
+                    col.classList.remove('active');
+                });
+                links.forEach(link => link.classList.remove('inactive'));
 
-            console.log('Debounced resize handler called')
-        }), 300);
+                console.log('Debounced resize handler called');
+            }),
+            300
+        );
 
         columnContent.forEach((content, contentIndex) => {
             const col = decorativeColumns[contentIndex];
@@ -46,35 +50,34 @@ export default function intro() {
                 backgroundVideos[contentIndex].play();
                 textColumns.forEach(col => col.classList.remove('active'));
                 textColumns[contentIndex].classList.add('active');
-                links.forEach(link => link.classList.remove('inactive'))
+                links.forEach(link => link.classList.remove('inactive'));
                 if (contentIndex === 0) {
-                  
                     links[1].classList.add('inactive');
                     const tl = gsap.timeline();
 
                     tl.to(leftColumn, {
                         duration: 0.3,
-                        width: leftColumnWidth + introBottomLink.offsetWidth / 2
+                        width: leftColumnWidth + offsetValue / 2
                     }).to(
                         textColumns[1],
                         {
                             duration: 0.3,
-                            x: introBottomLink.offsetWidth / 2
+                            x: offsetValue / 2
                         },
                         0
-                    )
+                    );
                 } else {
                     links[0].classList.add('inactive');
                     const tl = gsap.timeline();
 
                     tl.to(leftColumn, {
                         duration: 0.3,
-                        width: leftColumnWidth - introBottomLink.offsetWidth / 2
+                        width: leftColumnWidth - offsetValue / 2
                     }).to(
                         textColumns[0],
                         {
                             duration: 0.3,
-                            x: -introBottomLink.offsetWidth / 2
+                            x: -offsetValue / 2
                         },
                         0
                     );
@@ -85,7 +88,7 @@ export default function intro() {
                 backgrounds.forEach(bg => bg.classList.remove('active'));
                 backgroundVideos.forEach(video => video.pause());
                 textColumns.forEach(col => col.classList.remove('active'));
-                links.forEach(link => link.classList.remove('inactive'))
+                links.forEach(link => link.classList.remove('inactive'));
                 if (contentIndex === 0) {
                     const tl = gsap.timeline();
                     tl.to(leftColumn, {

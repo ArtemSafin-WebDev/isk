@@ -1832,12 +1832,27 @@ select:-webkit-autofill:focus {
   text-align: center;
   line-height: 120%;
   letter-spacing: 0.005em;
-  background: radial-gradient(78.72% 423.07% at 78.72% 100%, #F98181 0%, #D72545 51.04%, #14142B 99.8%);
+  background: radial-gradient(78.72% 423.07% at 78.72% 100%, #f98181 0%, #d72545 51.04%, #14142b 99.8%);
   color: white;
   position: relative;
   z-index: 100; }
+  .intro__main-btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+    z-index: -1;
+    background: radial-gradient(78.72% 423.07% at 78.72% 100%, #9761f3 0%, #5624ab 51.04%, #14142b 99.8%);
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s;
+    opacity: 0; }
   .intro__main-btn:link, .intro__main-btn:visited {
     color: white; }
+  .no-touch .intro__main-btn:hover::before {
+    opacity: 1; }
   @media only screen and (max-width: 640px) {
     .intro__main-btn {
       padding: 2rem 2.4rem;

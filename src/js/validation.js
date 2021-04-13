@@ -97,9 +97,18 @@ Parsley.addMessages('ru', {
 Parsley.setLocale('en');
 
 export default function validation() {
-    const formsToValidate = Array.from(document.querySelectorAll('form[data-need-validation]'));
 
-    formsToValidate.forEach(form => {
-        $(form).parsley({});
-    });
+    function initializeValidation() {
+        const formsToValidate = Array.from(document.querySelectorAll('form[data-need-validation]'));
+
+        formsToValidate.forEach(form => {
+            $(form).parsley({});
+        });
+    }
+    
+
+    window.initializeValidation = initializeValidation;
+
+    initializeValidation();
+    
 }

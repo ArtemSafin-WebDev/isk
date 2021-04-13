@@ -15,6 +15,7 @@ import teachersModals from './teachersModals';
 import aboutModals from './aboutModal';
 import ourTeamSlider from './ourTeamSlider';
 
+
 document.addEventListener('DOMContentLoaded', function() {
     polyfills();
     detectTouch();
@@ -31,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
     teachersModals();
     aboutModals();
     ourTeamSlider();
+    
 });
 
 window.addEventListener('load', function() {
