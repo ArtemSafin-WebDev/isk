@@ -9,14 +9,13 @@
 :root {
     --max-container-width: 160rem;
     --content-padding: 6rem;
-    --violet: #9761F3;
-    --dark-violet: #5624AB;
+    --violet: #9761f3;
+    --dark-violet: #5624ab;
     --dark-violet-hover: #40148d;
-    --blue: #58D6EB;
-    --dark-blue: #14142B;
+    --blue: #58d6eb;
+    --dark-blue: #14142b;
     --druk: 'DrukWideMediumCy', sans-serif;
     --mabry: 'Mabry Pro', sans-serif;
-
 
     @include breakpoint(large-desktop) {
         --max-container-width: 134rem;
@@ -33,6 +32,34 @@ html {
     box-sizing: border-box;
     font-size: 10px;
     -webkit-text-size-adjust: 100%;
+
+    @media screen and (min-width: 2000px) {
+        font-size: 11px;
+    }
+    @media screen and (min-width: 2200px) {
+        font-size: 12px;
+    }
+    @media screen and (min-width: 2400px) {
+        font-size: 14px;
+    }
+    @media screen and (min-width: 2600px) {
+        font-size: 16px;
+    }
+    @media screen and (min-width: 2800px) {
+        font-size: 18px;
+    }
+    @media screen and (min-width: 3200px) {
+        font-size: 20px;
+    }
+    @media screen and (min-width: 4000px) {
+        font-size: 24px;
+    }
+    @media screen and (min-width: 4500px) {
+        font-size: 25px;
+    }
+    @media screen and (min-width: 4800px) {
+        font-size: 27px;
+    }
 
     @include noHighlight();
     @include breakpoint(desktop) {
@@ -54,6 +81,10 @@ html {
     @include breakpoint(mobile) {
         font-size: 10px;
     }
+
+    @include breakpoint(supersmall-mobile) {
+        font-size: 9px;
+    }
 }
 
 body {
@@ -65,6 +96,11 @@ body {
     flex-direction: column;
     color: var(--dark-blue);
     font-family: var(--mabry);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    word-break: break-word;
+    hyphens: auto;
 }
 
 main {
@@ -156,7 +192,7 @@ button {
 a {
     background-color: transparent;
     text-decoration: none;
-    transition: color .2s;
+    transition: color 0.2s;
     &:link,
     &:visited {
         color: inherit;
@@ -166,7 +202,7 @@ a {
 svg {
     flex-shrink: 0;
     fill: currentColor;
-    transition: fill .2s;
+    transition: fill 0.2s;
 }
 
 img {
@@ -194,7 +230,8 @@ th {
     font-weight: 400;
 }
 
-td, th {
+td,
+th {
     text-align: left;
     vertical-align: top;
 }

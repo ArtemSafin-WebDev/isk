@@ -302,6 +302,8 @@
     margin: auto 0;
     position: relative;
     z-index: 40;
+    display: flex;
+    flex-direction: column;
 }
 
 .intro__column-link {
@@ -334,7 +336,7 @@
     font-size: 3rem;
     line-height: 130%;
     letter-spacing: 0.005em;
-    max-width: 49rem;
+    width: 49rem;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.4s, visibility 0s linear 0.4s;

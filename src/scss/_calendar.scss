@@ -52,6 +52,9 @@
     color: white;
     text-align: left;
     flex-grow: 1;
+    transition: background-color .2s;
+
+
     @include breakpoint(mobile) {
         min-height: 15rem;
         padding: 3rem;
@@ -63,6 +66,10 @@
     &:link,
     &:visited {
         color: white;
+    }
+
+    .no-touch &:hover {
+        background: #9761F3;
     }
 }
 

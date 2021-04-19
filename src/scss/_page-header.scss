@@ -75,6 +75,10 @@
     display: block;
     fill: white;
 
+    .page-header__logo--colored & {
+        fill: var(--violet);
+    }
+
     @include breakpoint(mobile) {
         width: 6rem;
     }
@@ -471,7 +475,7 @@
 }
 
 .page-header__menu-nav-list-item {
-    padding-bottom: 5.5rem;
+    padding-bottom: 3.5rem;
     &:last-child {
         padding-bottom: 0;
     }
@@ -483,7 +487,7 @@
 
 .page-header__menu-nav-link {
     font-weight: 500;
-    font-size: 5.5rem;
+    font-size: 5rem;
     line-height: 120%;
     letter-spacing: 0.005em;
     color: white;
@@ -496,8 +500,8 @@
 }
 
 .page-header__menu-pointer {
-    width: 15.2rem;
-    height: 15.2rem;
+    width: 13rem;
+    height: 13rem;
     background-color: #a77cf0;
     border-radius: 50%;
     position: absolute;

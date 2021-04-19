@@ -14,6 +14,7 @@ import setScrollbarWidth from './setScrollbarWidth';
 import teachersModals from './teachersModals';
 import aboutModals from './aboutModal';
 import ourTeamSlider from './ourTeamSlider';
+import fixedButton from './fixedButton';
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     teachersModals();
     aboutModals();
     ourTeamSlider();
+    fixedButton();
     
 });
 

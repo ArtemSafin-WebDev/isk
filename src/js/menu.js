@@ -10,13 +10,20 @@ export default function menu() {
 
     const menuLinks = Array.from(menu.querySelectorAll('.page-header__menu-nav-link'));
     const menuPointer = menu.querySelector('.page-header__menu-pointer');
+    let activeTl = null
     const openMenu = () => {
         document.body.classList.add('menu-open');
         menuOpen = true;
 
+        if (activeTl) {
+            activeTl.kill();
+        }
+
         const tl = gsap.timeline({
             delay: 0.3
         });
+
+        activeTl = tl;
 
         tl.fromTo(
             menuLinks,
@@ -124,7 +131,6 @@ export default function menu() {
     window.addEventListener(
         'resize',
         debounce(() => {
-            initializeLinks();
             checkFixed();
         }, 300)
     );

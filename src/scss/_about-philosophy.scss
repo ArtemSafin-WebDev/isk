@@ -29,7 +29,7 @@
     line-height: 7.3rem;
     letter-spacing: 0.005em;
     text-transform: uppercase;
-    margin-bottom: 11rem;
+    margin-bottom: 6rem;
     font-family: var(--druk);
 
     @include breakpoint(mobile) {
@@ -41,11 +41,21 @@
 }
 
 .about-philosophy__text {
-    font-weight: bold;
-    font-size: 3rem;
-    line-height: 160%;
-    letter-spacing: 0.005em;
-    max-width: 80rem;
+  
+  
+    
+    
+
+
+    font-weight: 500;
+    font-size: 4.4rem;
+    line-height: 120%;
+    letter-spacing: .005em;
+
+    @include breakpoint(laptop) {
+        font-size: 3rem;
+        line-height: 160%;
+    }
 
     @include breakpoint(mobile) {
         font-size: 1.8rem;
@@ -76,11 +86,17 @@
     padding: 2.8rem;
     text-align: center;
     justify-content: center;
+    transition: background-color .2s;
     .about-philosophy__features-list-item:nth-child(even) & {
         background: #343454;
     }
     .about-philosophy__features-list-item:nth-child(odd) & {
         background: #242441;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        background: #58D6EB;
     }
 
     @include breakpoint(mobile) {

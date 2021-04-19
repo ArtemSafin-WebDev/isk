@@ -975,11 +975,11 @@ button.swiper-pagination-bullet {
 :root {
   --max-container-width: 160rem;
   --content-padding: 6rem;
-  --violet: #9761F3;
-  --dark-violet: #5624AB;
+  --violet: #9761f3;
+  --dark-violet: #5624ab;
   --dark-violet-hover: #40148d;
-  --blue: #58D6EB;
-  --dark-blue: #14142B;
+  --blue: #58d6eb;
+  --dark-blue: #14142b;
   --druk: 'DrukWideMediumCy', sans-serif;
   --mabry: 'Mabry Pro', sans-serif; }
   @media only screen and (max-width: 1600px) {
@@ -998,6 +998,33 @@ html {
   font-size: 10px;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent; }
+  @media screen and (min-width: 2000px) {
+    html {
+      font-size: 11px; } }
+  @media screen and (min-width: 2200px) {
+    html {
+      font-size: 12px; } }
+  @media screen and (min-width: 2400px) {
+    html {
+      font-size: 14px; } }
+  @media screen and (min-width: 2600px) {
+    html {
+      font-size: 16px; } }
+  @media screen and (min-width: 2800px) {
+    html {
+      font-size: 18px; } }
+  @media screen and (min-width: 3200px) {
+    html {
+      font-size: 20px; } }
+  @media screen and (min-width: 4000px) {
+    html {
+      font-size: 24px; } }
+  @media screen and (min-width: 4500px) {
+    html {
+      font-size: 25px; } }
+  @media screen and (min-width: 4800px) {
+    html {
+      font-size: 27px; } }
   @media only screen and (max-width: 1400px) {
     html {
       font-size: 9px; } }
@@ -1013,6 +1040,9 @@ html {
   @media only screen and (max-width: 640px) {
     html {
       font-size: 10px; } }
+  @media only screen and (max-width: 370px) {
+    html {
+      font-size: 9px; } }
 
 body {
   min-width: 320px;
@@ -1028,6 +1058,12 @@ body {
           flex-direction: column;
   color: var(--dark-blue);
   font-family: var(--mabry); }
+
+h1, h2, h3, h4, h5, h6 {
+  word-break: break-word;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto; }
 
 main {
   display: block; }
@@ -1112,8 +1148,8 @@ button {
 a {
   background-color: transparent;
   text-decoration: none;
-  -webkit-transition: color .2s;
-  transition: color .2s; }
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s; }
   a:link, a:visited {
     color: inherit; }
 
@@ -1121,8 +1157,8 @@ svg {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   fill: currentColor;
-  -webkit-transition: fill .2s;
-  transition: fill .2s; }
+  -webkit-transition: fill 0.2s;
+  transition: fill 0.2s; }
 
 img {
   border-style: none;
@@ -1144,7 +1180,8 @@ table {
 th {
   font-weight: 400; }
 
-td, th {
+td,
+th {
   text-align: left;
   vertical-align: top; }
 
@@ -1331,6 +1368,8 @@ select:-webkit-autofill:focus {
   height: auto;
   display: block;
   fill: white; }
+  .page-header__logo--colored .page-header__logo-image {
+    fill: var(--violet); }
   @media only screen and (max-width: 640px) {
     .page-header__logo-image {
       width: 6rem; } }
@@ -1764,7 +1803,7 @@ select:-webkit-autofill:focus {
       text-align: center; } }
 
 .page-header__menu-nav-list-item {
-  padding-bottom: 5.5rem; }
+  padding-bottom: 3.5rem; }
   .page-header__menu-nav-list-item:last-child {
     padding-bottom: 0; }
   @media only screen and (max-width: 640px) {
@@ -1773,7 +1812,7 @@ select:-webkit-autofill:focus {
 
 .page-header__menu-nav-link {
   font-weight: 500;
-  font-size: 5.5rem;
+  font-size: 5rem;
   line-height: 120%;
   letter-spacing: 0.005em;
   color: white;
@@ -1786,8 +1825,8 @@ select:-webkit-autofill:focus {
       line-height: 130%; } }
 
 .page-header__menu-pointer {
-  width: 15.2rem;
-  height: 15.2rem;
+  width: 13rem;
+  height: 13rem;
   background-color: #a77cf0;
   border-radius: 50%;
   position: absolute;
@@ -2105,7 +2144,14 @@ select:-webkit-autofill:focus {
 .intro__column-content {
   margin: auto 0;
   position: relative;
-  z-index: 40; }
+  z-index: 40;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
 
 .intro__column-link {
   font-weight: 500;
@@ -2140,7 +2186,7 @@ select:-webkit-autofill:focus {
   font-size: 3rem;
   line-height: 130%;
   letter-spacing: 0.005em;
-  max-width: 49rem;
+  width: 49rem;
   opacity: 0;
   visibility: hidden;
   -webkit-transition: opacity 0.4s, visibility 0s linear 0.4s;
@@ -3554,9 +3600,9 @@ select:-webkit-autofill:focus {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
-  font-family: 'object-fit: cover; object-position: center;'; }
+  -o-object-position: center top;
+     object-position: center top;
+  font-family: 'object-fit: cover; object-position: center top;'; }
 
 .social {
   position: relative;
@@ -4250,26 +4296,44 @@ select:-webkit-autofill:focus {
   position: relative;
   color: white; }
   @media only screen and (min-width: 641px) {
-    .education-features__list-item:nth-child(odd) {
+    .education-features__list-item:nth-child(odd) .education-features__card {
       background: #242441; }
-    .education-features__list-item:nth-child(even) {
+    .education-features__list-item:nth-child(even) .education-features__card {
       background: #343454; } }
   @media only screen and (max-width: 640px) {
     .education-features__list-item {
       width: 50%; }
-      .education-features__list-item:nth-child(1) {
+      .education-features__list-item:nth-child(1) .education-features__card {
         background: #242441; }
-      .education-features__list-item:nth-child(2) {
+      .education-features__list-item:nth-child(2) .education-features__card {
         background: #343454; }
-      .education-features__list-item:nth-child(3) {
+      .education-features__list-item:nth-child(3) .education-features__card {
         background: #343454; }
-      .education-features__list-item:nth-child(4) {
+      .education-features__list-item:nth-child(4) .education-features__card {
         background: #242441; } }
   .education-features__list-item::before {
     content: '';
     display: block;
     width: 100%;
     padding-bottom: 100%; }
+
+.education-features__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: background-color .2s;
+  transition: background-color .2s;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%; }
+  .no-touch .education-features__card:hover {
+    background-color: var(--blue); }
 
 .education-features__card-content {
   position: absolute;
@@ -5667,7 +5731,9 @@ select:-webkit-autofill:focus {
   text-align: left;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
-          flex-grow: 1; }
+          flex-grow: 1;
+  -webkit-transition: background-color .2s;
+  transition: background-color .2s; }
   @media only screen and (max-width: 640px) {
     .calendar__calendar-btn {
       min-height: 15rem;
@@ -5676,6 +5742,8 @@ select:-webkit-autofill:focus {
     background: #12aac4; }
   .calendar__calendar-btn:link, .calendar__calendar-btn:visited {
     color: white; }
+  .no-touch .calendar__calendar-btn:hover {
+    background: #9761F3; }
 
 .calendar__calendar-btn-icon {
   -ms-flex-negative: 0;
@@ -7439,6 +7507,7 @@ select:-webkit-autofill:focus {
   color: #fff;
   background-color: var(--dark-violet);
   padding: 5rem 3rem;
+  padding-top: 8rem;
   font-size: 3rem;
   font-weight: 700; }
   @media only screen and (max-width: 640px) {
@@ -7455,7 +7524,8 @@ select:-webkit-autofill:focus {
   text-transform: uppercase;
   font-family: var(--druk);
   padding-bottom: 3.5rem;
-  line-height: 1.3; }
+  line-height: 1.3;
+  max-width: 50rem; }
 
 .contacts-info__item {
   padding-bottom: 6rem;
@@ -7512,7 +7582,7 @@ select:-webkit-autofill:focus {
   line-height: 7.3rem;
   letter-spacing: 0.005em;
   text-transform: uppercase;
-  margin-bottom: 11rem;
+  margin-bottom: 6rem;
   font-family: var(--druk); }
   @media only screen and (max-width: 640px) {
     .about-philosophy__heading {
@@ -7522,11 +7592,14 @@ select:-webkit-autofill:focus {
       margin-bottom: 1.6rem; } }
 
 .about-philosophy__text {
-  font-weight: bold;
-  font-size: 3rem;
-  line-height: 160%;
-  letter-spacing: 0.005em;
-  max-width: 80rem; }
+  font-weight: 500;
+  font-size: 4.4rem;
+  line-height: 120%;
+  letter-spacing: .005em; }
+  @media only screen and (max-width: 1200px) {
+    .about-philosophy__text {
+      font-size: 3rem;
+      line-height: 160%; } }
   @media only screen and (max-width: 640px) {
     .about-philosophy__text {
       font-size: 1.8rem;
@@ -7566,11 +7639,16 @@ select:-webkit-autofill:focus {
   text-align: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
+  -webkit-transition: background-color .2s;
+  transition: background-color .2s; }
   .about-philosophy__features-list-item:nth-child(even) .about-philosophy__card {
     background: #343454; }
   .about-philosophy__features-list-item:nth-child(odd) .about-philosophy__card {
     background: #242441; }
+  .no-touch .about-philosophy__card:hover,
+  .touch .about-philosophy__card:active {
+    background: #58D6EB; }
   @media only screen and (max-width: 640px) {
     .about-philosophy__card {
       padding: 1.8rem;
@@ -8553,7 +8631,8 @@ select:-webkit-autofill:focus {
       margin-left: calc(-1 * var(--content-padding));
       margin-right: calc(-1 * var(--content-padding));
       padding-left: var(--content-padding);
-      padding-right: var(--content-padding); } }
+      padding-right: var(--content-padding);
+      display: none; } }
 
 .news__intro-back {
   font-weight: bold;
@@ -9740,13 +9819,12 @@ select:-webkit-autofill:focus {
       padding-top: 5rem; } }
 
 .reviews-page__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+  margin-top: -42rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: minmax(auto, 15rem); }
   @media only screen and (max-width: 640px) {
     .reviews-page__list {
       -ms-flex-wrap: nowrap;
@@ -9754,7 +9832,9 @@ select:-webkit-autofill:focus {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
           -ms-flex-direction: column;
-              flex-direction: column; } }
+              flex-direction: column;
+      display: block;
+      margin-top: 0; } }
   .reviews-page__list::before {
     content: '';
     position: absolute;
@@ -9770,24 +9850,24 @@ select:-webkit-autofill:focus {
         height: 20rem; } }
 
 .reviews-page__list-item {
-  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column; }
+          flex-direction: column;
+  grid-row: span 3; }
+  .reviews-page__list-item:nth-child(2) {
+    grid-row: 3 / span 3;
+    grid-column: 2 / 3; }
   @media only screen and (max-width: 640px) {
     .reviews-page__list-item {
       width: 100%;
-      margin-bottom: 5rem; } }
+      margin-bottom: 5rem; }
+      .reviews-page__list-item:last-child {
+        margin-bottom: 0; } }
   @media only screen and (min-width: 641px) {
-    .reviews-page__list-item:nth-child(odd) {
-      margin-top: -58rem; }
-    .reviews-page__list-item:nth-child(even) {
-      position: relative;
-      top: 0rem; }
     .reviews-page__list-item:nth-child(4n + 2) .reviews-page__card {
       background: #5624AB; }
     .reviews-page__list-item:nth-child(4n + 3) .reviews-page__card {
@@ -9795,10 +9875,12 @@ select:-webkit-autofill:focus {
 
 .reviews-page__card {
   background: #9761f3;
-  min-height: 46rem;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
   @media only screen and (max-width: 640px) {
     .reviews-page__card {
       -webkit-box-orient: vertical;
