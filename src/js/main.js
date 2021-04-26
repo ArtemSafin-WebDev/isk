@@ -16,6 +16,7 @@ import aboutModals from './aboutModal';
 import ourTeamSlider from './ourTeamSlider';
 import fixedButton from './fixedButton';
 import introMobileSlider from './introMobileSlider';
+import mealModals from './mealModal';
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ourTeamSlider();
     fixedButton();
     introMobileSlider();
+    mealModals();
     
 });
 
