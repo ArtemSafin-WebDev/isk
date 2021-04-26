@@ -4,12 +4,21 @@
 <section class="intro js-intro">
     <div class="intro__backgrounds">
         <div class="intro__background">
-            <video src="assets/video/education.mp4" class="intro__background-image" poster="img/intro-left-bg-image.jpg"
-                loop muted></video>
+
+
+
+            <video class="lazyload intro__background-image" muted="" data-autoplay="" loop playsinline
+                data-poster="img/intro-left-bg-image.jpg" preload="none">
+                <source src="assets/video/education.mp4" type="video/mp4" />
+            </video>
         </div>
         <div class="intro__background">
-            <video src="assets/video/admission.mp4" class="intro__background-image"
-                poster="img/intro-right-bg-image.jpg" loop muted></video>
+
+
+            <video class="lazyload intro__background-image" muted="" data-autoplay="" loop playsinline
+                data-poster="img/intro-right-bg-image.jpg" preload="none">
+                <source src="assets/video/admission.mp4" type="video/mp4" />
+            </video>
         </div>
     </div>
     <div class="container">
@@ -17,6 +26,11 @@
             <div class="intro__left-col js-intro-col">
                 <div class="intro__mobile-bg">
                     <img data-src="img/mobile-bg-1.jpg" alt="" class="intro__mobile-bg-image lazyload">
+
+                    <video class="lazyload intro__mobile-bg-video" muted="" data-autoplay="" loop playsinline
+                        data-poster="img/intro-left-bg-image.jpg" preload="none">
+                        <source src="assets/video/education.mp4" type="video/mp4" />
+                    </video>
                 </div>
                 <img src="img/mobile-semicircle-1.svg" alt="" class="intro__semicircle-mobile">
 
@@ -41,6 +55,13 @@
             <div class="intro__right-col js-intro-col">
                 <div class="intro__mobile-bg">
                     <img data-src="img/mobile-bg-2.jpg" alt="" class="intro__mobile-bg-image lazyload">
+
+
+                   
+                    <video class="lazyload intro__mobile-bg-video" muted="" data-autoplay="" loop playsinline
+                        data-poster="img/intro-right-bg-image.jpg" preload="none">
+                        <source src="assets/video/admission.mp4" type="video/mp4" />
+                    </video>
                 </div>
                 <img src="img/mobile-semicircle-2.svg" alt="" class="intro__semicircle-mobile">
                 <a href="#" class="intro__mobile-link">

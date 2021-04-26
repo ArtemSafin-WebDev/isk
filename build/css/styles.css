@@ -1945,6 +1945,15 @@ select:-webkit-autofill:focus {
      object-position: center;
   font-family: 'object-fit: cover; object-position: center;'; }
 
+.intro__mobile-bg-video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover; }
+
 .intro__content {
   height: 100vh;
   position: relative;
