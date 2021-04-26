@@ -15,6 +15,7 @@ import teachersModals from './teachersModals';
 import aboutModals from './aboutModal';
 import ourTeamSlider from './ourTeamSlider';
 import fixedButton from './fixedButton';
+import introMobileSlider from './introMobileSlider';
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -34,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     aboutModals();
     ourTeamSlider();
     fixedButton();
+    introMobileSlider();
     
 });
 

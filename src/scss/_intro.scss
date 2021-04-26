@@ -37,7 +37,7 @@
         top: 0;
         width: 100%;
         height: 100%;
-       
+
         z-index: -1;
         background: radial-gradient(78.72% 423.07% at 78.72% 100%, #9761f3 0%, #5624ab 51.04%, #14142b 99.8%);
         transition: opacity 0.3s;
@@ -48,8 +48,6 @@
         color: white;
     }
 
-
-    
     .no-touch &:hover,
     .touch &:active {
         &::before {
@@ -102,7 +100,6 @@
             width: 100%;
             height: 100%;
             background: rgba(#14142b, 0.5);
-            
         }
     }
 }
@@ -122,7 +119,7 @@
     top: 0;
     width: 100%;
     height: 100%;
-    
+
     object-fit: cover;
 }
 
@@ -138,6 +135,8 @@
     @include breakpoint(mobile) {
         height: auto;
         flex-direction: column;
+
+        display: none;
     }
 }
 
@@ -502,5 +501,99 @@
 
     100% {
         transform: translateY(-50%);
+    }
+}
+
+.intro__mobile-slider {
+    display: none;
+    position: relative;
+    .swiper-slide {
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include breakpoint(mobile) {
+        display: block;
+        margin: 0 calc(-1 * var(--content-padding));
+    }
+}
+
+.intro__mobile-slider-card {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 51rem;
+}
+
+.intro__mobile-slider-card-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #14142b;
+        opacity: 0.7;
+    }
+}
+
+.intro__mobile-slider-card-bg-video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.intro__mobile-slider-card-heading {
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 128.7%;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    font-family: var(--druk);
+}
+
+
+.intro__mobile-slider-pagination {
+    bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 80;
+
+    .swiper-pagination-bullet {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        flex-shrink: 0;
+
+        background-color: rgba(white, .3);
+        opacity: 1;
+        margin: 0 .5rem;
+        transition: background-color .2s;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: white;
     }
 }
