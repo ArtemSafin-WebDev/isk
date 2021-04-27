@@ -9,7 +9,7 @@ export default function mealModals() {
         card.addEventListener('click', event => {
             event.preventDefault();
 
-            const modal = card.nextElementSibling;
+            const modal = document.querySelector('.nutrition__slider-sample-menu-modal')
 
             if (modal.matches('.nutrition__slider-sample-menu-modal')) {
                 modal.classList.add('shown');
