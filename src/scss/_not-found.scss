@@ -1,0 +1,112 @@
+.not-found {
+    background: #14142b;
+}
+.not-found__content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.not-found__circle {
+    height: 67.6rem;
+    width: 67.6rem;
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoint(mobile) {
+        width: 30rem;
+        height: 30rem;
+    }
+}
+
+.not-found__circle-right-half {
+    position: absolute;
+    left: 50%;
+    height: 100%;
+    width: auto;
+}
+
+.not-found__circle-left-half {
+    position: absolute;
+    right: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.not-found__circle-with-pattern {
+    position: absolute;
+    left: 0;
+    width: 67.6rem;
+    height: 67.6rem;
+    border-radius: 50%;
+    top: 0;
+    // background-color: red;
+    overflow: hidden;
+
+    @include breakpoint(mobile) {
+        width: 30rem;
+        height: 30rem;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 200%;
+        background-size: 110% auto;
+        background-repeat: repeat;
+        background-image: url(../img/semicircle-bg-pattern.svg);
+        background-position: center;
+        animation-name: moving-up-pattern;
+        animation-iteration-count: infinite;
+        animation-duration: 30s;
+        animation-timing-function: linear;
+    }
+}
+
+.not-found__circle-code {
+    font-weight: 500;
+    font-size: 12rem;
+    line-height: 1;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    font-family: var(--druk);
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 30;
+    margin: auto;
+
+    @include breakpoint(mobile) {
+        font-size: 6rem;
+    }
+}
+
+.not-found__circle-code-text {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    font-weight: bold;
+    font-size: 3rem;
+    line-height: 160%;
+    letter-spacing: 0.005em;
+    font-family: var(--mabry);
+    text-transform: initial;
+    width: 30rem;
+    text-align: left;
+    margin-left: 3rem;
+    margin-top: 1rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.5rem;
+        margin-left: 1.5rem;
+        width: 12rem;
+    }
+}
