@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 export default function fixedButton() {
-    const introMainBtn = document.querySelector('.intro__main-btn');
+    const introMainBtn = document.querySelector('.intro__main-btn, .grant-intro__link--fixed');
 
     if (!introMainBtn) return;
 
@@ -29,7 +29,7 @@ export default function fixedButton() {
 
                         gsap.set(document.body, {
                             paddingBottom: introMainBtn.offsetHeight
-                        })
+                        });
                     } else {
                         gsap.set(introMainBtn, {
                             clearProps: 'all'
@@ -37,7 +37,7 @@ export default function fixedButton() {
 
                         gsap.set(document.body, {
                             paddingBottom: 0
-                        })
+                        });
                     }
                 }
             });

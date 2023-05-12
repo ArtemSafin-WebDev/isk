@@ -1,0 +1,51 @@
+.grant-why {
+    background: #242441;
+    color: white;
+
+    .education-school__slider {
+        margin-top: 0;
+    }
+    @include breakpoint(mobile) {
+        .education-school__slider {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.grant-why__top {
+    position: relative;
+    z-index: 10;
+    padding: 6rem 0;
+    color: #14142b;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100vw;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        background: #58d6eb;
+    }
+
+    @include breakpoint(mobile) {
+        padding: 1.6rem 0;
+    }
+}
+
+.grant-why__heading {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 6rem;
+    line-height: 7.3rem;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    font-family: var(--druk);
+
+    @include breakpoint(mobile) {
+        font-size: 3rem;
+        line-height: 3.6rem;
+        letter-spacing: 0.005em;
+    }
+}

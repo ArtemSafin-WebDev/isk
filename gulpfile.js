@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const plumber = require('gulp-plumber');
 const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync').create();
@@ -18,7 +18,7 @@ const hb = require('gulp-hb');
 const fs = require('fs');
 const path = require('path');
 
-gulp.task('sprite', function () {
+gulp.task('sprite', function() {
     return gulp
         .src('src/img/icons/*.svg')
         .pipe(plumber())
@@ -27,20 +27,20 @@ gulp.task('sprite', function () {
                 mode: {
                     inline: true,
                     symbol: {
-                        sprite: '../sprite.hbs',
-                    },
-                },
+                        sprite: '../sprite.hbs'
+                    }
+                }
             })
         )
         .pipe(gulp.dest('./src/partials/components'));
 });
 
-gulp.task('handlebars', function () {
+gulp.task('handlebars', function() {
     return gulp
         .src('./src/pages/**/*.hbs')
         .pipe(debug({ title: 'handlebars compiler:' }))
         .pipe(
-            data(function (file) {
+            data(function(file) {
                 try {
                     const data = JSON.parse(fs.readFileSync('./src/pages/data/' + path.basename(file.path).replace('.hbs', '.json')));
                     return data;
@@ -49,9 +49,14 @@ gulp.task('handlebars', function () {
                 }
             })
         )
-        .pipe(hb().partials('./src/partials/components/**/*.hbs').partials('./src/partials/layouts/**/*.hbs').helpers(require('handlebars-layouts')))
         .pipe(
-            rename(function (path) {
+            hb()
+                .partials('./src/partials/components/**/*.hbs')
+                .partials('./src/partials/layouts/**/*.hbs')
+                .helpers(require('handlebars-layouts'))
+        )
+        .pipe(
+            rename(function(path) {
                 path.extname = '.html';
             })
         )
@@ -59,11 +64,11 @@ gulp.task('handlebars', function () {
         .pipe(browserSync.stream());
 });
 
-gulp.task('styles', function () {
+gulp.task('styles', function() {
     return gulp
         .src('src/scss/styles.scss')
         .pipe(plumber())
-        .pipe(sass())
+        .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer())
         .pipe(gulp.dest('build/css'))
         .pipe(cssMinify())
@@ -72,7 +77,7 @@ gulp.task('styles', function () {
         .pipe(browserSync.stream());
 });
 
-gulp.task('scripts', function () {
+gulp.task('scripts', function() {
     return gulp
         .src('./src/js/**/*')
         .pipe(plumber())
@@ -81,7 +86,7 @@ gulp.task('scripts', function () {
         .pipe(browserSync.stream());
 });
 
-gulp.task('scripts-production', function () {
+gulp.task('scripts-production', function() {
     return gulp
         .src('./src/js/**/*')
         .pipe(plumber())
@@ -90,15 +95,15 @@ gulp.task('scripts-production', function () {
         .pipe(browserSync.stream());
 });
 
-gulp.task('clean', function () {
+gulp.task('clean', function() {
     return del('./build');
 });
 
-gulp.task('serve', function () {
+gulp.task('serve', function() {
     browserSync.init({
         server: 'build/',
         port: 7000,
-        ghostMode: false,
+        ghostMode: false
     });
     gulp.watch(['./src/**/*.hbs', './src/pages/data**/*.json'], gulp.series('handlebars'));
 
@@ -110,12 +115,19 @@ gulp.task('serve', function () {
     gulp.watch('./src/assets/**/*', gulp.series('assets'));
 });
 
-gulp.task('images', function () {
-    return gulp.src('./src/img/**/*').pipe(gulp.dest('./build/img')).pipe(browserSync.stream());
+gulp.task('images', function() {
+    return gulp
+        .src('./src/img/**/*')
+        .pipe(gulp.dest('./build/img'))
+        .pipe(browserSync.stream());
 });
 
-gulp.task('assets', function () {
-    return gulp.src('./src/assets/**/*').pipe(newer('./build/assets')).pipe(gulp.dest('./build/assets')).pipe(browserSync.stream());
+gulp.task('assets', function() {
+    return gulp
+        .src('./src/assets/**/*')
+        .pipe(newer('./build/assets'))
+        .pipe(gulp.dest('./build/assets'))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('build', gulp.series('clean', 'images', 'sprite', 'handlebars', gulp.parallel('assets', 'styles', 'scripts')));
