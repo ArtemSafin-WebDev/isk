@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             speed: 600,
             longSwipesRatio: 0.7,
             autoHeight: true,
-
+            allowTouchMove: false,
             effect: 'fade',
             fadeEffect: {
                 crossFade: true
@@ -45,6 +45,16 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Main instance', mainInstance);
 
         mainInstance.controller.control = textInstance;
-        // textInstance.controller.control = mainInstance;
+
+        const setArrowsHeight = () => {
+            const arrows = element.querySelector('.school-slider__arrows');
+            element.style.setProperty('--offset-height', arrows.offsetHeight + 'px');
+        };
+
+        setArrowsHeight();
+
+        window.addEventListener('resize', () => {
+            setArrowsHeight();
+        });
     });
 });

@@ -100,7 +100,7 @@
     }
 
     .swiper-slide-active & {
-        transform: translateY(14.4rem);
+        transform: translateY(var(--offset-height, 0));
 
         @include breakpoint(mobile) {
             transform: translateY(0);
