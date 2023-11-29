@@ -36,7 +36,7 @@
         flex-grow: 0;
     }
 }
-.reviews__right-col{
+.reviews__right-col {
     width: 30%;
 
     @include breakpoint(tablet) {
@@ -63,7 +63,6 @@
         transform: translateX(-50%);
     }
 }
-
 
 .reviews__heading {
     font-weight: 500;
@@ -120,6 +119,21 @@
     color: var(--dark-blue);
     padding-right: 5rem;
 
+    .reviews--school & {
+        font-size: 3rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 160%;
+        letter-spacing: 0.015rem;
+
+        @include breakpoint(mobile) {
+            font-size: 2.4rem;
+            line-height: 130%;
+            font-weight: 700;
+            padding-right: 0;
+        }
+    }
+
     @include breakpoint(mobile) {
         font-size: 2.4rem;
         line-height: 130%;
@@ -159,7 +173,7 @@
         letter-spacing: 0.005em;
         font-weight: 700;
         line-height: 130%;
-        padding: .8rem 2rem;
+        padding: 0.8rem 2rem;
         margin: 0;
         white-space: nowrap;
     }
@@ -184,7 +198,6 @@
 
     @include breakpoint(mobile) {
         margin-right: 2rem;
-        
     }
 }
 
@@ -214,7 +227,6 @@
         background-color: #fff;
         transform: scaleX(var(--slider-progress, 0));
     }
-
 
     @include breakpoint(mobile) {
         height: 0.3rem;
@@ -252,7 +264,6 @@
         background-color: var(--violet);
     }
 
-
     @include breakpoint(mobile) {
         width: 6.6rem;
         height: 6rem;
@@ -263,7 +274,7 @@
     flex: 1;
     position: relative;
 }
-.reviews__thumbs-slider-name{
+.reviews__thumbs-slider-name {
     background: var(--dark-blue);
     color: #fff;
     padding: 2.5rem 3.5rem;

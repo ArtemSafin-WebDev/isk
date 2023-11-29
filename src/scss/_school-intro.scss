@@ -1,0 +1,165 @@
+.school-intro {
+    background-color: #9761f3;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.school-intro__bg {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    overflow: hidden;
+}
+
+.school-intro__cloud {
+    position: absolute;
+    width: 80%;
+    height: auto;
+    top: 6.2rem;
+    left: 6.2rem;
+
+    @include breakpoint(mobile) {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.school-intro__content {
+    padding: 20rem 0;
+    display: flex;
+    flex-direction: column;
+    // min-height: 89rem;
+    min-height: min(100vh, 87rem);
+
+    @include breakpoint(mobile) {
+        min-height: 50rem;
+    }
+}
+
+.school-intro__circle {
+    position: absolute;
+    width: 26rem;
+    height: 26rem;
+    border-radius: 50%;
+    overflow: hidden;
+
+    @include breakpoint(mobile) {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    &:nth-child(1) {
+        top: 11.6rem;
+        left: 16.5rem;
+
+        @include breakpoint(mobile) {
+            top: 8rem;
+            left: 4rem;
+        }
+    }
+    &:nth-child(2) {
+        top: 23.9rem;
+        right: 22.5rem;
+
+        @include breakpoint(mobile) {
+            top: 24rem;
+            right: 3rem;
+        }
+    }
+    &:nth-child(3) {
+        left: 48.9rem;
+        bottom: -3rem;
+
+        @include breakpoint(mobile) {
+            left: 12rem;
+            bottom: -1.5rem;
+        }
+    }
+}
+
+.school-intro__decor {
+    width: 14.6rem;
+    position: absolute;
+
+    @include breakpoint(mobile) {
+        width: 8rem;
+    }
+
+    &:nth-child(1) {
+        transform: rotate(60deg);
+        top: 4.4rem;
+        left: 40rem;
+
+        @include breakpoint(mobile) {
+            left: 12rem;
+            top: 4rem;
+        }
+    }
+
+    &:nth-child(2) {
+        left: 30rem;
+        transform: rotate(-100deg);
+        bottom: 4rem;
+
+        @include breakpoint(mobile) {
+            left: 16rem;
+            bottom: 13rem;
+        }
+    }
+    &:nth-child(3) {
+        right: 4rem;
+        top: 50%;
+        transform: translateY(-50%) rotate(120deg);
+
+        @include breakpoint(mobile) {
+            right: 2rem;
+            margin-top: -8rem;
+        }
+    }
+}
+
+.school-intro__decor-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.school-intro__circle-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.school__intro-heading {
+    margin: auto 0;
+    font-size: 11.2rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.056rem;
+    text-transform: uppercase;
+    font-family: var(--druk);
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(mobile) {
+        font-size: 3rem;
+        line-height: 3.6rem;
+        letter-spacing: 0.005em;
+    }
+
+    span {
+        &:first-child {
+            margin-right: auto;
+        }
+        &:last-child {
+            margin-left: auto;
+        }
+    }
+}

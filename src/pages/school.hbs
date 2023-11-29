@@ -1,0 +1,444 @@
+{{#extend "layout"}}
+    {{#content "main"}}
+        <section class="school-intro">
+            <div class="school-intro__bg">
+                <img src="img/cloud.svg" alt="" class="school-intro__cloud">
+                <div class="school-intro__circles">
+                    <div class="school-intro__circle">
+                        <img src="img/circles/1.webp" alt="" class="school-intro__circle-image">
+                    </div>
+                    <div class="school-intro__circle">
+                        <img src="img/circles/2.webp" alt="" class="school-intro__circle-image">
+                    </div>
+                    <div class="school-intro__circle">
+                        <img src="img/circles/3.webp" alt="" class="school-intro__circle-image">
+                    </div>
+                </div>
+                <div class="school-intro__decors">
+                    <div class="school-intro__decor">
+                        <img src="img/school-decor.svg" alt="" class="school-intro__decor-image">
+                    </div>
+                    <div class="school-intro__decor">
+                        <img src="img/school-decor.svg" alt="" class="school-intro__decor-image">
+                    </div>
+                    <div class="school-intro__decor">
+                        <img src="img/school-decor.svg" alt="" class="school-intro__decor-image">
+                    </div>
+                </div>
+
+            </div>
+            <div class="container">
+                <div class="school-intro__content">
+                    <h1 class="school__intro-heading">
+                        <span>
+                            нЕ БУДЬ,
+                        </span>
+                        <span>
+                            КАК ВСЕ!
+                        </span>
+                    </h1>
+                </div>
+            </div>
+        </section>
+        <section class="school-text">
+            <div class="container">
+                <div class="school-text__content">
+                    В первой международной школе Казани ты можешь учиться, так, как хочешь именно ТЫ
+                </div>
+            </div>
+
+        </section>
+
+        <section class="school-slider js-school-slider">
+
+
+            <div class="school-slider__top">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="school-slider__top-card">
+                                Можешь сам выбирать предметы
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="school-slider__top-card">
+                                Создавать свои уникальные проекты
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="school-slider__top-card">
+                                Воплотить свои творческие идеи в музыкальном бэнде
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="school-slider__top-card">
+                                Можно найти свое предназначение
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="school-slider__bottom">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="school-slider__bottom-card">
+                                <img src="img/school-slider/1.webp" alt="" class="school-slider__bottom-card-image">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="school-slider__bottom-card">
+                                <img src="img/school-slider/2.webp" alt="" class="school-slider__bottom-card-image">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="school-slider__bottom-card">
+                                <img src="img/school-slider/3.webp" alt="" class="school-slider__bottom-card-image">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="school-slider__bottom-card">
+                                <img src="img/school-slider/4.webp" alt="" class="school-slider__bottom-card-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="school-slider__arrows">
+                <button class="school-slider__arrow school-slider__arrow--prev">
+                    <svg width="17" height="27" aria-hidden="true" class="icon-arrow-left">
+                        <use xlink:href="#arrow-left"></use>
+                    </svg>
+                </button>
+                <button class="school-slider__arrow school-slider__arrow--next">
+                    <svg width="17" height="27" aria-hidden="true" class="icon-arrow-right">
+                        <use xlink:href="#arrow-right"></use>
+                    </svg>
+                </button>
+            </div>
+
+
+        </section>
+        <section class="school-map">
+            <div class="container">
+                <div class="school-map__content">
+                    <div class="school-map__map-wrapper">
+                        <img src="img/school-map.svg" alt="" class="school-map__map-image">
+                    </div>
+                    <div class="school-map__total">
+                        <div class="school-map__total-amount">
+                            38
+                        </div>
+                        <div class="school-map__total-text">
+                            Преподавателей<br>
+                            из других стран
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="sign-up">
+            <div class="container">
+                <h2 class="sign-up__heading sign-up__heading--align-left">
+                    Узнай как
+                </h2>
+                <form action="/" method="POST" class="sign-up__form" data-need-validation>
+                    <div class="sign-up__form-row">
+                        <div class="text-input-wrapper">
+                            <input type="text" class="text-input" name="name" placeholder="ФИО" required>
+                            <label for="name" class="text-input-label">ФИО</label>
+
+                        </div>
+
+                    </div>
+                    <div class="sign-up__form-row">
+                        <div class="text-input-wrapper">
+                            <input type="tel" class="text-input js-phone-input" name="phone" placeholder="Телефон"
+                                required data-parsley-phone>
+                            <label for="phone" class="text-input-label">Телефон</label>
+
+                        </div>
+
+                    </div>
+                    <div class="sign-up__form-buttons">
+                        <div class="sign-up__form-buttons-row">
+                            <div class="sign-up__form-buttons-col">
+                                <button type="submit" class="sign-up__form-submit-btn">
+                                    Записаться
+                                </button>
+                            </div>
+                            <div class="sign-up__form-buttons-col">
+                                <div class="sign-up__form-rules">
+                                    By clicking "Send" you consent to the processing of your personal data in accordance
+                                    with
+                                    Article 9
+                                    of the Federal Law of 27 July 2006 N 152-FZ "On Personal Data"
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="reviews reviews--school">
+            <div class="reviews__row js-reviews-slider">
+                <div class="reviews__left-col">
+
+                    <h2 class="reviews__heading">
+                        Отзывы
+                    </h2>
+                    <div class="reviews__main-slider">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <a href="#" class="reviews__main-slider-card">
+                                        <div class="reviews__main-slider-card-text">
+                                            <p>
+                                                Я бы сказала, что IB заложило во мне нужные знания и навыки, чтобы стать
+                                                думающим, организованным и многозадачным человеком, потому что задач
+                                                очень много,и эта нагрузка просто вынуждает учиться грамотно
+                                                распределять свое время. А еще здорово то, что, изучая предметы по
+                                                выбору в школе, я подготовилась к их изучению в университете. Кстати,
+                                                получив хорошие оценки по экзаменам в DP, абитуриент может получить
+                                                какие-то баллы и  по некоторым предметам в вузе, а значит, он раньше
+                                                завершит ряд курсов и сможет приступить к прохождение следующих. Так
+                                                случилось и у меня. IB программа ценится во многих высших учебных
+                                                заведениях, и возможность получить этот бонус может стать одним из
+                                                факторов при выборе университета.
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="reviews__main-slider-card">
+                                        <div class="reviews__main-slider-card-text">
+                                            <p>
+                                                Я бы сказала, что IB заложило во мне нужные знания и навыки, чтобы стать
+                                                думающим, организованным и многозадачным человеком, потому что задач
+                                                очень много,и эта нагрузка просто вынуждает учиться грамотно
+                                                распределять свое время. А еще здорово то, что, изучая предметы по
+                                                выбору в школе, я подготовилась к их изучению в университете. Кстати,
+                                                получив хорошие оценки по экзаменам в DP, абитуриент может получить
+                                                какие-то баллы и  по некоторым предметам в вузе, а значит, он раньше
+                                                завершит ряд курсов и сможет приступить к прохождение следующих. Так
+                                                случилось и у меня. IB программа ценится во многих высших учебных
+                                                заведениях, и возможность получить этот бонус может стать одним из
+                                                факторов при выборе университета.
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="reviews__main-slider-card">
+                                        <div class="reviews__main-slider-card-text">
+                                            <p>
+                                                Я бы сказала, что IB заложило во мне нужные знания и навыки, чтобы стать
+                                                думающим, организованным и многозадачным человеком, потому что задач
+                                                очень много,и эта нагрузка просто вынуждает учиться грамотно
+                                                распределять свое время. А еще здорово то, что, изучая предметы по
+                                                выбору в школе, я подготовилась к их изучению в университете. Кстати,
+                                                получив хорошие оценки по экзаменам в DP, абитуриент может получить
+                                                какие-то баллы и  по некоторым предметам в вузе, а значит, он раньше
+                                                завершит ряд курсов и сможет приступить к прохождение следующих. Так
+                                                случилось и у меня. IB программа ценится во многих высших учебных
+                                                заведениях, и возможность получить этот бонус может стать одним из
+                                                факторов при выборе университета.
+
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="reviews__main-slider-card">
+                                        <div class="reviews__main-slider-card-text">
+                                            <p>
+                                                Я бы сказала, что IB заложило во мне нужные знания и навыки, чтобы стать
+                                                думающим, организованным и многозадачным человеком, потому что задач
+                                                очень много,и эта нагрузка просто вынуждает учиться грамотно
+                                                распределять свое время. А еще здорово то, что, изучая предметы по
+                                                выбору в школе, я подготовилась к их изучению в университете. Кстати,
+                                                получив хорошие оценки по экзаменам в DP, абитуриент может получить
+                                                какие-то баллы и  по некоторым предметам в вузе, а значит, он раньше
+                                                завершит ряд курсов и сможет приступить к прохождение следующих. Так
+                                                случилось и у меня. IB программа ценится во многих высших учебных
+                                                заведениях, и возможность получить этот бонус может стать одним из
+                                                факторов при выборе университета.
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="reviews__main-slider-card">
+                                        <div class="reviews__main-slider-card-text">
+                                            <p>
+                                                Я бы сказала, что IB заложило во мне нужные знания и навыки, чтобы стать
+                                                думающим, организованным и многозадачным человеком, потому что задач
+                                                очень много,и эта нагрузка просто вынуждает учиться грамотно
+                                                распределять свое время. А еще здорово то, что, изучая предметы по
+                                                выбору в школе, я подготовилась к их изучению в университете. Кстати,
+                                                получив хорошие оценки по экзаменам в DP, абитуриент может получить
+                                                какие-то баллы и  по некоторым предметам в вузе, а значит, он раньше
+                                                завершит ряд курсов и сможет приступить к прохождение следующих. Так
+                                                случилось и у меня. IB программа ценится во многих высших учебных
+                                                заведениях, и возможность получить этот бонус может стать одним из
+                                                факторов при выборе университета.
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reviews__slider-controls">
+                        <div class="reviews__slider-pagination">
+                            <a href="#" class="reviews__slider-pagination-bullet">
+
+                            </a>
+                            <a href="#" class="reviews__slider-pagination-bullet">
+
+                            </a>
+                            <a href="#" class="reviews__slider-pagination-bullet">
+
+                            </a>
+                            <a href="#" class="reviews__slider-pagination-bullet">
+
+                            </a>
+                            <a href="#" class="reviews__slider-pagination-bullet">
+
+                            </a>
+                        </div>
+                        <div class="reviews__slider-arrows">
+                            <button class="reviews__slider-arrow reviews__slider-arrow--prev">
+                                <svg width="17" height="27" aria-hidden="true" class="icon-arrow-left">
+                                    <use xlink:href="#arrow-left"></use>
+                                </svg>
+                            </button>
+                            <button class="reviews__slider-arrow reviews__slider-arrow--next">
+                                <svg width="17" height="27" aria-hidden="true" class="icon-arrow-right">
+                                    <use xlink:href="#arrow-right"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="reviews__right-col">
+                    <div class="reviews__thumbs-slider">
+                        <div class="reviews__thumbs-slider-card">
+                            <div class="reviews__thumbs-slider-card-image-container">
+                                <img src="img/student-school.webp" alt="" class="reviews__thumbs-slider-card-image">
+                            </div>
+                            <div class="reviews__thumbs-slider-name">
+                                Guzel
+                                Sergeeva
+                            </div>
+                        </div>
+                        <div class="reviews__thumbs-slider-card">
+                            <div class="reviews__thumbs-slider-card-image-container">
+                                <img src="img/student-school.webp" alt="" class="reviews__thumbs-slider-card-image">
+                            </div>
+                            <div class="reviews__thumbs-slider-name">
+                                Ehsan Shariatmadari
+                            </div>
+                        </div>
+                        <div class="reviews__thumbs-slider-card">
+                            <div class="reviews__thumbs-slider-card-image-container">
+                                <img src="img/student-school.webp" alt="" class="reviews__thumbs-slider-card-image">
+                            </div>
+                            <div class="reviews__thumbs-slider-name">
+                                Anna Kornilova
+
+                            </div>
+                        </div>
+                        <div class="reviews__thumbs-slider-card">
+                            <div class="reviews__thumbs-slider-card-image-container">
+                                <img src="img/student-school.webp" alt="" class="reviews__thumbs-slider-card-image">
+                            </div>
+                            <div class="reviews__thumbs-slider-name">
+                                Guzel
+                                Sergeeva 4
+                            </div>
+                        </div>
+                        <div class="reviews__thumbs-slider-card">
+                            <div class="reviews__thumbs-slider-card-image-container">
+                                <img src="img/student-school.webp" alt="" class="reviews__thumbs-slider-card-image">
+                            </div>
+                            <div class="reviews__thumbs-slider-name">
+                                Guzel
+                                Sergeeva 5
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="sign-up">
+            <div class="container">
+                <h2 class="sign-up__heading sign-up__heading--align-left">
+                    Мы тебя поддержим на каждом этапе
+                </h2>
+                <form action="/" method="POST" class="sign-up__form" data-need-validation>
+                    <div class="sign-up__form-row">
+                        <div class="text-input-wrapper">
+                            <input type="text" class="text-input" name="name" placeholder="ФИО" required>
+                            <label for="name" class="text-input-label">ФИО</label>
+
+                        </div>
+
+                    </div>
+                    <div class="sign-up__form-row">
+                        <div class="text-input-wrapper">
+                            <input type="tel" class="text-input js-phone-input" name="phone" placeholder="Телефон"
+                                required data-parsley-phone>
+                            <label for="phone" class="text-input-label">Телефон</label>
+
+                        </div>
+
+                    </div>
+                    <div class="sign-up__form-buttons">
+                        <div class="sign-up__form-buttons-row">
+                            <div class="sign-up__form-buttons-col">
+                                <button type="submit" class="sign-up__form-submit-btn">
+                                    Записаться
+                                </button>
+                            </div>
+                            <div class="sign-up__form-buttons-col">
+                                <div class="sign-up__form-rules">
+                                    By clicking "Send" you consent to the processing of your personal data in accordance
+                                    with
+                                    Article 9
+                                    of the Federal Law of 27 July 2006 N 152-FZ "On Personal Data"
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="school-text school-text--violet">
+            <div class="container">
+                <div class="school-text__content">
+                    A thousand-mile journey begins with the first step and can only be taken one step at a time
+                </div>
+            </div>
+        </section>
+        <section class="school-image">
+            <div class="school-image__wrapper">
+                <img src="img/school-bottom-image.webp" alt="" class="school-image__picture">
+            </div>
+        </section>
+    {{/content}}
+{{/extend}}

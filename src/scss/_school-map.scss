@@ -1,0 +1,81 @@
+.school-map {
+    background-color: #7040c0;
+    color: white;
+}
+
+.school-map__content {
+    padding: 11rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 'stack';
+
+    @include breakpoint(mobile) {
+        padding: 6rem 0;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+}
+
+.school-map__map-wrapper {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    width: 106rem;
+    max-width: 100%;
+    padding-left: 6.2rem;
+    justify-self: flex-start;
+
+    @include breakpoint(mobile) {
+        width: auto;
+        padding: 0;
+    }
+}
+
+.school-map__map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.school-map__total {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    z-index: 5;
+    justify-self: flex-end;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.3rem;
+}
+
+.school-map__total-amount {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    width: 7.6rem;
+    height: 7.6rem;
+    border-radius: 50%;
+    background-color: #58d6eb;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0.02rem;
+    color: #14142b;
+    padding-top: 0.7rem;
+
+    @include breakpoint(mobile) {
+        width: 7rem;
+        height: 7rem;
+        font-size: 3.2rem;
+    }
+}
+
+.school-map__total-text {
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0.009rem;
+}

@@ -1,0 +1,22 @@
+.school-text {
+    background-color: #14142b;
+    color: white;
+
+    &--violet {
+        background-color: #9761f3;
+    }
+}
+
+.school-text__content {
+    font-size: 5.5rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0.0275rem;
+    padding: 4.2rem 0;
+
+    @include breakpoint(mobile) {
+        font-size: 2.4rem;
+        padding: 3.2rem 0;
+    }
+}

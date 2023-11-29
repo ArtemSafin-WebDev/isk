@@ -66,13 +66,13 @@ gulp.task('handlebars', function() {
 
 gulp.task('styles', function() {
     return gulp
-        .src('src/scss/styles.scss')
+        .src('src/scss/*.scss')
         .pipe(plumber())
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer())
         .pipe(gulp.dest('build/css'))
         .pipe(cssMinify())
-        .pipe(rename('styles.min.css'))
+
         .pipe(gulp.dest('build/css'))
         .pipe(browserSync.stream());
 });

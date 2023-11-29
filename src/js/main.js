@@ -19,7 +19,6 @@ import introMobileSlider from './introMobileSlider';
 import mealModals from './mealModal';
 import paymentModal from './paymentModal';
 
-
 document.addEventListener('DOMContentLoaded', function() {
     polyfills();
     detectTouch();
@@ -40,10 +39,9 @@ document.addEventListener('DOMContentLoaded', function() {
     introMobileSlider();
     mealModals();
     paymentModal();
-    
 });
 
 window.addEventListener('load', function() {
     document.body.classList.add('loaded');
-    setTimeout(() => document.body.classList.add('animatable'), 300)
-})
+    setTimeout(() => document.body.classList.add('animatable'), 300);
+});
